@@ -1,0 +1,4099 @@
+{
+  "0": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je hardware?",
+          "content": "<p><strong>Hardware</strong> jsou fyzické součásti počítače — vše co lze fyzicky dotknout. Dělíme ho na <strong>vnitřní</strong> (uvnitř skříně) a <strong>vnější</strong> (periferie).</p>"
+        },
+        {
+          "title": "Komponenty stolního PC",
+          "content": "<ul><li><strong>Základní deska</strong> — propojuje všechny komponenty, obsahuje patici CPU, sloty RAM</li><li><strong>CPU</strong> — mozek počítače, vykonává instrukce. Parametry: počet jader, frekvence (GHz), cache</li><li><strong>RAM</strong> — dočasná paměť běžících programů. Typicky 8–32 GB. Po vypnutí se smaže</li><li><strong>HDD vs SSD</strong> — HDD mechanický (levnější, pomalejší), SSD elektronický (rychlejší, dražší)</li><li><strong>GPU</strong> — grafická karta, zpracování obrazu</li><li><strong>PSU</strong> — napájecí zdroj, výkon v wattech</li></ul>"
+        },
+        {
+          "title": "Periferní zařízení",
+          "content": "<p><strong>Vstupní:</strong> klávesnice, myš, skener, mikrofon.<br><strong>Výstupní:</strong> monitor, tiskárna, reproduktory.</p><p><strong>Inkoustová tiskárna</strong> — levná pořizovací cena, dražší inkoust, vhodná pro fotografie.<br><strong>Laserová tiskárna</strong> — rychlejší, levnější tisk na stránku, vhodná pro kanceláře.</p><p><strong>USB flash disk</strong> — flash paměť (NAND), data uchována bez napájení.</p>"
+        },
+        {
+          "title": "Spolupráce komponent",
+          "content": "<p>CPU načítá instrukce z RAM, zpracuje je. Data se z disku načítají do RAM podle potřeby. Komunikace probíhá přes <strong>sběrnice</strong>. Nejpomalejší komponenta tvoří <strong>bottleneck</strong>.</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co je základní deska?",
+        "options": [
+          "Paměť pro ukládání dat",
+          "Komponenta propojující všechny části počítače",
+          "Zařízení pro zobrazení obrazu",
+          "Napájecí jednotka"
+        ],
+        "correct": 1,
+        "feedback": "Základní deska (motherboard) propojuje CPU, RAM, úložiště a ostatní komponenty."
+      },
+      {
+        "q": "Jaký je hlavní rozdíl mezi HDD a SSD?",
+        "options": [
+          "HDD je menší",
+          "SSD je mechanické",
+          "SSD je rychlejší, HDD levnější na GB",
+          "HDD má vždy větší kapacitu"
+        ],
+        "correct": 2,
+        "feedback": "SSD používá flash paměť a je výrazně rychlejší. HDD má mechanické části a je levnější za GB."
+      },
+      {
+        "q": "K čemu slouží RAM?",
+        "options": [
+          "K trvalému ukládání souborů",
+          "K zobrazení obrazu",
+          "K dočasnému ukládání dat běžících programů",
+          "K připojení periferií"
+        ],
+        "correct": 2,
+        "feedback": "RAM je dočasná pracovní paměť. Po vypnutí počítače se obsah smaže."
+      },
+      {
+        "q": "Co je bottleneck?",
+        "options": [
+          "Přehřátý procesor",
+          "Nejpomalejší komponenta limitující výkon systému",
+          "Chyba OS",
+          "Vadná základní deska"
+        ],
+        "correct": 1,
+        "feedback": "Bottleneck je komponenta jejíž výkon limituje celý systém — např. pomalý HDD s rychlým CPU."
+      },
+      {
+        "q": "Která tiskárna je vhodnější pro kancelářský tisk?",
+        "options": [
+          "Inkoustová — kvůli kvalitě",
+          "Laserová — kvůli rychlosti a nižším nákladům",
+          "Termální — kvůli tichu",
+          "Jehličková — kvůli spolehlivosti"
+        ],
+        "correct": 1,
+        "feedback": "Laserové tiskárny jsou rychlejší a náklady na stránku jsou nižší než u inkoustových."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Konfigurace herního PC",
+        "desc": "<p>Navrhni konfiguraci herního PC za <strong>30 000 Kč</strong>. Pro každou komponentu uveď název, cenu a důvod výběru.</p><p>Komponenty: CPU, GPU, RAM, SSD, základní deska, zdroj, case.</p>",
+        "hint": "Pro hry je nejdůležitější GPU a CPU. Nevyvážená konfigurace = bottleneck."
+      },
+      {
+        "title": "HDD vs SSD srovnání",
+        "desc": "<p>Vytvoř srovnávací tabulku podle: rychlost, cena/GB, odolnost, hlučnost, typické použití.</p>",
+        "hint": "SSD nemá pohyblivé části — proto je odolnější a tišší."
+      },
+      {
+        "title": "Diagnostika pomalého PC",
+        "desc": "<p>PC: CPU i7 (výkonný), RAM 16GB, HDD 5400RPM, moderní GPU. Identifikuj bottleneck a navrhni řešení.</p>",
+        "hint": "HDD 5400RPM ~100MB/s, SSD ~500MB/s, NVMe ~3500MB/s."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Převod paměťových jednotek",
+        "desc": "Doplň správné hodnoty.",
+        "template": "1 KB = ___1___ B\n1 MB = ___2___ KB\n1 GB = ___3___ MB\n1 TB = ___4___ GB",
+        "answers": {
+          "1": "1024",
+          "2": "1024",
+          "3": "1024",
+          "4": "1024"
+        }
+      },
+      {
+        "title": "Komponenty PC",
+        "desc": "Doplň zkratky komponent.",
+        "template": "Mozek počítače = ___1___\nDočasná paměť = ___2___\nRychlé úložiště = ___3___\nGrafická karta = ___4___",
+        "answers": {
+          "1": "CPU",
+          "2": "RAM",
+          "3": "SSD",
+          "4": "GPU"
+        }
+      },
+      {
+        "title": "Vstupní a výstupní zařízení",
+        "desc": "Zařaď jako vstupní (V) nebo výstupní (O).",
+        "template": "Klávesnice = ___1___\nMonitor = ___2___\nMyš = ___3___\nTiskárna = ___4___",
+        "answers": {
+          "1": "V",
+          "2": "O",
+          "3": "V",
+          "4": "O"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "CPU",
+        "def": "Central Processing Unit — procesor, mozek počítače, vykonává instrukce programů."
+      },
+      {
+        "term": "RAM",
+        "def": "Random Access Memory — dočasná operační paměť. Po vypnutí se obsah smaže."
+      },
+      {
+        "term": "SSD",
+        "def": "Solid State Drive — rychlé úložiště bez pohyblivých částí, využívá flash paměť."
+      },
+      {
+        "term": "HDD",
+        "def": "Hard Disk Drive — mechanické úložiště s rotujícími plotnami a čtecí hlavičkou."
+      },
+      {
+        "term": "Základní deska",
+        "def": "Motherboard — propojuje všechny komponenty přes sběrnice."
+      },
+      {
+        "term": "GPU",
+        "def": "Graphics Processing Unit — grafická karta zpracovávající obraz."
+      },
+      {
+        "term": "Bottleneck",
+        "def": "Nejpomalejší komponenta omezující výkon celého systému."
+      },
+      {
+        "term": "PSU",
+        "def": "Power Supply Unit — napájecí zdroj počítače, výkon v wattech."
+      }
+    ]
+  },
+  "1": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Číselné soustavy",
+          "content": "<p>Počítače pracují s čísly v různých soustavách. Každá má <strong>základ (radix)</strong>.</p><ul><li><strong>Dvojková (binární)</strong> — základ 2, číslice 0–1. Základní soustava počítačů.</li><li><strong>Osmičková</strong> — základ 8, číslice 0–7.</li><li><strong>Desítková</strong> — základ 10, číslice 0–9.</li><li><strong>Šestnáctková (hex)</strong> — základ 16, číslice 0–9 a A–F.</li></ul>"
+        },
+        {
+          "title": "Převody mezi soustavami",
+          "content": "<p><strong>Desítková → dvojková:</strong> opakovaně dělíme 2, zbytky čteme zdola nahoru.<br>Příklad: 13 → 1101₂</p><p><strong>Dvojková → desítková:</strong> každou cifru násobíme mocninou 2.<br>1101₂ = 8+4+0+1 = 13</p><p><strong>Hex ↔ binární:</strong> každá hex cifra = přesně 4 bity.<br>AF₁₆ = 1010 1111₂</p>"
+        },
+        {
+          "title": "ASCII kódování",
+          "content": "<p><strong>ASCII</strong> přiřazuje každému znaku číslo 0–127.</p><ul><li>'0'–'9' → kódy 48–57</li><li>'A'–'Z' → kódy 65–90</li><li>'a'–'z' → kódy 97–122</li></ul><p>'A' = 65 = <code>01000001</code>₂. Rozšíření: <strong>Unicode/UTF-8</strong> pro všechny jazyky světa.</p>"
+        },
+        {
+          "title": "Proč dvojková soustava?",
+          "content": "<p>Elektronické obvody mají dva stavy: <strong>zapnuto (1)</strong> a <strong>vypnuto (0)</strong>. Jeden bit = jedna binární cifra. <strong>8 bitů = 1 byte</strong>, hodnoty 0–255.</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Kolik je (1010)₂ v desítkové soustavě?",
+        "options": [
+          "8",
+          "10",
+          "12",
+          "16"
+        ],
+        "correct": 1,
+        "feedback": "1×2³+0×2²+1×2¹+0×2⁰ = 8+0+2+0 = 10"
+      },
+      {
+        "q": "Jak se zapíše 255 v hexadecimální soustavě?",
+        "options": [
+          "EF",
+          "FE",
+          "FF",
+          "F0"
+        ],
+        "correct": 2,
+        "feedback": "255 = 15×16+15 = FF. Hex F = desítkové 15."
+      },
+      {
+        "q": "Kolik bitů tvoří jeden byte?",
+        "options": [
+          "4",
+          "6",
+          "8",
+          "16"
+        ],
+        "correct": 2,
+        "feedback": "1 byte = 8 bitů. Může nabývat hodnot 0–255."
+      },
+      {
+        "q": "Jaký ASCII kód má znak 'A'?",
+        "options": [
+          "61",
+          "65",
+          "97",
+          "41"
+        ],
+        "correct": 1,
+        "feedback": "Velké 'A' = 65. Malé 'a' = 97 (o 32 více)."
+      },
+      {
+        "q": "Co odpovídá hexadecimální cifře 'B'?",
+        "options": [
+          "10",
+          "11",
+          "12",
+          "13"
+        ],
+        "correct": 1,
+        "feedback": "A=10, B=11, C=12, D=13, E=14, F=15."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Převody čísel",
+        "desc": "<p>Proveď a zapiš postup:</p><ul><li>(42)₁₀ → dvojková</li><li>(11011010)₂ → desítková</li><li>(3F)₁₆ → desítková</li><li>(255)₁₀ → hexadecimální</li></ul>",
+        "hint": "Pro převod do dvojkové: děl 2 a piš zbytky. Hex→bin: každá hex cifra = 4 bity."
+      },
+      {
+        "title": "ASCII tabulka",
+        "desc": "<p>Urči nebo odvoď:</p><ul><li>ASCII kód znaku 'Z'</li><li>Znak s kódem 98</li><li>Zpráva: 72 101 108 108 111</li></ul>",
+        "hint": "'A'=65, 'a'=97, '0'=48. Velká/malá písmena se liší o 32."
+      },
+      {
+        "title": "Binární sčítání",
+        "desc": "<p>Proveď:</p><ul><li>(1010)₂ + (0110)₂ = ?</li><li>(1111)₂ + (0001)₂ = ?</li><li>Ověř převodem do desítkové</li></ul>",
+        "hint": "0+0=0, 0+1=1, 1+1=10 (přenos 1), 1+1+1=11."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Mocniny dvojky",
+        "desc": "Doplň hodnoty.",
+        "template": "2⁰ = ___1___\n2¹ = ___2___\n2² = ___3___\n2³ = ___4___\n2⁸ = ___5___",
+        "answers": {
+          "1": "1",
+          "2": "2",
+          "3": "4",
+          "4": "8",
+          "5": "256"
+        }
+      },
+      {
+        "title": "Hex cifry",
+        "desc": "Doplň desítkové hodnoty.",
+        "template": "A = ___1___\nB = ___2___\nC = ___3___\nF = ___4___",
+        "answers": {
+          "1": "10",
+          "2": "11",
+          "3": "12",
+          "4": "15"
+        }
+      },
+      {
+        "title": "Jednotky",
+        "desc": "Doplň správné hodnoty.",
+        "template": "1 byte = ___1___ bitů\nMax. hodnota 1 byte = ___2___\nPočet hodnot 1 byte = ___3___",
+        "answers": {
+          "1": "8",
+          "2": "255",
+          "3": "256"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Bit",
+        "def": "Nejmenší jednotka informace. Nabývá hodnot 0 nebo 1."
+      },
+      {
+        "term": "Byte",
+        "def": "8 bitů. Může uložit hodnoty 0–255."
+      },
+      {
+        "term": "Binární soustava",
+        "def": "Číselná soustava se základem 2. Používá číslice 0 a 1."
+      },
+      {
+        "term": "Hexadecimální soustava",
+        "def": "Číselná soustava se základem 16. Číslice 0–9 a A–F."
+      },
+      {
+        "term": "ASCII",
+        "def": "Kódování přiřazující každému znaku číslo 0–127."
+      },
+      {
+        "term": "Unicode/UTF-8",
+        "def": "Rozšíření ASCII pro všechny světové jazyky včetně češtiny."
+      },
+      {
+        "term": "Radix",
+        "def": "Základ číselné soustavy — počet různých číslic."
+      },
+      {
+        "term": "Převod do dvojkové",
+        "def": "Opakovaně dělíme základem 2, zbytky čteme zdola nahoru."
+      }
+    ]
+  },
+  "2": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Booleova algebra",
+          "content": "<p><strong>Booleova algebra</strong> pracuje s hodnotami <strong>pravda (1)</strong> a <strong>nepravda (0)</strong>. Základní operace:</p><ul><li><strong>AND (∧)</strong> — 1 pouze pokud jsou OBA vstupy 1</li><li><strong>OR (∨)</strong> — 1 pokud je ALESPOŇ JEDEN vstup 1</li><li><strong>NOT (¬)</strong> — invertuje: 0→1, 1→0</li><li><strong>XOR</strong> — 1 pokud se vstupy liší</li><li><strong>NAND, NOR</strong> — negace AND/OR</li></ul>"
+        },
+        {
+          "title": "Pravdivostní tabulka",
+          "content": "<p>Zobrazuje výstupy pro všechny kombinace vstupů. Pro n vstupů: 2ⁿ řádků.</p><pre>AND:          OR:\na b | a∧b    a b | a∨b\n0 0 |  0    0 0 |  0\n0 1 |  0    0 1 |  1\n1 0 |  0    1 0 |  1\n1 1 |  1    1 1 |  1</pre>"
+        },
+        {
+          "title": "Karnaughova mapa",
+          "content": "<p><strong>K-mapa</strong> je grafická metoda minimalizace. Sousední buňky se liší v 1 proměnné (Grayův kód). Hledáme co největší skupiny jedniček (1, 2, 4, 8...).</p>"
+        },
+        {
+          "title": "Zákony Booleovy algebry",
+          "content": "<ul><li><code>a + a = a</code> (idempotence)</li><li><code>a + ā = 1</code> (doplněk)</li><li><code>a · 1 = a</code></li><li><code>a · 0 = 0</code></li><li><code>a·(a+b) = a</code> (absorpce)</li></ul>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký je výsledek 1 AND 0?",
+        "options": [
+          "0",
+          "1",
+          "Neurčito",
+          "Záleží na kontextu"
+        ],
+        "correct": 0,
+        "feedback": "AND vrací 1 pouze pokud jsou OBA vstupy 1."
+      },
+      {
+        "q": "Kolik řádků má pravdivostní tabulka pro 3 proměnné?",
+        "options": [
+          "3",
+          "6",
+          "8",
+          "16"
+        ],
+        "correct": 2,
+        "feedback": "2³ = 8 řádků."
+      },
+      {
+        "q": "Co je výsledek NOT 0?",
+        "options": [
+          "0",
+          "1",
+          "Nedefinováno",
+          "-1"
+        ],
+        "correct": 1,
+        "feedback": "NOT 0 = 1, NOT 1 = 0."
+      },
+      {
+        "q": "K čemu slouží Karnaughova mapa?",
+        "options": [
+          "Zobrazení obvodů",
+          "Minimalizace logických funkcí",
+          "Převod čísel",
+          "Návrh procesorů"
+        ],
+        "correct": 1,
+        "feedback": "K-mapa je grafická metoda minimalizace logických výrazů."
+      },
+      {
+        "q": "Jaký je výsledek 1 XOR 1?",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "Neurčito"
+        ],
+        "correct": 0,
+        "feedback": "XOR vrací 1 pouze pokud se vstupy liší. 1 XOR 1 = 0."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Pravdivostní tabulka",
+        "desc": "<p>Sestavte pravdivostní tabulku pro <strong>y = a·b + ā·c</strong>. Sloupce: a, b, c, ā, a·b, ā·c, y.</p>",
+        "hint": "3 proměnné = 8 řádků. Nejdříve meziresultáty, pak výsledek OR."
+      },
+      {
+        "title": "Minimalizace K-mapou",
+        "desc": "<p>Funkce: m0=1, m1=1, m2=0, m3=1, m4=0, m5=1, m6=0, m7=1. Sestav K-mapu (3 proměnné) a najdi minimalizovaný výraz.</p>",
+        "hint": "Hledej největší skupiny jedniček. Skupiny mohou přesahovat okraje."
+      },
+      {
+        "title": "Majority funkce",
+        "desc": "<p>Navrhněte obvod: výstup=1 tehdy, když jsou alespoň 2 ze 3 vstupů (a,b,c) rovny 1. Postup: tabulka → K-mapa → obvod.</p>",
+        "hint": "Majority: y = ab + bc + ac"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Výsledky AND",
+        "desc": "Doplň.",
+        "template": "0 AND 0 = ___1___\n0 AND 1 = ___2___\n1 AND 0 = ___3___\n1 AND 1 = ___4___",
+        "answers": {
+          "1": "0",
+          "2": "0",
+          "3": "0",
+          "4": "1"
+        }
+      },
+      {
+        "title": "OR a NOT",
+        "desc": "Doplň výsledky.",
+        "template": "0 OR 1 = ___1___\n1 OR 1 = ___2___\nNOT 0 = ___3___\nNOT 1 = ___4___\n1 XOR 0 = ___5___",
+        "answers": {
+          "1": "1",
+          "2": "1",
+          "3": "1",
+          "4": "0",
+          "5": "1"
+        }
+      },
+      {
+        "title": "Zákony algebry",
+        "desc": "Doplň výsledky.",
+        "template": "a AND 1 = ___1___\na AND 0 = ___2___\na OR 0 = ___3___\na OR 1 = ___4___\na OR ā = ___5___",
+        "answers": {
+          "1": "a",
+          "2": "0",
+          "3": "a",
+          "4": "1",
+          "5": "1"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "AND",
+        "def": "Logický součin. Výsledek 1 pouze pokud jsou oba vstupy 1."
+      },
+      {
+        "term": "OR",
+        "def": "Logický součet. Výsledek 1 pokud je alespoň jeden vstup 1."
+      },
+      {
+        "term": "NOT",
+        "def": "Negace. Invertuje hodnotu: 0→1, 1→0."
+      },
+      {
+        "term": "XOR",
+        "def": "Exkluzivní OR. Výsledek 1 pouze pokud se vstupy liší."
+      },
+      {
+        "term": "NAND",
+        "def": "Negace AND. Výsledek 0 pouze pokud jsou oba vstupy 1."
+      },
+      {
+        "term": "Pravdivostní tabulka",
+        "def": "Tabulka výstupů pro všechny kombinace vstupů. 2ⁿ řádků pro n proměnných."
+      },
+      {
+        "term": "Karnaughova mapa",
+        "def": "Grafická metoda minimalizace. Hledáme největší skupiny jedniček."
+      },
+      {
+        "term": "Minimalizace",
+        "def": "Zjednodušení logického výrazu na ekvivalentní tvar s méně operacemi."
+      }
+    ]
+  },
+  "3": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Kombinační logické obvody",
+          "content": "<p>Výstup závisí <strong>pouze na aktuálních vstupech</strong> — bez paměti.</p><ul><li><strong>Multiplexor (MUX)</strong> — vybírá jeden ze vstupů</li><li><strong>Sčítačka</strong> — sčítá binární čísla</li><li><strong>Komparátor</strong> — porovnává dvě čísla</li><li><strong>Kodér/Dekodér</strong> — převádí mezi kódy</li></ul>"
+        },
+        {
+          "title": "Sekvenční logické obvody",
+          "content": "<p>Výstup závisí na vstupech I na <strong>předchozím stavu</strong> — mají paměť.</p><ul><li><strong>Synchronní</strong> — mění stav při hodinovém pulzu (clock)</li><li><strong>Asynchronní</strong> — reagují okamžitě na vstup</li></ul>"
+        },
+        {
+          "title": "Klopné obvody (flip-flopy)",
+          "content": "<p>Základní paměťové prvky — uchovávají 1 bit.</p><ul><li><strong>RS</strong> — vstupy S (Set=1) a R (Reset=0). Zakázaný stav: S=R=1</li><li><strong>D</strong> — při clock pulzu zkopíruje D na výstup Q. Nejjednodušší</li><li><strong>JK</strong> — vylepšený RS bez zakázaného stavu. J=K=1 → toggle</li><li><strong>T</strong> — toggle: mění stav při každém pulzu</li></ul>"
+        },
+        {
+          "title": "Schodišťový obvod",
+          "content": "<p>Tři křížové spínače realizují funkci <strong>XOR</strong>: <code>y = a XOR b XOR c</code>. XOR = 1 při lichém počtu jedniček na vstupu.</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký je hlavní rozdíl mezi kombinačním a sekvenčním obvodem?",
+        "options": [
+          "Sekvenční je rychlejší",
+          "Sekvenční má paměť, kombinační ne",
+          "Kombinační používá tranzistory",
+          "Kombinační pracuje analogově"
+        ],
+        "correct": 1,
+        "feedback": "Sekvenční obvody mají paměť — výstup závisí na vstupech I předchozím stavu."
+      },
+      {
+        "q": "Co je zakázaný stav RS klopného obvodu?",
+        "options": [
+          "R=0, S=0",
+          "R=1, S=0",
+          "R=0, S=1",
+          "R=1, S=1"
+        ],
+        "correct": 3,
+        "feedback": "S=R=1 vede k nedefinovanému chování — proto je zakázaný."
+      },
+      {
+        "q": "Co dělá D flip-flop při hodinové hraně?",
+        "options": [
+          "Resetuje se",
+          "Přepne výstup",
+          "Přenese D na výstup Q",
+          "Ignoruje vstup"
+        ],
+        "correct": 2,
+        "feedback": "D flip-flop zkopíruje hodnotu vstupu D na výstup Q při hodinovém pulzu."
+      },
+      {
+        "q": "Jaký prvek synchronizuje synchronní obvody?",
+        "options": [
+          "Tranzistor",
+          "Kondenzátor",
+          "Hodinový signál (clock)",
+          "Zpětná vazba"
+        ],
+        "correct": 2,
+        "feedback": "Clock zajišťuje předvídatelnou změnu stavu."
+      },
+      {
+        "q": "Kolik bitů uchovává jeden klopný obvod?",
+        "options": [
+          "0",
+          "1",
+          "8",
+          "Záleží na typu"
+        ],
+        "correct": 1,
+        "feedback": "Jeden flip-flop uchovává právě 1 bit."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "RS klopný obvod",
+        "desc": "<p>Sestav pravdivostní tabulku RS klopného obvodu. Sloupce: S, R, Q, akce (Set/Reset/Paměť/Zakázáno).</p>",
+        "hint": "S=1,R=0→Set(Q=1). S=0,R=1→Reset(Q=0). S=0,R=0→Paměť. S=1,R=1→Zakázáno."
+      },
+      {
+        "title": "Schodišťový obvod",
+        "desc": "<p>Navrhni obvod pro 3 křížové spínače: žárovka svítí při lichém počtu sepnutých. Sestav tabulku, urči funkci, nakresli obvod.</p>",
+        "hint": "y = a XOR b XOR c"
+      },
+      {
+        "title": "2-bitový čítač",
+        "desc": "<p>Navrhni 2-bitový čítač (0,1,2,3,0...) ze dvou JK flip-flopů. Nakresli stavový diagram.</p>",
+        "hint": "Q0 se mění každý pulz. Q1 se mění vždy když Q0 přechází z 1 na 0."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "RS stavy",
+        "desc": "Doplň výstupy.",
+        "template": "S=1, R=0 → Q=___1___ (akce: ___2___)\nS=0, R=1 → Q=___3___ (akce: ___4___)\nS=0, R=0 → Q=___5___\nS=1, R=1 → ___6___",
+        "answers": {
+          "1": "1",
+          "2": "Set",
+          "3": "0",
+          "4": "Reset",
+          "5": "beze změny",
+          "6": "Zakázáno"
+        }
+      },
+      {
+        "title": "Typy obvodů",
+        "desc": "Zařaď jako kombinační (K) nebo sekvenční (S).",
+        "template": "Sčítačka = ___1___\nRS flip-flop = ___2___\nMultiplexor = ___3___\nČítač = ___4___",
+        "answers": {
+          "1": "K",
+          "2": "S",
+          "3": "K",
+          "4": "S"
+        }
+      },
+      {
+        "title": "Pojmy",
+        "desc": "Doplň správné pojmy.",
+        "template": "Základní paměťový prvek = ___1___\nSignál synchronizující obvod = ___2___\nObvod bez paměti = ___3___",
+        "answers": {
+          "1": "klopný obvod",
+          "2": "clock",
+          "3": "kombinační"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Kombinační obvod",
+        "def": "Obvod bez paměti. Výstup závisí pouze na aktuálních vstupech."
+      },
+      {
+        "term": "Sekvenční obvod",
+        "def": "Obvod s pamětí. Výstup závisí na vstupech i předchozím stavu."
+      },
+      {
+        "term": "Flip-flop (klopný obvod)",
+        "def": "Základní paměťový prvek uchovávající 1 bit. Typy: RS, D, JK, T."
+      },
+      {
+        "term": "RS flip-flop",
+        "def": "Set-Reset. S=1 nastaví Q=1, R=1 resetuje Q=0. S=R=1 je zakázáno."
+      },
+      {
+        "term": "D flip-flop",
+        "def": "Při hodinovém pulzu přenese hodnotu D na výstup Q."
+      },
+      {
+        "term": "Synchronní obvod",
+        "def": "Mění stav pouze při hodinovém pulzu (clock)."
+      },
+      {
+        "term": "Asynchronní obvod",
+        "def": "Reaguje okamžitě na změnu vstupu, bez hodinového signálu."
+      },
+      {
+        "term": "Clock",
+        "def": "Pravidelný hodinový signál synchronizující sekvenční obvody."
+      }
+    ]
+  },
+  "4": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je senzor?",
+          "content": "<p><strong>Senzor</strong> detekuje fyzikální veličinu a převádí ji na elektrický signál. <strong>Aktuátor</strong> je opak — převádí signál na fyzikální akci (motor, ventil).</p>"
+        },
+        {
+          "title": "Skupiny signálů a principy",
+          "content": "<ul><li><strong>Odporový</strong> — veličina mění odpor (termistor)</li><li><strong>Kapacitní</strong> — mění kapacitu kondenzátoru (dotykové obrazovky)</li><li><strong>Indukční</strong> — využívá magnetické pole</li><li><strong>Piezoelektrický</strong> — mechanická deformace generuje napětí</li><li><strong>Termoelektrický</strong> — teplotní rozdíl generuje napětí (termočlánek)</li></ul>"
+        },
+        {
+          "title": "Rozdělení senzorů",
+          "content": "<p><strong>Podle napájení:</strong><br><strong>Aktivní</strong> — potřebují napájení (ultrazvukový senzor).<br><strong>Pasivní</strong> — generují signál samy (termočlánek, fotodioda).</p><p><strong>Podle výstupu:</strong><br><strong>Analogové</strong> — spojitý signál (0–5V).<br><strong>Digitální</strong> — diskrétní výstup (0/1, I²C, SPI).</p>"
+        },
+        {
+          "title": "Inteligentní senzory",
+          "content": "<p>Obsahují <strong>mikroprocesor</strong> pro zpracování dat. Výhody: samokalibrace, digitální výstup, diagnostika. Příklady: BME280 (teplota+vlhkost+tlak), MPU6050 (akcelerometr+gyroskop).</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký je rozdíl mezi senzorem a aktuátorem?",
+        "options": [
+          "Senzor je digitální, aktuátor analogový",
+          "Senzor snímá (vstup), aktuátor vykonává akci (výstup)",
+          "Senzor potřebuje napájení, aktuátor ne",
+          "Senzor je levnější"
+        ],
+        "correct": 1,
+        "feedback": "Senzor převádí fyzikální veličinu na signál. Aktuátor naopak převádí signál na fyzikální akci."
+      },
+      {
+        "q": "Na jakém principu pracuje termistor?",
+        "options": [
+          "Piezoelektrickém",
+          "Kapacitním",
+          "Odporovém",
+          "Termoelektrickém"
+        ],
+        "correct": 2,
+        "feedback": "Termistor = odporový senzor teploty. NTC: s teplotou odpor klesá."
+      },
+      {
+        "q": "Co je piezoelektrický efekt?",
+        "options": [
+          "Změna odporu při teplotě",
+          "Vznik napětí při deformaci materiálu",
+          "Změna kapacity při vlhkosti",
+          "Světlo → proud"
+        ],
+        "correct": 1,
+        "feedback": "Piezoelektrický efekt: deformace krystalu generuje elektrické napětí."
+      },
+      {
+        "q": "Výhoda digitálního výstupu senzoru?",
+        "options": [
+          "Vždy vyšší přesnost",
+          "Odolnost vůči rušení a snadná komunikace",
+          "Nižší cena",
+          "Větší rozsah"
+        ],
+        "correct": 1,
+        "feedback": "Digitální signál je odolnější vůči rušení a snadno se zpracovává přes I²C, SPI."
+      },
+      {
+        "q": "Co umí inteligentní senzor navíc?",
+        "options": [
+          "Měří více veličin vždy",
+          "Má mikroprocesor pro zpracování, kalibraci a diagnostiku",
+          "Je vždy levnější",
+          "Pracuje bez napájení"
+        ],
+        "correct": 1,
+        "feedback": "Inteligentní senzor = senzor + mikroprocesor pro zpracování, kalibraci a komunikaci."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Výběr senzoru",
+        "desc": "<p>Pro každé měření vyber vhodný senzor a zdůvodni:</p><ul><li>Teplota v místnosti (±0,5°C)</li><li>Detekce překážky do 2m</li><li>Měření zrychlení dronu</li><li>Detekce otevření dveří</li></ul>",
+        "hint": "Uvažuj rozsah, přesnost, typ výstupu, prostředí."
+      },
+      {
+        "title": "Senzorová síť pro skleník",
+        "desc": "<p>Navrhni senzorovou síť pro chytrý skleník: měřené veličiny, typy senzorů, přenos dat, aktuátory.</p>",
+        "hint": "Skleník: teplota, vlhkost, osvětlení, CO₂. Aktuátory: zavlažování, ventilace, topení."
+      },
+      {
+        "title": "Porovnání principů",
+        "desc": "<p>Tabulka principů senzorů: odporový, kapacitní, indukční, piezoelektrický, termoelektrický. Pro každý: princip, příklad, použití.</p>",
+        "hint": "Odporový: termistor. Kapacitní: dotykové obrazovky. Piezo: mikrofony, senzory nárazu."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Principy senzorů",
+        "desc": "Přiřaď princip.",
+        "template": "Mění odpor → ___1___\nMění kapacitu → ___2___\nDeformace → napětí → ___3___\nTeplota → napětí → ___4___",
+        "answers": {
+          "1": "odporový",
+          "2": "kapacitní",
+          "3": "piezoelektrický",
+          "4": "termoelektrický"
+        }
+      },
+      {
+        "title": "Typy senzorů",
+        "desc": "Doplň kategorii.",
+        "template": "Termočlánek = ___1___ senzor\nUltrazvukový = ___2___ senzor\nAnalogový výstup = ___3___ signál\nI²C výstup = ___4___ signál",
+        "answers": {
+          "1": "pasivní",
+          "2": "aktivní",
+          "3": "analogový",
+          "4": "digitální"
+        }
+      },
+      {
+        "title": "Příklady senzorů",
+        "desc": "Přiřaď senzor k veličině.",
+        "template": "Teplota = ___1___\nVzdálenost = ___2___\nSvětlo = ___3___",
+        "answers": {
+          "1": "termistor",
+          "2": "HC-SR04",
+          "3": "fotorezistor"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Senzor",
+        "def": "Zařízení převádějící fyzikální veličinu na elektrický signál."
+      },
+      {
+        "term": "Aktuátor",
+        "def": "Zařízení převádějící signál na fyzikální akci (motor, ventil, LED)."
+      },
+      {
+        "term": "Termistor",
+        "def": "Odporový senzor teploty. NTC: odpor klesá s teplotou."
+      },
+      {
+        "term": "Piezoelektrický efekt",
+        "def": "Vznik napětí při mechanické deformaci krystalického materiálu."
+      },
+      {
+        "term": "Termočlánek",
+        "def": "Pasivní senzor teploty — teplotní rozdíl dvou kovů generuje napětí."
+      },
+      {
+        "term": "Inteligentní senzor",
+        "def": "Senzor s vestavěným mikroprocesorem pro kalibraci a digitální komunikaci."
+      },
+      {
+        "term": "Pasivní senzor",
+        "def": "Generuje signál bez napájení (termočlánek, fotodioda)."
+      },
+      {
+        "term": "Aktivní senzor",
+        "def": "Vyžaduje napájení (ultrazvukový, kapacitní senzor)."
+      }
+    ]
+  },
+  "5": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je pneumatický systém?",
+          "content": "<p><strong>Pneumatický systém</strong> využívá stlačený vzduch k přenosu energie a vykonávání práce. Vzduch je stlačen kompresorem a rozveden potrubím.</p><p><strong>Výhody:</strong> čistý, bezpečný, rychlý, odolný. <strong>Nevýhody:</strong> nižší síla než hydraulika, hlučnost, ztráty energie.</p>"
+        },
+        {
+          "title": "Schéma přenosového systému",
+          "content": "<p>Základní prvky pneumatického systému:</p><ul><li><strong>Kompresor</strong> — stlačuje vzduch</li><li><strong>Vzduchojemník (zásobník)</strong> — ukládá stlačený vzduch</li><li><strong>Jednotka pro úpravu vzduchu (FRL)</strong> — filtr, regulátor tlaku, maznice</li><li><strong>Rozvaděč</strong> — řídí tok vzduchu (ventil)</li><li><strong>Motor/Válec</strong> — přeměňuje tlak na pohyb</li></ul>"
+        },
+        {
+          "title": "Rozvaděče vzduchu",
+          "content": "<p><strong>Rozvaděč</strong> (ventil) řídí směr toku vzduchu. Označení: počet poloh / počet cest (např. 5/2 = 5 cest, 2 polohy).</p><ul><li><strong>Monostabilní</strong> — má 1 aktivní polohu, pružina vrací do výchozí</li><li><strong>Bistabilní</strong> — má 2 stabilní polohy, drží polohu bez napájení</li></ul>"
+        },
+        {
+          "title": "Pneumatické motory",
+          "content": "<p><strong>Lineární motor (válec)</strong> — přímočarý pohyb. Jednočinný (pružina vrací) nebo dvojčinný (vzduch v obou směrech).</p><p><strong>Rotační motor</strong> — rotační pohyb. Lamelový, pístový.</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co je monostabilní rozvaděč?",
+        "options": [
+          "Má dvě stabilní polohy",
+          "Má jednu aktivní polohu, pružina vrací do výchozí",
+          "Pracuje pouze s elektrickým ovládáním",
+          "Rozvaděč bez pružiny"
+        ],
+        "correct": 1,
+        "feedback": "Monostabilní rozvaděč má jednu aktivní polohu — po odepnutí signálu pružina vrátí ventil do výchozí polohy."
+      },
+      {
+        "q": "Co znamená označení 5/2 u rozvaděče?",
+        "options": [
+          "5 barů, 2 sekundy",
+          "5 cest, 2 polohy",
+          "5 mm průměr, 2 vstupy",
+          "5 voltů, 2 ampéry"
+        ],
+        "correct": 1,
+        "feedback": "5/2 = 5 cest (portů) a 2 polohy. Rozvaděč 5/2 má vstupy: tlak, výfuk(2x), a dva pracovní výstupy."
+      },
+      {
+        "q": "Jaký je hlavní rozdíl mezi jednočinným a dvojčinným válcem?",
+        "options": [
+          "Jednočinný je větší",
+          "Jednočinný je řízen vzduchem jen jedním směrem, zpět vrací pružina",
+          "Dvojčinný potřebuje méně vzduchu",
+          "Jednočinný je rychlejší"
+        ],
+        "correct": 1,
+        "feedback": "Jednočinný válec: vzduch tlačí jen jedním směrem, zpět vrací pružina. Dvojčinný: vzduch řídí pohyb v obou směrech."
+      },
+      {
+        "q": "Co je FRL jednotka?",
+        "options": [
+          "Typ pneumatického motoru",
+          "Filtr-Regulátor-Maznice — jednotka pro úpravu vzduchu",
+          "Typ rozvaděče",
+          "Typ kompresoru"
+        ],
+        "correct": 1,
+        "feedback": "FRL = Filtr (čistí vzduch) + Regulátor (nastavuje tlak) + Maznice (přidává olej pro mazání)."
+      },
+      {
+        "q": "Jaká je výhoda pneumatiky oproti hydraulice?",
+        "options": [
+          "Větší síla",
+          "Vyšší tlak",
+          "Čistota, bezpečnost, vzduch je všude dostupný",
+          "Nižší hlučnost"
+        ],
+        "correct": 2,
+        "feedback": "Pneumatika je čistá (únik vzduchu nevadí), bezpečná a vzduch je zdarma dostupný. Hydraulika má větší sílu ale je náročnější na těsnost."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Jednočinný válec s tlačítky",
+        "desc": "<p>Navrhni ovládání jednočinného lineárního válce: monostabilní 5/2 rozvaděč ovládaný solenoidem. Tlačítko START (bez aretace) vysouvá, tlačítko STOP zasunuje. Napájení 24V DC.</p>",
+        "hint": "Solenoid sepnut = válec vysunut. Solenoid rozepnut = pružina zasune. START sepne solenoid, STOP ho odepne."
+      },
+      {
+        "title": "Dvojčinný válec",
+        "desc": "<p>Uprav předchozí zapojení pro <strong>dvojčinný</strong> válec. Popiš rozdíly v zapojení a funkci.</p>",
+        "hint": "Dvojčinný válec potřebuje vzduch z obou stran → použij bistabilní rozvaděč nebo dva monostabilní."
+      },
+      {
+        "title": "Pneumatický systém skleníku",
+        "desc": "<p>Navrhni pneumatický systém pro automatické otevírání okna skleníku při teplotě nad 30°C. Popiš všechny prvky od kompresoru po válec.</p>",
+        "hint": "Senzor teploty → PLC → solenoid ventil → válec. Nezapomeň na FRL jednotku a vzduchojemník."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Součásti systému",
+        "desc": "Doplň funkci prvku.",
+        "template": "Kompresor = ___1___\nVzduchojemník = ___2___\nFRL = ___3___\nRozvaděč = ___4___\nVálec = ___5___",
+        "answers": {
+          "1": "stlačuje vzduch",
+          "2": "ukládá stlačený vzduch",
+          "3": "filtruje a reguluje vzduch",
+          "4": "řídí tok vzduchu",
+          "5": "přeměňuje tlak na pohyb"
+        }
+      },
+      {
+        "title": "Typy rozvaděčů",
+        "desc": "Doplň vlastnost.",
+        "template": "Monostabilní → po odepnutí signálu se vrátí ___1___\nBistabilní → drží polohu ___2___\nOznačení 5/2 → ___3___ cest, ___4___ polohy",
+        "answers": {
+          "1": "pružinou do výchozí",
+          "2": "bez napájení",
+          "3": "5",
+          "4": "2"
+        }
+      },
+      {
+        "title": "Typy válců",
+        "desc": "Doplň správný typ.",
+        "template": "Vzduch tlačí jen jedním směrem → ___1___ válec\nVzduch řídí pohyb oběma směry → ___2___ válec\nVrací pružina → ___3___ válec",
+        "answers": {
+          "1": "jednočinný",
+          "2": "dvojčinný",
+          "3": "jednočinný"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Pneumatický systém",
+        "def": "Systém využívající stlačený vzduch k přenosu energie a vykonávání práce."
+      },
+      {
+        "term": "Kompresor",
+        "def": "Zařízení stlačující vzduch na pracovní tlak."
+      },
+      {
+        "term": "FRL jednotka",
+        "def": "Filtr-Regulátor-Maznice — upravuje vzduch před vstupem do systému."
+      },
+      {
+        "term": "Rozvaděč (ventil)",
+        "def": "Řídí směr a tok stlačeného vzduchu. Označení: cesty/polohy (5/2)."
+      },
+      {
+        "term": "Monostabilní rozvaděč",
+        "def": "Má jednu aktivní polohu. Pružina vrací ventil do výchozí polohy po odepnutí."
+      },
+      {
+        "term": "Bistabilní rozvaděč",
+        "def": "Má dvě stabilní polohy. Drží polohu i bez napájení."
+      },
+      {
+        "term": "Jednočinný válec",
+        "def": "Vzduch tlačí jen jedním směrem, zpět vrací pružina."
+      },
+      {
+        "term": "Dvojčinný válec",
+        "def": "Vzduch řídí pohyb v obou směrech."
+      }
+    ]
+  },
+  "6": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je PLC?",
+          "content": "<p><strong>PLC</strong> (Programmable Logic Controller) je průmyslový počítač určený pro řízení strojů a procesů v reálném čase. Je odolný vůči vibracím, prachu, teplotám.</p><p>Cyklus PLC: <strong>načti vstupy → zpracuj program → nastav výstupy → opakuj</strong>.</p>"
+        },
+        {
+          "title": "Základní komponenty PLC",
+          "content": "<ul><li><strong>CPU</strong> — procesor, vykonává program</li><li><strong>Vstupní moduly</strong> — připojení senzorů, tlačítek (digitální/analogové)</li><li><strong>Výstupní moduly</strong> — připojení aktuátorů, motorů</li><li><strong>Napájecí zdroj</strong></li><li><strong>Komunikační rozhraní</strong> — Ethernet, Profibus</li></ul>"
+        },
+        {
+          "title": "Kompaktní vs modulární PLC",
+          "content": "<p><strong>Kompaktní PLC</strong> — vše v jednom tělese, pevný počet vstupů/výstupů, levnější, pro menší aplikace. Příklad: Siemens S7-1200.</p><p><strong>Modulární PLC</strong> — rozšiřitelné přidáváním modulů, pro větší aplikace. Příklad: Siemens S7-300/400.</p>"
+        },
+        {
+          "title": "Programovací jazyky PLC (IEC 61131-3)",
+          "content": "<ul><li><strong>LD (Ladder Diagram)</strong> — grafický, vypadá jako reléové schéma. Nejrozšířenější.</li><li><strong>FBD (Function Block Diagram)</strong> — blokové schéma funkcí</li><li><strong>ST (Structured Text)</strong> — textový, podobný Pascalu</li><li><strong>IL (Instruction List)</strong> — assembler-like</li><li><strong>SFC (Sequential Function Chart)</strong> — stavový diagram</li></ul>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co je základní cyklus PLC?",
+        "options": [
+          "Zapni → Vypni → Čekej",
+          "Načti vstupy → Zpracuj program → Nastav výstupy → Opakuj",
+          "Načti kód → Zkompiluj → Spusť",
+          "Boot → Login → Run"
+        ],
+        "correct": 1,
+        "feedback": "PLC cyklicky opakuje: načte stav vstupů, spustí program, nastaví výstupy. Cyklus trvá typicky 1–100ms."
+      },
+      {
+        "q": "Kdy je vhodné použít modulární PLC?",
+        "options": [
+          "Pro malé jednoduché aplikace",
+          "Vždy, je lepší než kompaktní",
+          "Pro větší aplikace vyžadující rozšiřitelnost",
+          "Pouze pro řízení motorů"
+        ],
+        "correct": 2,
+        "feedback": "Modulární PLC je vhodný pro větší aplikace kde potřebujeme přidávat moduly (více vstupů/výstupů, komunikace)."
+      },
+      {
+        "q": "Jak vypadá Ladder Diagram (LD)?",
+        "options": [
+          "Jako vývojový diagram",
+          "Jako reléové schéma s kontakty a cívkami",
+          "Jako textový kód podobný C",
+          "Jako blokové schéma"
+        ],
+        "correct": 1,
+        "feedback": "LD připomíná schéma reléových obvodů — kontakty (podmínky) a cívky (výstupy) jsou propojeny jako schody (ladder = žebřík)."
+      },
+      {
+        "q": "Co patří mezi výstupní moduly PLC?",
+        "options": [
+          "Tlačítka a senzory",
+          "Motory, ventily, signálky",
+          "Klávesnice a displej",
+          "Napájecí zdroje"
+        ],
+        "correct": 1,
+        "feedback": "Výstupní moduly PLC ovládají aktuátory: motory, ventily, relé, signálky, solenoidové ventily."
+      },
+      {
+        "q": "Jaká norma definuje programovací jazyky PLC?",
+        "options": [
+          "ISO 9001",
+          "IEC 61131-3",
+          "IEEE 802.11",
+          "ISO 27001"
+        ],
+        "correct": 1,
+        "feedback": "IEC 61131-3 definuje 5 standardních programovacích jazyků pro PLC: LD, FBD, ST, IL, SFC."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Program pro lis v LD",
+        "desc": "<p>Navrhni program v Ladder Diagramu pro řízení lisu:</p><ul><li>START tlačítko S3 spustí lis</li><li>Lis se aktivuje pouze pokud je Bezpečnostní plot uzavřen (B1)</li><li>Ventil M0 otevře lis</li><li>EMERGENCY OFF (NC), rozepnutí B1 nebo B2 (válec vysunut) zastaví lis</li></ul>",
+        "hint": "NC kontakt = normálně zavřený. START + B1 musí být splněny (AND). Libovolná stop podmínka resetuje."
+      },
+      {
+        "title": "Přiřazení tagů",
+        "desc": "<p>Pro program lisu přiřaď fyzické vstupy/výstupy PLC k proměnným:</p><ul><li>Vstup: START (S3), EMERGENCY (NC), B1, B2</li><li>Výstup: Ventil M0</li><li>Navrhni adresování (např. %I0.0, %Q0.0)</li></ul>",
+        "hint": "Vstupy PLC = %I0.x, Výstupy = %Q0.x, Paměťové bity = %M0.x"
+      },
+      {
+        "title": "Srovnání LD vs FBD",
+        "desc": "<p>Pro jednoduchou funkci (aktivace výstupu pokud jsou splněny 2 podmínky AND) nakresli:</p><ul><li>Ladder Diagram</li><li>Function Block Diagram</li><li>Popiš rozdíly v čitelnosti</li></ul>",
+        "hint": "LD: kontakty v sérii = AND. FBD: blok AND s dvěma vstupy a jedním výstupem."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Cyklus PLC",
+        "desc": "Doplň kroky cyklu.",
+        "template": "Krok 1: Načti ___1___\nKrok 2: Zpracuj ___2___\nKrok 3: Nastav ___3___\nKrok 4: ___4___",
+        "answers": {
+          "1": "vstupy",
+          "2": "program",
+          "3": "výstupy",
+          "4": "Opakuj"
+        }
+      },
+      {
+        "title": "Programovací jazyky",
+        "desc": "Doplň zkratku jazyka.",
+        "template": "Grafický, vypadá jako relé schéma = ___1___\nBlokové schéma funkcí = ___2___\nTextový, podobný Pascalu = ___3___\nStavový diagram = ___4___",
+        "answers": {
+          "1": "LD",
+          "2": "FBD",
+          "3": "ST",
+          "4": "SFC"
+        }
+      },
+      {
+        "title": "Typy PLC",
+        "desc": "Doplň vlastnosti.",
+        "template": "Vše v jednom tělese = ___1___ PLC\nRozšiřitelné moduly = ___2___ PLC\nSiemens S7-1200 = ___3___ PLC\nVhodný pro větší aplikace = ___4___ PLC",
+        "answers": {
+          "1": "kompaktní",
+          "2": "modulární",
+          "3": "kompaktní",
+          "4": "modulární"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "PLC",
+        "def": "Programmable Logic Controller — průmyslový počítač pro řízení strojů a procesů."
+      },
+      {
+        "term": "Cyklus PLC",
+        "def": "Načti vstupy → Zpracuj program → Nastav výstupy → Opakuj. Typicky 1–100ms."
+      },
+      {
+        "term": "Ladder Diagram (LD)",
+        "def": "Grafický programovací jazyk PLC. Vypadá jako schéma reléových obvodů."
+      },
+      {
+        "term": "Kompaktní PLC",
+        "def": "Pevný počet V/V v jednom tělese. Levnější, pro menší aplikace."
+      },
+      {
+        "term": "Modulární PLC",
+        "def": "Rozšiřitelné přidáváním modulů. Pro větší a složitější aplikace."
+      },
+      {
+        "term": "IEC 61131-3",
+        "def": "Norma definující 5 programovacích jazyků PLC: LD, FBD, ST, IL, SFC."
+      },
+      {
+        "term": "Vstupní modul",
+        "def": "Připojuje senzory a tlačítka k PLC."
+      },
+      {
+        "term": "Výstupní modul",
+        "def": "Připojuje aktuátory (motory, ventily) k PLC."
+      }
+    ]
+  },
+  "7": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Druhy sítí",
+          "content": "<ul><li><strong>LAN</strong> (Local Area Network) — lokální síť v budově nebo areálu</li><li><strong>WAN</strong> (Wide Area Network) — rozlehlá síť, internet</li><li><strong>MAN</strong> (Metropolitan Area Network) — síť v rámci města</li><li><strong>P2P</strong> (Peer-to-Peer) — každý uzel je rovnocenný, bez centrálního serveru</li></ul>"
+        },
+        {
+          "title": "Spojovací vedení",
+          "content": "<ul><li><strong>UTP</strong> (Unshielded Twisted Pair) — nestíněný kroucený pár, kategorie Cat5e/Cat6</li><li><strong>STP</strong> (Shielded TP) — stíněný, odolnější vůči rušení</li><li><strong>Optický kabel</strong> — přenos světlem, vysoká rychlost a dosah, imunní vůči rušení</li><li><strong>Koaxiální kabel</strong> — starší standard (TV, starší sítě)</li></ul>"
+        },
+        {
+          "title": "Prvky počítačové sítě",
+          "content": "<ul><li><strong>NIC</strong> (Network Interface Card) — síťová karta, každá má unikátní MAC adresu</li><li><strong>Repeater</strong> — zesiluje signál, rozšiřuje dosah</li><li><strong>Hub</strong> — rozbočovač, posílá data všem (zastaralé)</li><li><strong>Switch</strong> — přepínač, posílá data jen příjemci (efektivní)</li><li><strong>Router</strong> — směrovač, propojuje různé sítě a přiřazuje IP adresy</li></ul>"
+        },
+        {
+          "title": "Protokoly a adresování",
+          "content": "<p><strong>MAC adresa</strong> — fyzická adresa síťové karty, 48 bitů, jedinečná.</p><p><strong>IP adresa</strong> — logická adresa, IPv4 (192.168.1.1), IPv6.</p><p><strong>DNS</strong> — překlad doménových jmen na IP adresy.</p><p><strong>HTTP/HTTPS</strong> — protokol pro web. HTTPS je šifrovaný.</p><p><strong>Wi-Fi</strong> — bezdrátová síť, standardy 802.11a/b/g/n/ac/ax (WiFi 6).</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký je rozdíl mezi hubem a switchem?",
+        "options": [
+          "Hub je rychlejší",
+          "Switch posílá data jen příjemci, hub všem",
+          "Hub je novější technologie",
+          "Switch nepotřebuje napájení"
+        ],
+        "correct": 1,
+        "feedback": "Switch se učí MAC adresy a posílá data přímo příjemci. Hub posílá data všem — méně efektivní, kolizní doména."
+      },
+      {
+        "q": "Co dělá DNS?",
+        "options": [
+          "Přiděluje IP adresy automaticky",
+          "Překládá doménová jména na IP adresy",
+          "Šifruje komunikaci",
+          "Propojuje různé sítě"
+        ],
+        "correct": 1,
+        "feedback": "DNS (Domain Name System) překládá čitelné názvy (google.com) na IP adresy (142.250.74.46)."
+      },
+      {
+        "q": "Co je MAC adresa?",
+        "options": [
+          "Adresa webové stránky",
+          "Logická adresa v síti",
+          "Fyzická adresa síťové karty, jedinečná",
+          "Adresa routeru"
+        ],
+        "correct": 2,
+        "feedback": "MAC adresa je jedinečná fyzická adresa síťové karty (48 bitů). Přiděluje ji výrobce."
+      },
+      {
+        "q": "Jaký protokol používá zabezpečený web?",
+        "options": [
+          "HTTP",
+          "FTP",
+          "HTTPS",
+          "SMTP"
+        ],
+        "correct": 2,
+        "feedback": "HTTPS = HTTP + TLS šifrování. Chrání data před odposlechem (zelený zámek v prohlížeči)."
+      },
+      {
+        "q": "Co je router?",
+        "options": [
+          "Zesiluje síťový signál",
+          "Propojuje různé sítě a směruje provoz",
+          "Přiděluje MAC adresy",
+          "Konvertuje kabel na WiFi vždy"
+        ],
+        "correct": 1,
+        "feedback": "Router (směrovač) propojuje různé sítě (LAN ↔ internet) a rozhoduje kudy posílat datové pakety."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Návrh domácí sítě",
+        "desc": "<p>Navrhni domácí síť pro byt s: 3 počítači, 2 chytrými televizory, 5 smartphony. Uveď:</p><ul><li>Potřebné síťové prvky</li><li>Typ kabeláže (nebo WiFi)</li><li>Adresní schéma (IP adresy)</li></ul>",
+        "hint": "Router od ISP → switch pro kabelová zařízení + WiFi AP. Typická domácí síť: 192.168.1.0/24."
+      },
+      {
+        "title": "Srovnání kabelů",
+        "desc": "<p>Porovnej UTP Cat6, STP a optický kabel podle: maximální rychlost, maximální délka segmentu, odolnost vůči rušení, cena, typické použití.</p>",
+        "hint": "UTP Cat6: 1Gbps/100m. Optika: 100Gbps+/km+. Optika je imunní vůči elektromagnetickému rušení."
+      },
+      {
+        "title": "Trace route analýza",
+        "desc": "<p>Popiš co se stane od zadání www.google.com do zobrazení stránky:</p><ul><li>Jak se přeloží doménové jméno?</li><li>Kudy putují pakety?</li><li>Jaké protokoly jsou zapojeny?</li></ul>",
+        "hint": "DNS dotaz → IP adresa → TCP spojení → HTTP/HTTPS request → HTML odpověď → renderování."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Síťové prvky",
+        "desc": "Doplň funkci.",
+        "template": "Hub = posílá data ___1___\nSwitch = posílá data ___2___\nRouter = propojuje ___3___\nRepeater = ___4___",
+        "answers": {
+          "1": "všem",
+          "2": "jen příjemci",
+          "3": "různé sítě",
+          "4": "zesiluje signál"
+        }
+      },
+      {
+        "title": "Protokoly",
+        "desc": "Doplň účel protokolu.",
+        "template": "HTTP = protokol pro ___1___\nDNS = překlad ___2___\nIP = ___3___ adresování\nMAC = ___4___ adresa karty",
+        "answers": {
+          "1": "web",
+          "2": "jmen na IP",
+          "3": "logické",
+          "4": "fyzická"
+        }
+      },
+      {
+        "title": "Typy sítí",
+        "desc": "Doplň zkratku.",
+        "template": "Lokální síť v budově = ___1___\nRozsáhlá síť (internet) = ___2___\nRovnocenné uzly bez serveru = ___3___\nMěstská síť = ___4___",
+        "answers": {
+          "1": "LAN",
+          "2": "WAN",
+          "3": "P2P",
+          "4": "MAN"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "LAN",
+        "def": "Local Area Network — lokální síť v budově nebo areálu."
+      },
+      {
+        "term": "Router",
+        "def": "Směrovač — propojuje různé sítě a směruje datové pakety."
+      },
+      {
+        "term": "Switch",
+        "def": "Přepínač — posílá data jen cílovému příjemci na základě MAC adresy."
+      },
+      {
+        "term": "MAC adresa",
+        "def": "Fyzická adresa síťové karty. 48 bitů, jedinečná, přidělena výrobcem."
+      },
+      {
+        "term": "IP adresa",
+        "def": "Logická adresa v síti. IPv4 (32 bitů) nebo IPv6 (128 bitů)."
+      },
+      {
+        "term": "DNS",
+        "def": "Domain Name System — překládá doménová jména na IP adresy."
+      },
+      {
+        "term": "HTTPS",
+        "def": "HTTP + TLS šifrování. Zabezpečená komunikace s webem."
+      },
+      {
+        "term": "WiFi 802.11",
+        "def": "Standard bezdrátových sítí. Verze: a/b/g/n/ac/ax (WiFi 6)."
+      }
+    ]
+  },
+  "8": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je algoritmus?",
+          "content": "<p><strong>Algoritmus</strong> je přesný, konečný postup řešení problému. Vlastnosti: <strong>konečnost</strong>, <strong>determinovanost</strong> (jednoznačnost), <strong>vstup/výstup</strong>, <strong>obecnost</strong>.</p><p>Typy zápisu: přirozený jazyk, pseudokód, vývojový diagram, programovací jazyk.</p>"
+        },
+        {
+          "title": "Vývojový diagram",
+          "content": "<p>Grafické znázornění algoritmu pomocí standardních značek:</p><ul><li><strong>Ovál</strong> — začátek/konec</li><li><strong>Obdélník</strong> — zpracování (výpočet, přiřazení)</li><li><strong>Kosočtverec</strong> — rozhodnutí (podmínka ano/ne)</li><li><strong>Rovnoběžník</strong> — vstup/výstup</li><li><strong>Šipky</strong> — tok programu</li></ul>"
+        },
+        {
+          "title": "Třídící algoritmy",
+          "content": "<p>Algoritmy pro seřazení dat:</p><ul><li><strong>Bubble sort</strong> — porovnává sousední prvky, O(n²)</li><li><strong>Selection sort</strong> — hledá minimum a vkládá, O(n²)</li><li><strong>Insertion sort</strong> — vkládá na správné místo, O(n²)</li><li><strong>Quick sort</strong> — rekurzivní dělení, O(n log n) průměrně</li></ul>"
+        },
+        {
+          "title": "Etapy programátorské práce",
+          "content": "<ol><li><strong>Analýza</strong> — pochopení problému, specifikace požadavků</li><li><strong>Návrh algoritmu</strong> — vývojový diagram, pseudokód</li><li><strong>Implementace</strong> — zápis v programovacím jazyce</li><li><strong>Testování</strong> — ověření správnosti</li><li><strong>Dokumentace a údržba</strong></li></ol><p>Typy chyb: <strong>syntaktické</strong> (špatná syntax), <strong>sémantické/logické</strong> (špatný algoritmus), <strong>runtime</strong> (za běhu).</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co znamená determinovanost algoritmu?",
+        "options": [
+          "Algoritmus skončí v konečném čase",
+          "Pro stejné vstupy vždy produkuje stejné výstupy",
+          "Algoritmus má alespoň jeden vstup",
+          "Algoritmus je zapsán v pseudokódu"
+        ],
+        "correct": 1,
+        "feedback": "Determinovanost = jednoznačnost. Pro stejné vstupní hodnoty algoritmus vždy provede stejné kroky a dá stejný výsledek."
+      },
+      {
+        "q": "Jakou značku ve vývojovém diagramu použijeme pro podmínku?",
+        "options": [
+          "Ovál",
+          "Obdélník",
+          "Kosočtverec",
+          "Rovnoběžník"
+        ],
+        "correct": 2,
+        "feedback": "Kosočtverec (diamant) reprezentuje rozhodnutí/podmínku s větvením ano/ne."
+      },
+      {
+        "q": "Jaká je časová složitost Bubble sortu v nejhorším případě?",
+        "options": [
+          "O(n)",
+          "O(n log n)",
+          "O(n²)",
+          "O(log n)"
+        ],
+        "correct": 2,
+        "feedback": "Bubble sort má složitost O(n²) — pro každý prvek prochází celé pole. Vhodný jen pro malá pole."
+      },
+      {
+        "q": "Co je syntaktická chyba v programu?",
+        "options": [
+          "Program dává špatné výsledky",
+          "Program havaruje za běhu",
+          "Kód porušuje pravidla jazyka — nejde zkompilovat",
+          "Algoritmus je neefektivní"
+        ],
+        "correct": 2,
+        "feedback": "Syntaktická chyba = porušení gramatiky jazyka (chybějící závorka, středník). Kompilátor ji odhalí."
+      },
+      {
+        "q": "Která etapa programátorské práce přichází jako první?",
+        "options": [
+          "Implementace",
+          "Testování",
+          "Analýza problému",
+          "Dokumentace"
+        ],
+        "correct": 2,
+        "feedback": "Nejdřív analýza — pochopení problému a specifikace co program má dělat. Pak návrh, implementace, testování."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Vývojový diagram — průměr",
+        "desc": "<p>Sestav vývojový diagram algoritmu, který:</p><ul><li>Načítá kladná celá čísla (ukončení nulou)</li><li>Počítá jejich průměr</li><li>Nula se do průměru nezapočítává</li></ul>",
+        "hint": "Potřebuješ proměnné: suma, počet. Cyklus while dokud vstup ≠ 0. Na konci: průměr = suma / počet."
+      },
+      {
+        "title": "Bubble sort krok za krokem",
+        "desc": "<p>Proveď Bubble sort na poli: <strong>[5, 3, 8, 1, 9, 2]</strong></p><ul><li>Zapiš stav pole po každém průchodu</li><li>Kolik průchodů bylo potřeba?</li></ul>",
+        "hint": "V každém průchodu porovnáváme sousední prvky a prohazujeme. Největší prvek 'probublá' na konec."
+      },
+      {
+        "title": "Pseudokód → vývojový diagram",
+        "desc": "<p>Převeď do vývojového diagramu:</p><pre>načti n\npokud n % 2 == 0:\n  vypiš 'sudé'\njinak:\n  vypiš 'liché'</pre>",
+        "hint": "% je modulo (zbytek po dělení). n % 2 == 0 → sudé číslo."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Značky diagramu",
+        "desc": "Doplň název značky.",
+        "template": "Začátek/Konec = ___1___\nZpracování = ___2___\nPodmínka = ___3___\nVstup/Výstup = ___4___",
+        "answers": {
+          "1": "ovál",
+          "2": "obdélník",
+          "3": "kosočtverec",
+          "4": "rovnoběžník"
+        }
+      },
+      {
+        "title": "Typy chyb",
+        "desc": "Doplň typ chyby.",
+        "template": "Chybějící závorka → ___1___ chyba\nDělení nulou za běhu → ___2___ chyba\nŠpatný výsledek výpočtu → ___3___ chyba",
+        "answers": {
+          "1": "syntaktická",
+          "2": "runtime",
+          "3": "logická"
+        }
+      },
+      {
+        "title": "Třídící algoritmy",
+        "desc": "Doplň složitost.",
+        "template": "Bubble sort nejhorší případ = ___1___\nQuick sort průměrný případ = ___2___\nBubble sort: porovnává ___3___ prvky",
+        "answers": {
+          "1": "O(n²)",
+          "2": "O(n log n)",
+          "3": "sousední"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Algoritmus",
+        "def": "Přesný konečný postup řešení problému. Vlastnosti: konečnost, determinovanost, vstup/výstup."
+      },
+      {
+        "term": "Vývojový diagram",
+        "def": "Grafické znázornění algoritmu pomocí standardních značek (ovál, obdélník, kosočtverec)."
+      },
+      {
+        "term": "Bubble sort",
+        "def": "Třídící algoritmus porovnávající sousední prvky. Složitost O(n²)."
+      },
+      {
+        "term": "Syntaktická chyba",
+        "def": "Chyba v gramatice kódu — kompilátor ji odhalí ještě před spuštěním."
+      },
+      {
+        "term": "Logická chyba",
+        "def": "Program se spustí ale dává špatné výsledky. Způsobena chybou v algoritmu."
+      },
+      {
+        "term": "Pseudokód",
+        "def": "Zápis algoritmu v přirozeném jazyce kombinovaném s programovacími konstrukty."
+      },
+      {
+        "term": "Časová složitost",
+        "def": "Popis jak roste čas výpočtu s rostoucím vstupem. Notace O(n), O(n²), O(n log n)."
+      },
+      {
+        "term": "Determinovanost",
+        "def": "Pro stejné vstupy algoritmus vždy produkuje stejné výstupy."
+      }
+    ]
+  },
+  "9": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Arduino a Wiring",
+          "content": "<p><strong>Arduino</strong> je open-source platforma pro fyzické výpočty. Programuje se v jazyce <strong>Wiring</strong> (vychází z C++). IDE: Arduino IDE nebo VS Code s PlatformIO.</p><p>Každý program má dvě hlavní funkce:<br><code>void setup()</code> — spustí se jednou při startu<br><code>void loop()</code> — opakuje se stále dokola</p>"
+        },
+        {
+          "title": "Datové typy",
+          "content": "<ul><li><code>int</code> — celé číslo (-32768 až 32767)</li><li><code>long</code> — velké celé číslo</li><li><code>float</code> — desetinné číslo</li><li><code>bool</code> — pravda/nepravda</li><li><code>char</code> — jeden znak</li><li><code>String</code> — řetězec znaků</li></ul>"
+        },
+        {
+          "title": "Sériová komunikace",
+          "content": "<p>Umožňuje komunikaci Arduino ↔ PC přes USB. Použití: ladění programu, odesílání dat.</p><pre>Serial.begin(9600);  // inicializace, 9600 baud\nSerial.println(hodnota);  // odeslání dat\nSerial.read();  // čtení dat</pre>"
+        },
+        {
+          "title": "Akční členy",
+          "content": "<ul><li><strong>LED</strong> — světelná dioda, ovládána <code>digitalWrite(pin, HIGH/LOW)</code></li><li><strong>Servo motor</strong> — polohovací motor 0–180°, knihovna Servo.h</li><li><strong>DC motor</strong> — rotační motor, potřebuje H-bridge (L298N)</li><li><strong>Bzučák (buzzer)</strong> — akustická signalizace</li></ul>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co dělá funkce setup() v Arduinu?",
+        "options": [
+          "Opakuje se stále dokola",
+          "Spustí se jednou při startu a inicializuje program",
+          "Čte data ze senzorů",
+          "Odesílá data přes Bluetooth"
+        ],
+        "correct": 1,
+        "feedback": "setup() se spustí jednou při zapnutí Arduina. Slouží k inicializaci pinů, sériové komunikace atd."
+      },
+      {
+        "q": "Jaká funkce nastaví pin jako výstup?",
+        "options": [
+          "pinMode(pin, INPUT)",
+          "digitalWrite(pin, HIGH)",
+          "pinMode(pin, OUTPUT)",
+          "analogWrite(pin, 255)"
+        ],
+        "correct": 2,
+        "feedback": "pinMode(pin, OUTPUT) nastaví pin jako výstupní. Pak lze použít digitalWrite() k nastavení HIGH nebo LOW."
+      },
+      {
+        "q": "Jakou rychlost přenosu nastavíme v Serial.begin()?",
+        "options": [
+          "Délku zprávy",
+          "Rychlost přenosu v baudech",
+          "Číslo pinu",
+          "Napětí"
+        ],
+        "correct": 1,
+        "feedback": "Serial.begin(9600) nastaví přenosovou rychlost 9600 baud (bitů za sekundu). PC musí mít stejné nastavení."
+      },
+      {
+        "q": "Která knihovna se používá pro ovládání servo motoru?",
+        "options": [
+          "Motor.h",
+          "Servo.h",
+          "PWM.h",
+          "Stepper.h"
+        ],
+        "correct": 1,
+        "feedback": "Knihovna Servo.h umožňuje snadné ovládání servo motorů. Použití: #include <Servo.h>, myServo.attach(pin), myServo.write(úhel)."
+      },
+      {
+        "q": "Jaký datový typ použijeme pro uložení hodnoty true/false?",
+        "options": [
+          "int",
+          "float",
+          "bool",
+          "char"
+        ],
+        "correct": 2,
+        "feedback": "bool (boolean) uchovává hodnotu true nebo false. V Arduinu také 0 nebo 1."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Blikající LED",
+        "desc": "<p>Napiš program pro Arduino UNO který bude blikat LED na pinu 13:</p><ul><li>LED svítí 500ms</li><li>LED nesvítí 500ms</li><li>Opakuje se stále</li></ul>",
+        "hint": "Použij digitalWrite(13, HIGH/LOW) a delay(500). LED na pinu 13 je zabudovaná v Arduinu UNO."
+      },
+      {
+        "title": "Servo motor se třemi polohami",
+        "desc": "<p>Naprogramuj servo motor (pin 9) aby se otáčel do tří libovolných úhlů:</p><ul><li>V každé poloze se zastaví na 2 sekundy</li><li>Při každé zastávce vypiš úhel přes Serial</li></ul>",
+        "hint": "Servo.write(uhel) nastaví polohu. Serial.println(uhel) vypíše hodnotu. delay(2000) čeká 2s."
+      },
+      {
+        "title": "Sériová kalkulačka",
+        "desc": "<p>Přijímej přes sériový port číslo a vypisuj jeho násobilku (1–10) zpět do Serial monitoru.</p>",
+        "hint": "Serial.parseInt() přečte číslo ze sériového portu. Použij for cyklus pro výpočet násobilky."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní struktura",
+        "desc": "Doplň správné funkce.",
+        "template": "void ___1___() {\n  // spustí se jednou\n  pinMode(13, ___2___);\n  Serial.begin(___3___);\n}\n\nvoid ___4___() {\n  // opakuje se stále\n  digitalWrite(13, HIGH);\n  delay(500);\n}",
+        "answers": {
+          "1": "setup",
+          "2": "OUTPUT",
+          "3": "9600",
+          "4": "loop"
+        }
+      },
+      {
+        "title": "Ovládání LED",
+        "desc": "Doplň příkazy.",
+        "template": "digitalWrite(pin, ___1___);  // rozsvítit\ndigitalWrite(pin, ___2___);  // zhasnout\ndelay(___3___);              // čekat 1 sekundu",
+        "answers": {
+          "1": "HIGH",
+          "2": "LOW",
+          "3": "1000"
+        }
+      },
+      {
+        "title": "Servo motor",
+        "desc": "Doplň kód pro servo.",
+        "template": "#include <___1___>\nServo myServo;\n\nvoid setup() {\n  myServo.___2___(9);  // připojit na pin 9\n}\n\nvoid loop() {\n  myServo.___3___(90);  // otočit na 90°\n  delay(2000);\n}",
+        "answers": {
+          "1": "Servo.h",
+          "2": "attach",
+          "3": "write"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "setup()",
+        "def": "Funkce spouštěná jednou při startu Arduina. Slouží k inicializaci."
+      },
+      {
+        "term": "loop()",
+        "def": "Funkce opakující se stále dokola. Hlavní logika programu."
+      },
+      {
+        "term": "pinMode()",
+        "def": "Nastaví pin jako vstupní (INPUT) nebo výstupní (OUTPUT)."
+      },
+      {
+        "term": "digitalWrite()",
+        "def": "Nastaví digitální pin na HIGH (5V) nebo LOW (0V)."
+      },
+      {
+        "term": "delay()",
+        "def": "Pozastaví program na zadaný počet milisekund."
+      },
+      {
+        "term": "Serial.begin()",
+        "def": "Inicializuje sériovou komunikaci. Parametr: přenosová rychlost v baudech."
+      },
+      {
+        "term": "Serial.println()",
+        "def": "Odešle data přes sériový port s odřádkováním."
+      },
+      {
+        "term": "Servo.write()",
+        "def": "Nastaví polohu servo motoru v stupních (0–180)."
+      }
+    ]
+  },
+  "10": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Digitální sběrnice Arduina",
+          "content": "<p>Arduino UNO má <strong>14 digitálních pinů</strong> (0–13). Každý může být vstupní nebo výstupní.</p><pre>pinMode(pin, INPUT);   // vstup\npinMode(pin, OUTPUT);  // výstup\ndigitalRead(pin);      // čtení (0 nebo 1)\ndigitalWrite(pin, HIGH/LOW);  // zápis</pre><p>Piny 0 a 1 jsou rezervovány pro sériovou komunikaci (TX/RX).</p>"
+        },
+        {
+          "title": "Digitalizace — logické úrovně",
+          "content": "<p><strong>Digitální signál</strong> má dvě úrovně: <strong>HIGH</strong> (~5V) a <strong>LOW</strong> (~0V).</p><p><strong>Hystereze</strong> — oblast napětí která je interpretována jako ani 0 ani 1 (přechodová oblast). Chrání obvod před kmitáním při pomalu se měnícím signálu.</p><p>U Arduina: <0,8V = LOW, >2V = HIGH.</p>"
+        },
+        {
+          "title": "A/D převod",
+          "content": "<p><strong>A/D převodník</strong> (Analog-to-Digital Converter) převádí analogový signál na digitální hodnotu.</p><p>Arduino UNO: 6 analogových vstupů (A0–A5), 10-bitový ADC.</p><pre>int hodnota = analogRead(A0);\n// vrátí 0–1023 odpovídající 0–5V</pre><p>Rozlišení: 5V / 1024 ≈ 4,9mV na krok.</p>"
+        },
+        {
+          "title": "Tlačítko s pull-up/pull-down",
+          "content": "<p>Tlačítko bez pull-up/pull-down rezistoru by floatovalo (neurčitý stav). Řešení:</p><ul><li><strong>Pull-down</strong> — rezistor na GND, pin = 0 v klidu, 1 při stisku</li><li><strong>Pull-up</strong> — rezistor na VCC, pin = 1 v klidu, 0 při stisku (interní: INPUT_PULLUP)</li></ul>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co vrátí funkce digitalRead()?",
+        "options": [
+          "Hodnotu 0–1023",
+          "Hodnotu 0 nebo 1",
+          "Napětí v millivoltech",
+          "Hodnotu 0–255"
+        ],
+        "correct": 1,
+        "feedback": "digitalRead() vrací 0 (LOW) nebo 1 (HIGH). Je pro digitální piny — čte logický stav."
+      },
+      {
+        "q": "Co je hystereze v digitálních obvodech?",
+        "options": [
+          "Zpoždění signálu",
+          "Přechodová oblast napětí eliminující kmitání",
+          "Typ A/D převodníku",
+          "Šum na analogovém vstupu"
+        ],
+        "correct": 1,
+        "feedback": "Hystereze definuje přechodovou oblast — napětí v tomto rozsahu nevyvolá změnu výstupu. Zabraňuje rychlému přepínání při pomalém nebo zašuměném signálu."
+      },
+      {
+        "q": "Jaký je rozsah hodnot analogRead() na Arduinu UNO?",
+        "options": [
+          "0–255",
+          "0–512",
+          "0–1023",
+          "0–4095"
+        ],
+        "correct": 2,
+        "feedback": "Arduino UNO má 10-bitový ADC. 2¹⁰ = 1024 hodnot, tedy 0–1023."
+      },
+      {
+        "q": "K čemu slouží pull-up rezistor u tlačítka?",
+        "options": [
+          "Omezuje proud přes LED",
+          "Zajišťuje definovaný stav pinu v klidu",
+          "Zrychluje odezvu tlačítka",
+          "Filtruje šum"
+        ],
+        "correct": 1,
+        "feedback": "Pull-up rezistor drží pin na HIGH v klidovém stavu. Bez něj by pin 'floatoval' (náhodný stav)."
+      },
+      {
+        "q": "Kolik analogových vstupů má Arduino UNO?",
+        "options": [
+          "2",
+          "4",
+          "6",
+          "8"
+        ],
+        "correct": 2,
+        "feedback": "Arduino UNO má 6 analogových vstupů označených A0–A5."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Tlačítko ovládá LED",
+        "desc": "<p>Sestav zapojení a program: LED (pin 13) zhasne při stisku tlačítka (pin 2).</p><ul><li>V klidovém stavu LED svítí</li><li>Při stisku LED zhasne</li><li>Použij INPUT_PULLUP</li></ul>",
+        "hint": "INPUT_PULLUP: v klidu pin=HIGH, při stisku (připojení na GND) pin=LOW."
+      },
+      {
+        "title": "Čítač stisku",
+        "desc": "<p>Naprogramuj čítač: každý stisk tlačítka zvýší počítadlo o 1 a vypíše aktuální hodnotu přes Serial.</p>",
+        "hint": "Pozor na zákmity (debounce) — použij delay(50) po detekci stisku nebo sleduj změnu stavu LOW→HIGH."
+      },
+      {
+        "title": "A/D převod — voltmetr",
+        "desc": "<p>Vytvoř jednoduchý voltmetr: čti hodnotu z potenciometru (A0) a vypisuj napětí v mV přes Serial.</p>",
+        "hint": "Napětí (mV) = analogRead(A0) * 5000 / 1023"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Digitální I/O",
+        "desc": "Doplň příkazy.",
+        "template": "// Nastavení pinu jako vstup s pull-up\npinMode(2, ___1___);\n\n// Čtení digitálního pinu\nint stav = ___2___(2);\n\n// LED svítí pokud není tlačítko stisknuto\ndigitalWrite(13, ___3___);\n// (tlačítko s pull-up: stisknuto = LOW)",
+        "answers": {
+          "1": "INPUT_PULLUP",
+          "2": "digitalRead",
+          "3": "stav"
+        }
+      },
+      {
+        "title": "A/D převod",
+        "desc": "Doplň kód.",
+        "template": "// Čtení analogového pinu\nint hodnota = ___1___(A0);\n\n// Převod na napětí v mV\nfloat napeti = hodnota * ___2___ / 1023.0;\n\n// Výpis přes Serial\nSerial.___3___(napeti);",
+        "answers": {
+          "1": "analogRead",
+          "2": "5000",
+          "3": "println"
+        }
+      },
+      {
+        "title": "Logické úrovně",
+        "dest": "Doplň hodnoty.",
+        "template": "HIGH = přibližně ___1___V\nLOW = přibližně ___2___V\nArduino ADC rozlišení = ___3___ bitů\nRozsah analogRead = 0 až ___4___",
+        "answers": {
+          "1": "5",
+          "2": "0",
+          "3": "10",
+          "4": "1023"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "digitalRead()",
+        "def": "Čte logický stav digitálního pinu. Vrací 0 (LOW) nebo 1 (HIGH)."
+      },
+      {
+        "term": "analogRead()",
+        "def": "Čte analogový pin. Vrací 0–1023 (10-bit ADC, 0–5V)."
+      },
+      {
+        "term": "INPUT_PULLUP",
+        "def": "Režim pinu s interním pull-up rezistorem. Klid=HIGH, stisk=LOW."
+      },
+      {
+        "term": "A/D převodník",
+        "def": "Převádí analogový signál na digitální hodnotu."
+      },
+      {
+        "term": "Hystereze",
+        "def": "Přechodová oblast napětí zabraňující kmitání výstupu."
+      },
+      {
+        "term": "Pull-up rezistor",
+        "def": "Drží pin na HIGH v klidu. Zabraňuje 'floatování' vstupního pinu."
+      },
+      {
+        "term": "Pull-down rezistor",
+        "def": "Drží pin na LOW v klidu."
+      },
+      {
+        "term": "Debounce",
+        "def": "Odstranění zákmitů tlačítka — krátké čekání po detekci stisku."
+      }
+    ]
+  },
+  "11": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Analogové signály",
+          "content": "<p><strong>Analogový signál</strong> je spojitý — může nabývat libovolné hodnoty v rozsahu. Digitální je diskrétní (0 nebo 1).</p><p>Arduino čte analogové signály přes ADC (A0–A5, rozsah 0–5V → hodnota 0–1023).</p>"
+        },
+        {
+          "title": "PWM — Pulse Width Modulation",
+          "content": "<p><strong>PWM</strong> simuluje analogový výstup pomocí rychlého přepínání digitálního signálu.</p><p><strong>Střída (duty cycle)</strong> — poměr doby HIGH ku periodě. 0% = stále LOW, 100% = stále HIGH, 50% = průměr 2,5V.</p><pre>analogWrite(pin, hodnota);  // 0–255\n// 0 = 0%, 127 = 50%, 255 = 100%</pre><p>PWM piny na UNO: 3, 5, 6, 9, 10, 11 (označeny ~).</p>"
+        },
+        {
+          "title": "Použití PWM",
+          "content": "<p>PWM se používá pro:</p><ul><li><strong>Stmívání LED</strong> — různá intenzita světla</li><li><strong>Řízení otáček DC motoru</strong></li><li><strong>Řízení servo motoru</strong></li><li><strong>Generování zvuku</strong></li></ul>"
+        },
+        {
+          "title": "Sledování napětí",
+          "content": "<p>Potenciometr (trimr) rozděluje napětí — na středním kontaktu je napětí 0–5V podle polohy. Ideální pro testování analogového čtení.</p><pre>int val = analogRead(A0);\nfloat volt = val * 5.0 / 1023.0;</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co je PWM?",
+        "options": [
+          "Typ procesoru",
+          "Simulace analogového výstupu rychlým přepínáním",
+          "Protokol sériové komunikace",
+          "Typ senzoru"
+        ],
+        "correct": 1,
+        "feedback": "PWM (Pulse Width Modulation) simuluje analogovou hodnotu rychlým přepínáním mezi HIGH a LOW. Průměrné napětí závisí na střídě."
+      },
+      {
+        "q": "Co znamená střída (duty cycle) 50%?",
+        "options": [
+          "Signál je HIGH 50ms",
+          "Výstupní napětí je průměrně 50% maxima",
+          "Frekvence je 50Hz",
+          "Signál je HIGH každou druhou periodu"
+        ],
+        "correct": 1,
+        "feedback": "Duty cycle 50% = signál je HIGH polovinu periody → průměrné napětí ~2,5V (při 5V logice)."
+      },
+      {
+        "q": "Jaký je rozsah parametru funkce analogWrite()?",
+        "options": [
+          "0–1023",
+          "0–255",
+          "0–100",
+          "0–5"
+        ],
+        "correct": 1,
+        "feedback": "analogWrite() přijímá hodnoty 0–255. 0 = 0% duty cycle, 255 = 100% duty cycle."
+      },
+      {
+        "q": "Které piny Arduina UNO podporují PWM?",
+        "options": [
+          "Všechny digitální piny",
+          "Pouze analogové piny A0–A5",
+          "Piny označené ~ (3,5,6,9,10,11)",
+          "Pouze pin 13"
+        ],
+        "correct": 2,
+        "feedback": "PWM piny jsou označeny ~ v Arduino UNO: 3, 5, 6, 9, 10, 11."
+      },
+      {
+        "q": "Jaký je rozdíl mezi analogRead() a analogWrite()?",
+        "options": [
+          "Není žádný rozdíl",
+          "analogRead čte 0–1023, analogWrite zapisuje 0–255 PWM",
+          "analogRead je rychlejší",
+          "analogWrite čte data ze senzorů"
+        ],
+        "correct": 1,
+        "feedback": "analogRead() čte ADC (0–1023). analogWrite() generuje PWM signál (0–255). Různé operace, různé piny."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Stmívání LED potenciometrem",
+        "desc": "<p>Sestav zapojení: potenciometr na A0, LED na pin 9 (PWM). Program plynule mění jas LED podle polohy potenciometru.</p>",
+        "hint": "analogRead vrací 0–1023, analogWrite potřebuje 0–255. Převeď: pwmVal = analogRead(A0) / 4."
+      },
+      {
+        "title": "Indikátor úrovně",
+        "desc": "<p>Dva LED: první svítí při hodnotě potenciometru ≤ 511, druhý při > 511.</p>",
+        "hint": "Přečti analogRead(A0). Podmínkou if/else rozhoduj které LED svítí."
+      },
+      {
+        "title": "PWM a Serial monitor",
+        "desc": "<p>Čti potenciometr, vypisuj do Serial: raw hodnotu (0–1023), napětí (V) a PWM hodnotu (0–255).</p>",
+        "hint": "Napětí = hodnota * 5.0 / 1023. PWM = hodnota / 4. Formátuj výpis přehledně."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "PWM výstup",
+        "desc": "Doplň kód.",
+        "template": "// PWM na pin 9\nint jas = 128;  // 50% jas\n___1___(9, jas);  // nastav PWM\n\n// Čtení potenciometru\nint val = ___2___(A0);  // 0–1023\n\n// Převod na PWM rozsah\nint pwm = val / ___3___;  // 0–255",
+        "answers": {
+          "1": "analogWrite",
+          "2": "analogRead",
+          "3": "4"
+        }
+      },
+      {
+        "title": "Střída",
+        "desc": "Doplň hodnoty.",
+        "template": "analogWrite(pin, 0);    // ___1___% duty cycle\nanalogWrite(pin, 127);  // přibližně ___2___% \nanalogWrite(pin, 255);  // ___3___% duty cycle",
+        "answers": {
+          "1": "0",
+          "2": "50",
+          "3": "100"
+        }
+      },
+      {
+        "title": "Napětí z ADC",
+        "desc": "Doplň výpočet.",
+        "template": "int raw = analogRead(A0);  // 0–1023\n// Výpočet napětí\nfloat volt = raw * ___1___ / ___2___;\n// Max. hodnota raw = ___3___\n// Odpovídá napětí ___4___ V",
+        "answers": {
+          "1": "5.0",
+          "2": "1023",
+          "3": "1023",
+          "4": "5"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "PWM",
+        "def": "Pulse Width Modulation — simulace analogového výstupu rychlým přepínáním."
+      },
+      {
+        "term": "Střída (duty cycle)",
+        "def": "Poměr doby HIGH ku periodě. 50% = průměrně 2,5V (při 5V)."
+      },
+      {
+        "term": "analogWrite()",
+        "def": "Generuje PWM signál. Parametr 0–255 odpovídá 0–100% střídě."
+      },
+      {
+        "term": "analogRead()",
+        "def": "Čte analogový pin přes ADC. Vrací 0–1023 (odpovídá 0–5V)."
+      },
+      {
+        "term": "ADC",
+        "def": "Analog-to-Digital Converter. Arduino UNO: 10-bit, rozsah 0–1023."
+      },
+      {
+        "term": "Potenciometr",
+        "def": "Proměnný odpor rozdělující napětí. Výstup 0–5V podle polohy."
+      },
+      {
+        "term": "PWM piny (UNO)",
+        "def": "Piny 3, 5, 6, 9, 10, 11 — označeny ~ v Arduino UNO."
+      },
+      {
+        "term": "Rozlišení ADC",
+        "def": "Arduino UNO: 10 bitů = 1024 kroků ≈ 4,9mV na krok (při 5V)."
+      }
+    ]
+  },
+  "12": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Senzory pro Arduino",
+          "content": "<p>Senzory umožňují Arduinu vnímat okolní svět. Výstupy mohou být <strong>analogové</strong> (spojité napětí) nebo <strong>digitální</strong> (0/1 nebo sériový protokol).</p>"
+        },
+        {
+          "title": "Senzory světla",
+          "content": "<ul><li><strong>Fotorezistor (LDR)</strong> — odpor klesá se světlem. Zapojen jako dělič napětí na analogový vstup.</li><li><strong>Fotodioda</strong> — generuje proud při osvětlení</li><li><strong>Fototranzistor</strong> — zesílený výstup fotodiody</li></ul>"
+        },
+        {
+          "title": "Senzory pohybu a rychlosti",
+          "content": "<ul><li><strong>PIR senzor</strong> — detekuje pohyb tepla (člověk). Digitální výstup.</li><li><strong>Ultrazvukový senzor (HC-SR04)</strong> — měří vzdálenost odráženým zvukem</li><li><strong>Enkodér</strong> — počítá otáčky (impulsy na otáčku)</li></ul><pre>// HC-SR04:\npulseIn(echoPin, HIGH)  // čas odrazu v µs\n// vzdálenost = čas * 0.034 / 2</pre>"
+        },
+        {
+          "title": "Teplotní senzory",
+          "content": "<ul><li><strong>NTC termistor</strong> — analogový, jednoduchý</li><li><strong>DS18B20</strong> — digitální, přesný (±0,5°C), protokol 1-Wire</li><li><strong>DHT11/DHT22</strong> — teplota + vlhkost, digitální</li></ul>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Na jakém principu pracuje fotorezistor?",
+        "options": [
+          "Piezoelektrickém",
+          "Termoelektrickém",
+          "Odporovém — odpor se mění se světlem",
+          "Kapacitním"
+        ],
+        "correct": 2,
+        "feedback": "Fotorezistor (LDR) je odporový senzor — jeho odpor klesá se zvyšující se intenzitou světla."
+      },
+      {
+        "q": "Jak měří vzdálenost HC-SR04?",
+        "options": [
+          "Infračerveným paprskem",
+          "Magnetickým polem",
+          "Odrazem ultrazvuku a měřením doby letu",
+          "Kapacitním snímáním"
+        ],
+        "correct": 2,
+        "feedback": "HC-SR04 vysílá ultrazvukový puls a měří čas do přijetí odrazu. Vzdálenost = čas * rychlost_zvuku / 2."
+      },
+      {
+        "q": "Jaký protokol používá teplotní senzor DS18B20?",
+        "options": [
+          "I²C",
+          "SPI",
+          "1-Wire",
+          "UART"
+        ],
+        "correct": 2,
+        "feedback": "DS18B20 používá protokol 1-Wire — komunikace po jediném vodiči (plus GND a napájení)."
+      },
+      {
+        "q": "Co detekuje PIR senzor?",
+        "options": [
+          "Světlo",
+          "Pohyb tepelného záření (lidí a zvířat)",
+          "Magnetické pole",
+          "Vzdálenost"
+        ],
+        "correct": 1,
+        "feedback": "PIR (Passive InfraRed) detekuje změny infračerveného záření — pohyb teplých předmětů (lidí, zvířat)."
+      },
+      {
+        "q": "Jak zapojíme fotorezistor pro čtení Arduinem?",
+        "options": [
+          "Přímo na digitální pin",
+          "Jako dělič napětí s pevným rezistorem na analogový pin",
+          "Na PWM pin",
+          "Přes I²C sběrnici"
+        ],
+        "correct": 1,
+        "feedback": "LDR se zapojuje jako dělič napětí: LDR + pevný rezistor (10kΩ) mezi 5V a GND. Střední bod (změna napětí) jde na analogový pin."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Světelný senzor — Serial graf",
+        "desc": "<p>Sestav zapojení s fotorezistorem na A0. Program měří světlo a zobrazuje hodnoty v Serial Plotteru.</p>",
+        "hint": "Serial.println(analogRead(A0)) — Serial Plotter v Arduino IDE automaticky kreslí graf."
+      },
+      {
+        "title": "Vzdálenostní měřič",
+        "desc": "<p>Zapojen HC-SR04 (trigger=pin 9, echo=pin 10). Vypisuj vzdálenost v cm přes Serial každých 200ms.</p>",
+        "hint": "Vzdálenost (cm) = pulseIn(echoPin, HIGH) * 0.034 / 2. Trigger pulse: HIGH 10µs."
+      },
+      {
+        "title": "Teploměr",
+        "desc": "<p>Připoj NTC termistor na A0. Vypisuj přibližnou teplotu přes Serial. (Použij Steinhart-Hart rovnici nebo jednoduchou lineární aproximaci.)</p>",
+        "hint": "Pro jednoduchost: teplota ≈ (raw - 512) / 10 + 25 (velmi hrubá aproximace pro NTC 10kΩ při 25°C)."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "HC-SR04",
+        "desc": "Doplň kód pro měření vzdálenosti.",
+        "template": "const int trigPin = 9;\nconst int echoPin = 10;\n\nvoid setup() {\n  pinMode(trigPin, ___1___);\n  pinMode(echoPin, ___2___);\n}\n\nvoid loop() {\n  digitalWrite(trigPin, ___3___);\n  delayMicroseconds(10);\n  digitalWrite(trigPin, LOW);\n  long dur = ___4___(echoPin, HIGH);\n  int dist = dur * 0.034 / 2;\n}",
+        "answers": {
+          "1": "OUTPUT",
+          "2": "INPUT",
+          "3": "HIGH",
+          "4": "pulseIn"
+        }
+      },
+      {
+        "title": "Fotorezistor",
+        "desc": "Doplň kód.",
+        "template": "// LDR na pin A0\nint svetlo = ___1___(A0);\n\n// Pokud je tma (hodnota > 700)\nif (svetlo ___2___ 700) {\n  digitalWrite(13, ___3___);  // rozsvítit\n} else {\n  digitalWrite(13, ___4___);\n}",
+        "answers": {
+          "1": "analogRead",
+          "2": ">",
+          "3": "HIGH",
+          "4": "LOW"
+        }
+      },
+      {
+        "title": "Typy senzorů",
+        "desc": "Doplň typ výstupu.",
+        "template": "Fotorezistor = ___1___ výstup\nDS18B20 = ___2___ výstup (1-Wire)\nDHT22 = ___3___ výstup\nNTC termistor = ___4___ výstup",
+        "answers": {
+          "1": "analogový",
+          "2": "digitální",
+          "3": "digitální",
+          "4": "analogový"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "LDR (fotorezistor)",
+        "def": "Světlocitlivý odpor — odpor klesá se zvyšující se intenzitou světla."
+      },
+      {
+        "term": "HC-SR04",
+        "def": "Ultrazvukový senzor vzdálenosti. Měří čas odrazu ultrazvuku."
+      },
+      {
+        "term": "PIR senzor",
+        "def": "Detekuje pohyb tepelného záření (lidí, zvířat). Digitální výstup."
+      },
+      {
+        "term": "DS18B20",
+        "def": "Digitální teplotní senzor, přesnost ±0,5°C. Protokol 1-Wire."
+      },
+      {
+        "term": "DHT22",
+        "def": "Senzor teploty a vlhkosti. Digitální výstup."
+      },
+      {
+        "term": "Dělič napětí",
+        "def": "Zapojení dvou odporů pro získání napětí mezi 0V a VCC (pro LDR atd.)."
+      },
+      {
+        "term": "1-Wire",
+        "def": "Protokol komunikace po jednom vodiči (DS18B20)."
+      },
+      {
+        "term": "pulseIn()",
+        "def": "Měří délku pulzu na pinu v mikrosekundách (používá se s HC-SR04)."
+      }
+    ]
+  },
+  "13": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Datové typy v C#",
+          "content": "<ul><li><code>int</code> — celé číslo (-2 147 483 648 až 2 147 483 647)</li><li><code>long</code> — velké celé číslo</li><li><code>double</code> — desetinné číslo (dvojitá přesnost)</li><li><code>float</code> — desetinné číslo (jednoduchá přesnost)</li><li><code>bool</code> — true / false</li><li><code>char</code> — jeden znak (Unicode)</li><li><code>string</code> — řetězec znaků</li></ul><p>Konvence pojmenování: <strong>camelCase</strong> pro proměnné (<code>mojeProměnná</code>), <strong>PascalCase</strong> pro třídy a metody.</p>"
+        },
+        {
+          "title": "Přetypování a konverze",
+          "content": "<p><strong>Implicitní konverze</strong> — automatická, bezpečná (int → double).</p><p><strong>Explicitní přetypování (cast)</strong> — manuální, může ztratit data:</p><pre>double d = 9.7;\nint i = (int)d;  // i = 9 (ořezání)</pre><p><strong>Convert třída:</strong></p><pre>int x = Convert.ToInt32(\"42\");\nstring s = Convert.ToString(123);</pre>"
+        },
+        {
+          "title": "Operátory",
+          "content": "<p><strong>Aritmetické:</strong> <code>+, -, *, /, %</code> (modulo = zbytek)</p><p><strong>Relační:</strong> <code>==, !=, &lt;, &gt;, &lt;=, &gt;=</code></p><p><strong>Logické:</strong> <code>&&</code> (AND), <code>||</code> (OR), <code>!</code> (NOT)</p><p><strong>Zkrácený zápis:</strong></p><ul><li><code>i++</code> — inkrementace (i = i + 1)</li><li><code>i--</code> — dekrementace</li><li><code>i += 5</code> → <code>i = i + 5</code></li><li><code>i *= 2</code> → <code>i = i * 2</code></li></ul>"
+        },
+        {
+          "title": "Vyhodnocování logických výrazů",
+          "content": "<p><strong>Short-circuit evaluation</strong> — C# přestane vyhodnocovat jakmile zná výsledek:</p><ul><li><code>false && ...</code> → ihned false (druhá část se nevyhodnotí)</li><li><code>true || ...</code> → ihned true</li></ul>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký datový typ použijeme pro uložení čísla 3.14?",
+        "options": [
+          "int",
+          "bool",
+          "double",
+          "char"
+        ],
+        "correct": 2,
+        "feedback": "Pro desetinná čísla používáme double nebo float. double má větší přesnost."
+      },
+      {
+        "q": "Co vrátí výraz 17 % 5?",
+        "options": [
+          "3",
+          "2",
+          "1",
+          "3.4"
+        ],
+        "correct": 1,
+        "feedback": "% je operátor modulo (zbytek po dělení). 17 / 5 = 3 zbytek 2. Tedy 17 % 5 = 2."
+      },
+      {
+        "q": "Co dělá operátor ++?",
+        "options": [
+          "Vrátí absolutní hodnotu",
+          "Zvýší hodnotu proměnné o 1",
+          "Zdvojí hodnotu",
+          "Vrátí zbytek po dělení"
+        ],
+        "correct": 1,
+        "feedback": "i++ je zkrácený zápis pro i = i + 1. Inkrementuje hodnotu o 1."
+      },
+      {
+        "q": "Jak převedeme string \"42\" na int v C#?",
+        "options": [
+          "int x = \"42\"",
+          "int x = (int)\"42\"",
+          "int x = Convert.ToInt32(\"42\")",
+          "int x = int.Parse(42)"
+        ],
+        "correct": 2,
+        "feedback": "Convert.ToInt32() nebo int.Parse() převede string na int. Přímé přetypování stringu na int nefunguje."
+      },
+      {
+        "q": "Jaká je hodnota výrazu: true && false?",
+        "options": [
+          "true",
+          "false",
+          "null",
+          "Chyba"
+        ],
+        "correct": 1,
+        "feedback": "AND (&&) vrátí true pouze pokud jsou OBA operandy true. true && false = false."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Kalkulačka v C#",
+        "desc": "<p>Vytvoř konzolovou aplikaci, která načte dvě čísla a vypíše jejich součet, rozdíl, součin a podíl.</p>",
+        "hint": "Použij Console.ReadLine() pro vstup, Convert.ToDouble() pro převod, Console.WriteLine() pro výstup. Ošetři dělení nulou."
+      },
+      {
+        "title": "Převody typů",
+        "desc": "<p>Napiš program demonstrující:</p><ul><li>Implicitní konverzi int → double</li><li>Explicitní přetypování double → int (s výpisem ztráty dat)</li><li>Převod string → int a zpět</li></ul>",
+        "hint": "Zkus double d = 9.99; int i = (int)d; — jaká bude hodnota i?"
+      },
+      {
+        "title": "Pravdivostní tabulka v kódu",
+        "desc": "<p>Napiš program, který pro dvě bool proměnné (a, b) vypíše tabulku výsledků: a&&b, a||b, !a, !b, a^b (XOR).</p>",
+        "hint": "Použij Console.WriteLine($\"a={a}, b={b}, AND={a&&b}, OR={a||b}\")"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Deklarace proměnných",
+        "desc": "Doplň správné typy.",
+        "template": "___1___ jmeno = \"Jana\";\n___2___ vek = 17;\n___3___ vyska = 1.72;\n___4___ jeStudent = true;\n___5___ znamka = 'A';",
+        "answers": {
+          "1": "string",
+          "2": "int",
+          "3": "double",
+          "4": "bool",
+          "5": "char"
+        }
+      },
+      {
+        "title": "Zkrácené operátory",
+        "desc": "Doplň zkrácený zápis.",
+        "template": "i = i + 1;  →  ___1___\ni = i - 1;  →  ___2___\ni = i * 2;  →  ___3___\ni = i + 5;  →  ___4___\ni = i / 2;  →  ___5___",
+        "answers": {
+          "1": "i++",
+          "2": "i--",
+          "3": "i *= 2",
+          "4": "i += 5",
+          "5": "i /= 2"
+        }
+      },
+      {
+        "title": "Logické operátory",
+        "desc": "Doplň výsledky.",
+        "template": "true && false = ___1___\ntrue || false = ___2___\n!true = ___3___\n5 > 3 = ___4___\n5 == 5 = ___5___",
+        "answers": {
+          "1": "false",
+          "2": "true",
+          "3": "false",
+          "4": "true",
+          "5": "true"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "int",
+        "def": "Celé číslo v C#. Rozsah: -2 147 483 648 až 2 147 483 647."
+      },
+      {
+        "term": "double",
+        "def": "Desetinné číslo s dvojitou přesností (~15 desetinných míst)."
+      },
+      {
+        "term": "bool",
+        "def": "Boolean — true nebo false."
+      },
+      {
+        "term": "Modulo (%)",
+        "def": "Vrátí zbytek po celočíselném dělení. 17 % 5 = 2."
+      },
+      {
+        "term": "Implicitní konverze",
+        "def": "Automatický převod bezpečný bez ztráty dat (int → double)."
+      },
+      {
+        "term": "Explicitní přetypování",
+        "def": "Manuální (cast). Může ztratit data: (int)9.7 = 9."
+      },
+      {
+        "term": "Short-circuit evaluation",
+        "def": "C# přestane vyhodnocovat logický výraz jakmile zná výsledek."
+      },
+      {
+        "term": "camelCase",
+        "def": "Konvence pojmenování: první slovo malé, další velké. Příklad: mojeProměnná."
+      }
+    ]
+  },
+  "14": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Podmínkové příkazy if / switch",
+          "content": "<pre>if (podmínka) {\n  // větev true\n} else if (jiná) {\n  // další větev\n} else {\n  // jinak\n}</pre><pre>switch (proměnná) {\n  case 1: ...; break;\n  case 2: ...; break;\n  default: ...; break;\n}</pre><p>Switch je přehlednější než mnoho else-if pro diskrétní hodnoty.</p>"
+        },
+        {
+          "title": "Cyklus while a do-while",
+          "content": "<pre>// while — podmínka se testuje PŘED prvním průchodem\nwhile (podmínka) {\n  // tělo\n}\n\n// do-while — tělo se provede VŽDY alespoň jednou\ndo {\n  // tělo\n} while (podmínka);</pre><p>Použij <code>do-while</code> pokud potřebuješ provést tělo vždy alespoň jednou (např. vstup od uživatele).</p>"
+        },
+        {
+          "title": "Vývojové diagramy struktur",
+          "content": "<p><strong>if:</strong> kosočtverec s větvením ano/ne.<br><strong>while:</strong> podmínka před tělem, šipka zpět na podmínku.<br><strong>do-while:</strong> tělo před podmínkou, šipka zpět na tělo.</p>"
+        },
+        {
+          "title": "Řazení — Selection sort",
+          "content": "<pre>for (int i = 0; i < n-1; i++) {\n  int minIdx = i;\n  for (int j = i+1; j < n; j++)\n    if (pole[j] < pole[minIdx])\n      minIdx = j;\n  // Prohoď pole[i] a pole[minIdx]\n  int tmp = pole[i];\n  pole[i] = pole[minIdx];\n  pole[minIdx] = tmp;\n}</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký je rozdíl mezi while a do-while?",
+        "options": [
+          "Žádný rozdíl",
+          "while testuje podmínku před tělem, do-while po těle",
+          "do-while je rychlejší",
+          "while lze použít jen s čísly"
+        ],
+        "correct": 1,
+        "feedback": "while testuje podmínku před každým průchodem — tělo nemusí proběhnout. do-while testuje po prvním průchodu — tělo proběhne vždy alespoň jednou."
+      },
+      {
+        "q": "Kdy je lepší použít switch místo if-else?",
+        "options": [
+          "Vždy",
+          "Nikdy",
+          "Pro diskrétní hodnoty jedné proměnné (výběr z možností)",
+          "Pouze pro string"
+        ],
+        "correct": 2,
+        "feedback": "switch je přehlednější pro porovnání jedné proměnné s více hodnotami. Pro složité podmínky (rozsahy, kombinace) je lepší if-else."
+      },
+      {
+        "q": "Co se stane pokud chybí break v case větvi switch?",
+        "options": [
+          "Chyba kompilace",
+          "Přeskočí na default",
+          "Pokračuje do dalšího case (fall-through)",
+          "Switch se ukončí"
+        ],
+        "correct": 2,
+        "feedback": "Bez break pokračuje vykonávání do dalšího case — tzv. fall-through. V C# to způsobí chybu kompilace (na rozdíl od C/Java)."
+      },
+      {
+        "q": "Kdy použijeme do-while?",
+        "options": [
+          "Vždy místo while",
+          "Když potřebujeme tělo provést vždy alespoň jednou",
+          "Pouze pro práci s polem",
+          "Nelze ho použít v C#"
+        ],
+        "correct": 1,
+        "feedback": "do-while je ideální pro vstup od uživatele — nejdříve zobrazíme výzvu a přečteme vstup, pak ověříme zda je platný."
+      },
+      {
+        "q": "Jaký výraz ukončí nekonečný cyklus while(true)?",
+        "options": [
+          "stop",
+          "end",
+          "break",
+          "return 0"
+        ],
+        "correct": 2,
+        "feedback": "break okamžitě ukončí cyklus a program pokračuje za ním."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Kategorizace čísla",
+        "desc": "<p>Program načte číslo a určí do které kategorie patří:</p><ul><li>Méně než 25</li><li>26–50</li><li>51 a více</li></ul>",
+        "hint": "Použij if / else if / else. Pozor: hranice 25 a 26 — co se stane s číslem 25?"
+      },
+      {
+        "title": "Loterie",
+        "desc": "<p>Uživatel zadá číslo 1–100. Program vygeneruje 10 náhodných čísel (1–100) a vypíše, kolikrát padlo zadané číslo.</p>",
+        "hint": "Random rnd = new Random(); rnd.Next(1, 101) generuje 1–100. Použij cyklus for a čítač."
+      },
+      {
+        "title": "Validace vstupu",
+        "desc": "<p>Pomocí do-while načítej číslo od uživatele dokud nezadá číslo v rozsahu 1–10.</p>",
+        "hint": "do { načti vstup } while (vstup < 1 || vstup > 10); — ideální případ pro do-while."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "if-else struktura",
+        "desc": "Doplň klíčová slova.",
+        "template": "___1___ (x > 0) {\n  Console.WriteLine(\"kladné\");\n} ___2___ ___3___ (x < 0) {\n  Console.WriteLine(\"záporné\");\n} ___4___ {\n  Console.WriteLine(\"nula\");\n}",
+        "answers": {
+          "1": "if",
+          "2": "else",
+          "3": "if",
+          "4": "else"
+        }
+      },
+      {
+        "title": "switch příkaz",
+        "desc": "Doplň strukturu.",
+        "template": "___1___ (den) {\n  ___2___ 1:\n    Console.WriteLine(\"Pondělí\");\n    ___3___;\n  case 2:\n    Console.WriteLine(\"Úterý\");\n    break;\n  ___4___:\n    Console.WriteLine(\"Jiný den\");\n    break;\n}",
+        "answers": {
+          "1": "switch",
+          "2": "case",
+          "3": "break",
+          "4": "default"
+        }
+      },
+      {
+        "title": "do-while",
+        "desc": "Doplň strukturu.",
+        "template": "int vstup;\n___1___ {\n  Console.Write(\"Zadej číslo 1-10: \");\n  vstup = Convert.ToInt32(Console.ReadLine());\n} ___2___ (vstup < 1 ___3___ vstup > 10);",
+        "answers": {
+          "1": "do",
+          "2": "while",
+          "3": "||"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "if / else if / else",
+        "def": "Podmínkový příkaz. Testuje podmínky a vykoná odpovídající větev."
+      },
+      {
+        "term": "switch",
+        "def": "Příkaz pro výběr z více případů jedné proměnné. Každý case musí mít break."
+      },
+      {
+        "term": "while",
+        "def": "Cyklus testující podmínku PŘED každým průchodem. Tělo nemusí proběhnout."
+      },
+      {
+        "term": "do-while",
+        "def": "Cyklus testující podmínku PO průchodu. Tělo proběhne vždy alespoň jednou."
+      },
+      {
+        "term": "break",
+        "def": "Okamžitě ukončí cyklus nebo switch."
+      },
+      {
+        "term": "fall-through",
+        "def": "Pokračování do dalšího case při chybějícím break (v C# zakázáno)."
+      },
+      {
+        "term": "Random",
+        "def": "Třída pro generování náhodných čísel. rnd.Next(min, max) vrátí min až max-1."
+      },
+      {
+        "term": "Validace vstupu",
+        "def": "Ověření zda uživatel zadal platnou hodnotu. do-while je ideální konstrukt."
+      }
+    ]
+  },
+  "15": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Cyklus for",
+          "content": "<pre>for (inicializace; podmínka; krok) {\n  // tělo\n}\n\n// Příklad:\nfor (int i = 0; i < 10; i++) {\n  Console.WriteLine(i);\n}</pre><p>for je ideální když <strong>předem známe počet opakování</strong>. Řídící proměnná je definovaná v hlavičce.</p>"
+        },
+        {
+          "title": "Cyklus foreach",
+          "content": "<pre>foreach (typ prvek in kolekce) {\n  // tělo\n}\n\n// Příklad:\nstring[] mesta = {\"Praha\", \"Brno\", \"Ostrava\"};\nforeach (string mesto in mesta) {\n  Console.WriteLine(mesto);\n}</pre><p>foreach prochází všechny prvky kolekce. Nelze měnit prvky kolekce za průchodu.</p>"
+        },
+        {
+          "title": "for vs foreach vs while",
+          "content": "<ul><li><strong>for</strong> — známe počet opakování, potřebujeme index</li><li><strong>foreach</strong> — procházíme kolekci, nepotřebujeme index</li><li><strong>while</strong> — podmínka závisí na vnější události, počet neznáme</li></ul>"
+        },
+        {
+          "title": "Vnořené cykly",
+          "content": "<pre>// Tabulka násobilky:\nfor (int i = 1; i <= 10; i++) {\n  for (int j = 1; j <= 10; j++) {\n    Console.Write($\"{i*j,4}\");\n  }\n  Console.WriteLine();\n}</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Kdy je vhodné použít foreach místo for?",
+        "options": [
+          "Když potřebujeme index prvku",
+          "Když procházíme kolekci a nepotřebujeme index",
+          "Pouze pro pole čísel",
+          "Foreach je vždy rychlejší"
+        ],
+        "correct": 1,
+        "feedback": "foreach je vhodný pro procházení kolekcí bez potřeby indexu. Kód je přehlednější a bezpečnější."
+      },
+      {
+        "q": "Co je řídící proměnná v cyklu for?",
+        "options": [
+          "Podmínka ukončení",
+          "Proměnná inicializovaná v hlavičce cyklu řídící jeho průběh",
+          "Název cyklu",
+          "Hodnota po posledním průchodu"
+        ],
+        "correct": 1,
+        "feedback": "Řídící proměnná (typicky i) je inicializována v for hlavičce, testována v podmínce a měněna v kroku."
+      },
+      {
+        "q": "Jaký je výstup: for(int i=10; i>=1; i--) Console.Write(i+\" \");",
+        "options": [
+          "1 2 3 ... 10",
+          "10 9 8 ... 1",
+          "Chyba",
+          "Nekonečná smyčka"
+        ],
+        "correct": 1,
+        "feedback": "Cyklus jde od 10 dolů do 1 (podmínka i>=1, krok i--). Výstup: 10 9 8 7 6 5 4 3 2 1."
+      },
+      {
+        "q": "Co se stane pokud změníme prvek kolekce uvnitř foreach?",
+        "options": [
+          "Prvek se změní",
+          "Chyba za běhu (InvalidOperationException)",
+          "Změní se kopie",
+          "Cyklus se přeruší"
+        ],
+        "correct": 1,
+        "feedback": "Foreach nelze použít pro modifikaci kolekce — způsobí InvalidOperationException. Pro modifikaci použij for s indexem."
+      },
+      {
+        "q": "Jak vypíšeme znaky slova \"hello\" foreach cyklem?",
+        "options": [
+          "foreach (char c in \"hello\")",
+          "foreach (string c in \"hello\")",
+          "foreach (char c of \"hello\")",
+          "for (char c : \"hello\")"
+        ],
+        "correct": 0,
+        "feedback": "string lze procházet foreach jako kolekci znaků (char). foreach (char c in \"hello\") projde každý znak."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Výpis slova s číslováním",
+        "desc": "<p>Vypiš 10x slovo \"maturita\" číslované od 10 do 19.</p><p>Výstup: 10: maturita, 11: maturita, ...</p>",
+        "hint": "for (int i = 10; i <= 19; i++) { Console.WriteLine($\"{i}: maturita\"); }"
+      },
+      {
+        "title": "Počet výskytů písmene",
+        "desc": "<p>Načti větu od uživatele a vypiš počet výskytů písmene 'a' (nebo libovolného zvoleného znaku).</p>",
+        "hint": "foreach (char c in veta) { if (c == 'a') pocet++; }"
+      },
+      {
+        "title": "Foreach přes pole znaky",
+        "desc": "<p>Vypiš znaky slova \"maturita\" pomocí foreach, každý znak na nový řádek s pořadovým číslem.</p>",
+        "hint": "int i = 1; foreach (char c in \"maturita\") { Console.WriteLine($\"{i}: {c}\"); i++; }"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní for",
+        "desc": "Doplň cyklus pro výpis čísel 1–10.",
+        "template": "for (int ___1___ = 1; ___1___ ___2___ 10; ___1___++) {\n  Console.___3___(___1___);\n}",
+        "answers": {
+          "1": "i",
+          "2": "<=",
+          "3": "WriteLine"
+        }
+      },
+      {
+        "title": "foreach",
+        "desc": "Doplň foreach pro výpis pole.",
+        "template": "string[] barvy = {\"červená\", \"modrá\", \"zelená\"};\n___1___ (string ___2___ ___3___ barvy) {\n  Console.WriteLine(___2___);\n}",
+        "answers": {
+          "1": "foreach",
+          "2": "barva",
+          "3": "in"
+        }
+      },
+      {
+        "title": "Počítání výskytů",
+        "desc": "Doplň kód.",
+        "template": "string text = \"maturita\";\nint pocet = 0;\nforeach (___1___ c in text) {\n  if (c ___2___ 'a') {\n    ___3___++;\n  }\n}\nConsole.WriteLine($\"Počet 'a': {pocet}\");",
+        "answers": {
+          "1": "char",
+          "2": "==",
+          "3": "pocet"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "for cyklus",
+        "def": "Cyklus s inicializací, podmínkou a krokem v hlavičce. Ideální pro předem známý počet."
+      },
+      {
+        "term": "foreach cyklus",
+        "def": "Prochází všechny prvky kolekce. Nepotřebuje index, nelze modifikovat kolekci."
+      },
+      {
+        "term": "Řídící proměnná",
+        "def": "Proměnná cyklu for řídící jeho průběh (typicky i, j, k)."
+      },
+      {
+        "term": "break",
+        "def": "Okamžitě ukončí cyklus."
+      },
+      {
+        "term": "continue",
+        "def": "Přeskočí zbytek aktuální iterace a pokračuje další."
+      },
+      {
+        "term": "Vnořený cyklus",
+        "def": "Cyklus uvnitř cyklu. Vnitřní proběhne celý pro každou iteraci vnějšího."
+      },
+      {
+        "term": "Iterace",
+        "def": "Jeden průchod cyklem."
+      },
+      {
+        "term": "InvalidOperationException",
+        "def": "Výjimka při pokusu modifikovat kolekci během foreach."
+      }
+    ]
+  },
+  "16": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Pole v C#",
+          "content": "<p><strong>Pole</strong> je datová struktura ukládající prvky stejného typu na indexovaných pozicích.</p><pre>// Deklarace a inicializace:\nint[] cisla = new int[5];         // 5 nul\nstring[] mesta = {\"Praha\",\"Brno\"}; // inicializace\nint[] data = new int[]{1,2,3};\n\n// Přístup:\ncisla[0] = 10;  // první prvek\ncisla[4] = 50;  // poslední (index 0–4)\ncisla.Length;   // délka pole</pre>"
+        },
+        {
+          "title": "Dvourozměrná pole",
+          "content": "<pre>int[,] matice = new int[3,4];  // 3 řádky, 4 sloupce\nmatice[0,0] = 1;\n\n// Procházení:\nfor (int i = 0; i < matice.GetLength(0); i++)\n  for (int j = 0; j < matice.GetLength(1); j++)\n    Console.Write(matice[i,j]);</pre>"
+        },
+        {
+          "title": "List<T> — dynamické pole",
+          "content": "<p><strong>List</strong> je dynamická kolekce — automaticky mění velikost.</p><pre>List&lt;string&gt; seznam = new List&lt;string&gt;();\nseznám.Add(\"Praha\");\nseznám.Add(\"Brno\");\nseznám.Remove(\"Brno\");\nseznám.Count;  // počet prvků\nseznám[0];     // přístup indexem</pre>"
+        },
+        {
+          "title": "Dictionary — slovník",
+          "content": "<pre>Dictionary&lt;string, int&gt; vek = \n    new Dictionary&lt;string, int&gt;();\nvek[\"Jana\"] = 17;\nvek[\"Petr\"] = 18;\nConsole.WriteLine(vek[\"Jana\"]);  // 17\n\n// Procházení:\nforeach (var kvp in vek)\n  Console.WriteLine($\"{kvp.Key}: {kvp.Value}\");</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký index má první prvek pole v C#?",
+        "options": [
+          "1",
+          "-1",
+          "0",
+          "Záleží na deklaraci"
+        ],
+        "correct": 2,
+        "feedback": "V C# (i většině jazyků) indexy pole začínají od 0. Pole o délce n má indexy 0 až n-1."
+      },
+      {
+        "q": "Co způsobí přístup mimo hranice pole (index >= Length)?",
+        "options": [
+          "Vrátí 0",
+          "Vrátí null",
+          "IndexOutOfRangeException",
+          "Tichá chyba"
+        ],
+        "correct": 2,
+        "feedback": "Přístup mimo hranice pole způsobí runtime výjimku IndexOutOfRangeException."
+      },
+      {
+        "q": "Jaký je rozdíl mezi polem (array) a List<T>?",
+        "options": [
+          "Žádný",
+          "Pole má pevnou velikost, List je dynamický",
+          "List je rychlejší",
+          "Pole může ukládat různé typy"
+        ],
+        "correct": 1,
+        "feedback": "Pole má pevnou velikost definovanou při vytvoření. List<T> dynamicky roste a zmenšuje se."
+      },
+      {
+        "q": "Jak přistoupíme k hodnotě ve slovníku Dictionary?",
+        "options": [
+          "dict.Get(klic)",
+          "dict[klic]",
+          "dict.Value(klic)",
+          "dict->klic"
+        ],
+        "correct": 1,
+        "feedback": "K hodnotám v Dictionary se přistupuje přes klíč v hranatých závorkách: dict[\"klic\"]."
+      },
+      {
+        "q": "Co vrátí vlastnost Length u pole?",
+        "options": [
+          "Poslední index",
+          "Počet prvků v poli",
+          "Velikost v bytech",
+          "Typ prvků"
+        ],
+        "correct": 1,
+        "feedback": "Length vrátí počet prvků v poli. Poslední platný index je Length - 1."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Správce měst",
+        "desc": "<p>Vytvoř program s polem 4 měst. Po spuštění:</p><ul><li>Vypíše všechna města</li><li>Zeptá se na index pro změnu</li><li>Přepíše hodnotu</li><li>Vypíše pole znovu</li></ul>",
+        "hint": "string[] mesta = new string[4]; Ošetři vstup aby index byl 0–3."
+      },
+      {
+        "title": "Statistiky pole",
+        "desc": "<p>Vytvoř pole 10 náhodných čísel 1–100. Vypiš: minimum, maximum, průměr, součet.</p>",
+        "hint": "Random rnd = new Random(); for cyklus pro plnění. Pak průchod foreach pro výpočty."
+      },
+      {
+        "title": "Slovník žáků",
+        "desc": "<p>Vytvoř Dictionary<string, int> pro jména žáků a jejich průměry. Přidej 5 žáků, vypíš všechny a najdi žáka s nejlepším průměrem.</p>",
+        "hint": "foreach (var kvp in slovnik) { ... kvp.Key, kvp.Value ... }"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Deklarace pole",
+        "desc": "Doplň kód.",
+        "template": "// Pole 5 celých čísel (nuly):\nint[] pole = new ___1___[___2___];\n\n// Inicializace s hodnotami:\nstring[] jmena = {___3___, \"Petr\", \"Jana\"};\n\n// Délka pole:\nint delka = jmena.___4___;",
+        "answers": {
+          "1": "int",
+          "2": "5",
+          "3": "\"Anna\"",
+          "4": "Length"
+        }
+      },
+      {
+        "title": "Práce s List",
+        "desc": "Doplň operace.",
+        "template": "List&lt;string&gt; seznam = new List&lt;string&gt;();\nseznám.___1___(\"Praha\");  // přidat\nseznám.___2___(\"Brno\");   // odebrat\nint pocet = seznam.___3___;  // počet prvků",
+        "answers": {
+          "1": "Add",
+          "2": "Remove",
+          "3": "Count"
+        }
+      },
+      {
+        "title": "Dvourozměrné pole",
+        "desc": "Doplň kód.",
+        "template": "// 3 řádky, 3 sloupce:\nint[,] mat = new int[___1___,___2___];\nmat[0,0] = 1;\n\n// Počet řádků:\nint radky = mat.GetLength(___3___);\n// Počet sloupců:\nint sloupce = mat.GetLength(___4___);",
+        "answers": {
+          "1": "3",
+          "2": "3",
+          "3": "0",
+          "4": "1"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Pole (array)",
+        "def": "Pevná datová struktura ukládající prvky stejného typu. Indexy od 0."
+      },
+      {
+        "term": "List<T>",
+        "def": "Dynamická kolekce. Automaticky mění velikost. Metody: Add, Remove, Count."
+      },
+      {
+        "term": "Dictionary<K,V>",
+        "def": "Kolekce párů klíč-hodnota. Přístup přes klíč: dict[klic]."
+      },
+      {
+        "term": "IndexOutOfRangeException",
+        "def": "Výjimka při přístupu mimo hranice pole."
+      },
+      {
+        "term": "Length",
+        "def": "Vlastnost pole vracející počet prvků."
+      },
+      {
+        "term": "Count",
+        "def": "Vlastnost List a Dictionary vracející počet prvků."
+      },
+      {
+        "term": "Dvourozměrné pole",
+        "def": "Matice. Přístup: pole[radek, sloupec]. Deklarace: int[,]."
+      },
+      {
+        "term": "GetLength(dim)",
+        "def": "Vrátí délku dimenze dvourozměrného pole. 0=řádky, 1=sloupce."
+      }
+    ]
+  },
+  "17": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Práce se soubory v C#",
+          "content": "<p>Třída <strong>File</strong> poskytuje statické metody pro práci se soubory. Třída <strong>StreamWriter/StreamReader</strong> pro čtení a zápis.</p><pre>// Kontrola existence:\nif (File.Exists(\"soubor.txt\")) { ... }\n\n// Rychlý zápis:\nFile.WriteAllText(\"soubor.txt\", \"text\");\nFile.AppendAllText(\"soubor.txt\", \"další\");\n\n// Rychlé čtení:\nstring obsah = File.ReadAllText(\"soubor.txt\");\nstring[] radky = File.ReadAllLines(\"soubor.txt\");</pre>"
+        },
+        {
+          "title": "StreamWriter a StreamReader",
+          "content": "<pre>// Zápis (append = true → připisovat):\nusing (StreamWriter sw = new StreamWriter(\"soubor.txt\", append: true)) {\n  sw.WriteLine(\"Nový řádek\");\n}\n\n// Čtení řádek po řádce:\nusing (StreamReader sr = new StreamReader(\"soubor.txt\")) {\n  string radek;\n  while ((radek = sr.ReadLine()) != null) {\n    Console.WriteLine(radek);\n  }\n}</pre>"
+        },
+        {
+          "title": "Cesta k souboru",
+          "content": "<p>Soubor se hledá relativně ke spuštěnému programu (bin/Debug). Pro uložení vedle .exe:</p><pre>string cesta = Path.Combine(\n    AppDomain.CurrentDomain.BaseDirectory,\n    \"soucet.txt\");</pre>"
+        },
+        {
+          "title": "Typy souborů",
+          "content": "<p>C# aplikace může číst a zapisovat: <strong>.txt</strong> (text), <strong>.csv</strong> (hodnoty oddělené čárkou), <strong>.json</strong> (strukturovaná data), <strong>.xml</strong>. Binární soubory přes BinaryWriter/BinaryReader.</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaká metoda zkontroluje zda soubor existuje?",
+        "options": [
+          "File.Check()",
+          "File.Exists()",
+          "File.IsPresent()",
+          "File.Find()"
+        ],
+        "correct": 1,
+        "feedback": "File.Exists(cesta) vrátí true pokud soubor existuje, false pokud ne."
+      },
+      {
+        "q": "Jaký je rozdíl mezi File.WriteAllText a File.AppendAllText?",
+        "options": [
+          "Žádný",
+          "WriteAllText přepíše soubor, AppendAllText připíše na konec",
+          "AppendAllText je rychlejší",
+          "WriteAllText nelze použít s UTF-8"
+        ],
+        "correct": 1,
+        "feedback": "WriteAllText vždy přepíše celý obsah. AppendAllText přidá text na konec existujícího souboru."
+      },
+      {
+        "q": "K čemu slouží klíčové slovo using u StreamWriter?",
+        "options": [
+          "Import jmenného prostoru",
+          "Automatické uzavření a uvolnění zdroje po opuštění bloku",
+          "Sdílení souboru",
+          "Šifrování souboru"
+        ],
+        "correct": 1,
+        "feedback": "using zajistí automatické volání Dispose() (a tím Close()) po opuštění bloku — i při výjimce."
+      },
+      {
+        "q": "Co vrátí File.ReadAllLines()?",
+        "options": [
+          "Jeden dlouhý string",
+          "Pole stringů (každý řádek = jeden prvek)",
+          "List<string>",
+          "Stream"
+        ],
+        "correct": 1,
+        "feedback": "ReadAllLines() vrátí string[] kde každý prvek je jeden řádek souboru."
+      },
+      {
+        "q": "Jaká třída slouží pro čtení souboru řádek po řádce?",
+        "options": [
+          "FileReader",
+          "TextReader",
+          "StreamReader",
+          "BinaryReader"
+        ],
+        "correct": 2,
+        "feedback": "StreamReader poskytuje metodu ReadLine() pro čtení po řádcích."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Součet do souboru",
+        "desc": "<p>Program načte dvě čísla, jejich součet zapíše do souboru 'soucet.txt'. Při každém dalším spuštění přidá nový výsledek. Na začátku zkontroluje zda soubor existuje.</p>",
+        "hint": "File.Exists() pro kontrolu. File.AppendAllText() nebo StreamWriter s append:true pro přidávání."
+      },
+      {
+        "title": "Čtení a výpis souboru",
+        "desc": "<p>Načti textový soubor řádek po řádce pomocí StreamReader a vypiš každý řádek s číslem řádku.</p>",
+        "hint": "while ((radek = sr.ReadLine()) != null) { cislo++; Console.WriteLine($\"{cislo}: {radek}\"); }"
+      },
+      {
+        "title": "CSV zpracování",
+        "desc": "<p>Vytvoř program, který zapíše 5 záznamů (jméno, věk) do CSV souboru a pak ho přečte a vypíše formátovaně.</p>",
+        "hint": "CSV formát: Jana,17\\nPetr,18. Čtení: radek.Split(',') rozdělí na pole."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní operace se soubory",
+        "desc": "Doplň metody.",
+        "template": "// Kontrola existence:\nbool existuje = File.___1___(\"data.txt\");\n\n// Přepis souboru:\nFile.___2___(\"data.txt\", \"nový obsah\");\n\n// Připsat na konec:\nFile.___3___(\"data.txt\", \"další řádek\\n\");\n\n// Přečíst vše:\nstring text = File.___4___(\"data.txt\");",
+        "answers": {
+          "1": "Exists",
+          "2": "WriteAllText",
+          "3": "AppendAllText",
+          "4": "ReadAllText"
+        }
+      },
+      {
+        "title": "StreamWriter s using",
+        "desc": "Doplň kód.",
+        "template": "___1___ (StreamWriter sw = new ___2___(\"log.txt\", ___3___: true)) {\n  sw.___4___(\"Nový záznam\");\n}",
+        "answers": {
+          "1": "using",
+          "2": "StreamWriter",
+          "3": "append",
+          "4": "WriteLine"
+        }
+      },
+      {
+        "title": "StreamReader čtení",
+        "desc": "Doplň kód.",
+        "template": "using (StreamReader sr = new StreamReader(\"soubor.txt\")) {\n  string radek;\n  while ((radek = sr.___1___()) ___2___ null) {\n    Console.WriteLine(radek);\n  }\n}",
+        "answers": {
+          "1": "ReadLine",
+          "2": "!="
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "File.Exists()",
+        "def": "Zkontroluje zda soubor na dané cestě existuje. Vrátí bool."
+      },
+      {
+        "term": "File.WriteAllText()",
+        "def": "Zapíše string do souboru. Přepíše existující obsah."
+      },
+      {
+        "term": "File.AppendAllText()",
+        "def": "Připíše text na konec souboru."
+      },
+      {
+        "term": "File.ReadAllLines()",
+        "def": "Přečte soubor a vrátí string[] kde každý prvek je řádek."
+      },
+      {
+        "term": "StreamWriter",
+        "def": "Třída pro zápis textu do souboru. Parametr append:true pro připisování."
+      },
+      {
+        "term": "StreamReader",
+        "def": "Třída pro čtení textu ze souboru. ReadLine() čte po řádcích."
+      },
+      {
+        "term": "using blok",
+        "def": "Zajistí automatické uzavření zdroje (Dispose) po opuštění bloku."
+      },
+      {
+        "term": "CSV",
+        "def": "Comma-Separated Values — textový formát pro tabulková data oddělená čárkou."
+      }
+    ]
+  },
+  "18": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Principy OOP",
+          "content": "<p>Objektově orientované programování stojí na čtyřech pilířích:</p><ul><li><strong>Zapouzdření</strong> — data a metody jsou uvnitř třídy, přístup řízen modifikátory</li><li><strong>Dědičnost</strong> — třída může dědit vlastnosti od rodiče (<code>class Pes : Zvirat</code>)</li><li><strong>Polymorfismus</strong> — různé třídy reagují různě na stejnou zprávu</li><li><strong>Abstrakce</strong> — skrývání implementačních detailů</li></ul>"
+        },
+        {
+          "title": "Třída a objekt",
+          "content": "<pre>class Osoba {\n  // Atributy (fields):\n  private string jmeno;\n  public int vek;\n\n  // Konstruktor:\n  public Osoba(string jmeno, int vek) {\n    this.jmeno = jmeno;\n    this.vek = vek;\n  }\n\n  // Metoda:\n  public void Pozdrav() {\n    Console.WriteLine($\"Ahoj, jsem {jmeno}\");\n  }\n}\n\n// Vytvoření objektu:\nOsoba o = new Osoba(\"Jana\", 17);\no.Pozdrav();</pre>"
+        },
+        {
+          "title": "Modifikátory přístupu",
+          "content": "<ul><li><code>public</code> — přístupné odkudkoli</li><li><code>private</code> — pouze uvnitř třídy</li><li><code>protected</code> — třída a její potomci</li><li><code>internal</code> — pouze v rámci assembly</li></ul><p><strong>Properties (vlastnosti)</strong> — řízený přístup k privátním polím:</p><pre>private int _vek;\npublic int Vek {\n  get { return _vek; }\n  set { if (value >= 0) _vek = value; }\n}</pre>"
+        },
+        {
+          "title": "Dědičnost",
+          "content": "<pre>class Zvirat {\n  public string Jmeno;\n  public virtual void Zvuk() {\n    Console.WriteLine(\"...\");\n  }\n}\n\nclass Pes : Zvirat {\n  public override void Zvuk() {\n    Console.WriteLine(\"Haf!\");\n  }\n}</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co je zapouzdření v OOP?",
+        "options": [
+          "Třída dědí od jiné třídy",
+          "Skrytí dat uvnitř třídy a řízení přístupu modifikátory",
+          "Třída může mít více forem",
+          "Skrytí implementace za rozhraní"
+        ],
+        "correct": 1,
+        "feedback": "Zapouzdření = data a metody jsou součástí třídy, přístup k privátním datům je řízen přes metody nebo properties."
+      },
+      {
+        "q": "Co dělá konstruktor?",
+        "options": [
+          "Ničí objekt po použití",
+          "Inicializuje objekt při vytvoření (new)",
+          "Dědí vlastnosti od rodiče",
+          "Definuje rozhraní třídy"
+        ],
+        "correct": 1,
+        "feedback": "Konstruktor je speciální metoda volaná při vytvoření objektu (new). Inicializuje atributy na výchozí hodnoty."
+      },
+      {
+        "q": "Jaký modifikátor použijeme pro atribut přístupný pouze uvnitř třídy?",
+        "options": [
+          "public",
+          "internal",
+          "protected",
+          "private"
+        ],
+        "correct": 3,
+        "feedback": "private = přístupné pouze uvnitř dané třídy. Základní princip zapouzdření."
+      },
+      {
+        "q": "Co je property (vlastnost) v C#?",
+        "options": [
+          "Typ proměnné",
+          "Zkrácený zápis pro metodu",
+          "Řízený přístup k privátnímu poli přes get/set",
+          "Jiný název pro konstruktor"
+        ],
+        "correct": 2,
+        "feedback": "Property poskytuje get (čtení) a set (zápis) s možností validace. Umožňuje zapouzdřit privátní pole."
+      },
+      {
+        "q": "Co je polymorfismus?",
+        "options": [
+          "Třída má více konstruktorů",
+          "Různé třídy implementují stejnou metodu různě",
+          "Jedna třída dědí od více tříd",
+          "Abstraktní třída bez implementace"
+        ],
+        "correct": 1,
+        "feedback": "Polymorfismus: různé třídy mohou mít stejný název metody ale různou implementaci (override). Rodiče.Zvuk() volá správnou verzi."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Třída Clovek",
+        "desc": "<p>Vytvoř třídu <strong>Clovek</strong> s atributy Jmeno a Unava (výchozí 0). Metoda Bezi(km) zvyšuje Unavu o km. Unava max 20, min 0. Vypiš jen jména a únavu.</p>",
+        "hint": "Ošetři rozsah: if (unava + km > 20) unava = 20; else unava += km;"
+      },
+      {
+        "title": "Dědičnost — ZOO",
+        "desc": "<p>Vytvoř třídu Zvirat (Jmeno, Zvuk()). Odvoď třídy Pes a Kocka s přepsanou metodou Zvuk(). Vytvoř pole Zvirat[] a zavolej Zvuk() na každé.</p>",
+        "hint": "virtual/override pro polymorfismus. Zvirat[] pole = { new Pes(\"Rex\"), new Kocka(\"Micka\") };"
+      },
+      {
+        "title": "Třída BankovniUcet",
+        "desc": "<p>Třída BankovniUcet: privátní zůstatek, public metody Vklad(částka) a Vyber(částka). Výběr pouze pokud je dostatek. Property Zustatek jen pro čtení.</p>",
+        "hint": "public decimal Zustatek { get { return _zustatek; } } — jen getter. Vyber: if (castka <= _zustatek)."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní třída",
+        "desc": "Doplň strukturu třídy.",
+        "template": "___1___ Auto {\n  ___2___ string Znacka;  // private\n  ___3___ int Rok;        // public\n\n  ___4___ Auto(string znacka, int rok) {\n    ___5___.Znacka = znacka;\n    this.Rok = rok;\n  }\n}",
+        "answers": {
+          "1": "class",
+          "2": "private",
+          "3": "public",
+          "4": "public",
+          "5": "this"
+        }
+      },
+      {
+        "title": "Property",
+        "desc": "Doplň property.",
+        "template": "private int _vek;\npublic int Vek {\n  ___1___ { return _vek; }\n  ___2___ {\n    if (___3___ >= 0) _vek = ___3___;\n  }\n}",
+        "answers": {
+          "1": "get",
+          "2": "set",
+          "3": "value"
+        }
+      },
+      {
+        "title": "Dědičnost",
+        "desc": "Doplň klíčová slova.",
+        "template": "class Tvar {\n  public ___1___ void Vykresli() { }\n}\n\nclass Kruh : ___2___ {\n  public ___3___ void Vykresli() {\n    Console.WriteLine(\"○\");\n  }\n}",
+        "answers": {
+          "1": "virtual",
+          "2": "Tvar",
+          "3": "override"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Zapouzdření",
+        "def": "Skrytí dat uvnitř třídy. Přístup řízen modifikátory (private, public)."
+      },
+      {
+        "term": "Dědičnost",
+        "def": "Třída přebírá vlastnosti a metody od rodičovské třídy."
+      },
+      {
+        "term": "Polymorfismus",
+        "def": "Různé třídy reagují různě na stejnou metodu (override)."
+      },
+      {
+        "term": "Konstruktor",
+        "def": "Speciální metoda volaná při new. Inicializuje objekt."
+      },
+      {
+        "term": "private",
+        "def": "Přístupné pouze uvnitř třídy."
+      },
+      {
+        "term": "Property",
+        "def": "Řízený přístup k privátnímu poli přes get a set."
+      },
+      {
+        "term": "virtual / override",
+        "def": "virtual = metoda může být přepsána. override = přepsaná implementace."
+      },
+      {
+        "term": "this",
+        "def": "Odkaz na aktuální instanci třídy."
+      }
+    ]
+  },
+  "19": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Windows Forms v C#",
+          "content": "<p><strong>Windows Forms</strong> (WinForms) je framework pro tvorbu desktopových GUI aplikací. Formulář (Form) je okno, na které přidáváme komponenty (Controls).</p><p>Vytvoření projektu: Visual Studio → Windows Forms App (.NET).</p>"
+        },
+        {
+          "title": "Základní komponenty",
+          "content": "<ul><li><strong>Label</strong> — zobrazení textu</li><li><strong>TextBox</strong> — vstupní pole (<code>textBox1.Text</code>)</li><li><strong>Button</strong> — tlačítko, event <code>Click</code></li><li><strong>PictureBox</strong> — zobrazení obrázku</li><li><strong>ListBox</strong> — seznam položek</li><li><strong>ComboBox</strong> — rozbalovací seznam</li><li><strong>CheckBox, RadioButton</strong> — výběr</li></ul>"
+        },
+        {
+          "title": "Události (Events)",
+          "content": "<p>WinForms je <strong>event-driven</strong> — kód se spouští při akcích uživatele.</p><pre>private void btnVypocti_Click(object sender, EventArgs e) {\n  double a = Convert.ToDouble(txtA.Text);\n  double b = Convert.ToDouble(txtB.Text);\n  lblVysledek.Text = (a + b).ToString();\n}</pre>"
+        },
+        {
+          "title": "Timer a práce s obrázky",
+          "content": "<p><strong>Timer</strong> spouští kód v pravidelných intervalech:</p><pre>timer1.Interval = 1000;  // 1 sekunda\ntimer1.Start();\n\nprivate void timer1_Tick(object sender, EventArgs e) {\n  lblCas.Text = DateTime.Now.ToLongTimeString();\n}</pre><p><strong>PictureBox:</strong> <code>pictureBox1.Image = Image.FromFile(\"foto.jpg\");</code></p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jak přistoupíme k textu v TextBox?",
+        "options": [
+          "textBox1.Value",
+          "textBox1.Text",
+          "textBox1.Content",
+          "textBox1.Input"
+        ],
+        "correct": 1,
+        "feedback": "Vlastnost Text obsahuje text TextBoxu. Čtení i zápis: textBox1.Text = \"ahoj\";"
+      },
+      {
+        "q": "Jaký event se volá při kliknutí na Button?",
+        "options": [
+          "MouseOver",
+          "Press",
+          "Click",
+          "Activate"
+        ],
+        "correct": 2,
+        "feedback": "Event Click se spustí při kliknutí. Handler: private void btn_Click(object sender, EventArgs e)."
+      },
+      {
+        "q": "K čemu slouží komponenta Timer ve WinForms?",
+        "options": [
+          "Měří výkon aplikace",
+          "Spouští kód opakovaně v definovaných intervalech",
+          "Zobrazuje aktuální čas",
+          "Synchronizuje vlákna"
+        ],
+        "correct": 1,
+        "feedback": "Timer vyvolává event Tick v nastavených intervalech (ms). Používá se pro animace, aktualizaci GUI, odpočítávání."
+      },
+      {
+        "q": "Jak zobrazíme obrázek v PictureBox?",
+        "options": [
+          "pictureBox1.Draw(soubor)",
+          "pictureBox1.Image = Image.FromFile(cesta)",
+          "pictureBox1.Show(cesta)",
+          "pictureBox1.Load(cesta)"
+        ],
+        "correct": 1,
+        "feedback": "Image.FromFile() načte obrázek ze souboru. Přiřadíme ho vlastnosti Image komponenty PictureBox."
+      },
+      {
+        "q": "Co je event-driven programování?",
+        "options": [
+          "Program běží v nekonečném cyklu",
+          "Kód se spouští jako reakce na události uživatele",
+          "Program si sám generuje události",
+          "Kód je uspořádán v časovém pořadí"
+        ],
+        "correct": 1,
+        "feedback": "Event-driven: kód čeká na události (klik, stisk klávesy, timer) a reaguje na ně. Základ GUI aplikací."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Kalkulačka WinForms",
+        "desc": "<p>Vytvoř Forms aplikaci s: 2x TextBox (čísla), 4x Button (+,-,*,/), Label pro výsledek. Po kliknutí provede operaci a zobrazí výsledek.</p>",
+        "hint": "Každé tlačítko má vlastní Click handler. Ošetři dělení nulou podmínkou if."
+      },
+      {
+        "title": "Digitální hodiny",
+        "dest": "<p>Vytvoř formulář s velkým Label pro čas. Timer každou sekundu aktualizuje čas v Label. Přidej tlačítko pro zastavení/spuštění.</p>",
+        "hint": "timer1.Tick handler: lblCas.Text = DateTime.Now.ToString(\"HH:mm:ss\"); Button toggle: timer1.Enabled = !timer1.Enabled;"
+      },
+      {
+        "title": "Prohlížeč obrázků",
+        "desc": "<p>Formulář s PictureBox a Button 'Načíst obrázek'. Kliknutím otevře OpenFileDialog a zobrazí vybraný obrázek.</p>",
+        "hint": "OpenFileDialog ofd = new OpenFileDialog(); if (ofd.ShowDialog() == DialogResult.OK) { pictureBox1.Image = Image.FromFile(ofd.FileName); }"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Click handler",
+        "desc": "Doplň handler pro výpočet.",
+        "template": "private void ___1___(object sender, EventArgs e) {\n  double a = Convert.ToDouble(txtA.___2___);\n  double b = Convert.ToDouble(txtB.Text);\n  lblVysledek.___2___ = (a + b).___3___();\n}",
+        "answers": {
+          "1": "btnVypocti_Click",
+          "2": "Text",
+          "3": "ToString"
+        }
+      },
+      {
+        "title": "Timer",
+        "desc": "Doplň kód pro timer.",
+        "template": "// Inicializace:\ntimer1.___1___ = 1000;\ntimer1.___2___();\n\n// Tick handler:\nprivate void timer1_Tick(object sender, EventArgs e) {\n  lblCas.Text = DateTime.Now.___3___(\"HH:mm:ss\");\n}",
+        "answers": {
+          "1": "Interval",
+          "2": "Start",
+          "3": "ToString"
+        }
+      },
+      {
+        "title": "TextBox a Label",
+        "desc": "Doplň vlastnosti.",
+        "template": "// Čtení textu:\nstring vstup = textBox1.___1___;\n\n// Zápis do Label:\nlabel1.___1___ = \"Výsledek: \" + vysledek;\n\n// Vymazání TextBox:\ntextBox1.___1___ = ___2___;",
+        "answers": {
+          "1": "Text",
+          "2": "\"\""
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Windows Forms",
+        "def": "Framework pro desktopové GUI v C#. Komponenty na formuláři, event-driven."
+      },
+      {
+        "term": "TextBox.Text",
+        "def": "Vlastnost pro čtení a zápis textu v TextBox komponentě."
+      },
+      {
+        "term": "Button.Click",
+        "def": "Event spuštěný při kliknutí na tlačítko."
+      },
+      {
+        "term": "Timer",
+        "def": "Komponenta spouštějící Tick event v pravidelných intervalech."
+      },
+      {
+        "term": "PictureBox",
+        "def": "Komponenta pro zobrazení obrázku. Image = Image.FromFile(cesta)."
+      },
+      {
+        "term": "Event-driven",
+        "def": "Programovací paradigma: kód reaguje na události (klik, klávesa, timer)."
+      },
+      {
+        "term": "OpenFileDialog",
+        "def": "Dialog pro výběr souboru. ShowDialog() zobrazí, FileName vrátí cestu."
+      },
+      {
+        "term": "Label.Text",
+        "def": "Vlastnost pro zobrazení textu v Label komponentě."
+      }
+    ]
+  },
+  "20": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Unity — herní engine",
+          "content": "<p><strong>Unity</strong> je multiplatformní herní engine. Hry se skládají ze <strong>Scén</strong>, scény z <strong>GameObject</strong> objektů, na které jsou připevněny <strong>Komponenty</strong> (Component).</p><p>Programuje se v <strong>C#</strong>. Každý skript dědí od <code>MonoBehaviour</code>.</p>"
+        },
+        {
+          "title": "Základní lifecycle metody",
+          "content": "<pre>void Awake()   // voláno jako první, i při deaktivovaném obj.\nvoid Start()   // voláno před první snímkem, po Awake\nvoid Update()  // voláno každý snímek\nvoid FixedUpdate() // voláno každý fyzikální krok (50x/s)\nvoid OnCollisionEnter(Collision c) // kolize\nvoid OnTriggerEnter(Collider c)    // trigger</pre>"
+        },
+        {
+          "title": "Pohyb a fyzika",
+          "content": "<pre>// Pohyb transformem:\ntransform.Translate(Vector3.right * speed * Time.deltaTime);\n\n// Pohyb přes Rigidbody:\nRigidbody rb;\nvoid Start() { rb = GetComponent&lt;Rigidbody&gt;(); }\nvoid FixedUpdate() {\n  rb.velocity = new Vector3(1, 0, 0);\n  // nebo:\n  rb.AddForce(Vector3.forward * 10);\n}</pre><p><code>Time.deltaTime</code> zajistí pohyb nezávislý na FPS.</p>"
+        },
+        {
+          "title": "Input a Singleton pattern",
+          "content": "<pre>// Vstup:\nfloat h = Input.GetAxis(\"Horizontal\");  // -1 až 1\nif (Input.GetKeyDown(KeyCode.Space)) { ... }\n\n// Singleton (GameManager):\npublic class GameManager : MonoBehaviour {\n  public static GameManager Instance;\n  void Awake() {\n    if (Instance == null) Instance = this;\n    else Destroy(gameObject);\n  }\n}</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Která metoda v Unity se volá každý snímek?",
+        "options": [
+          "Start()",
+          "Awake()",
+          "Update()",
+          "FixedUpdate()"
+        ],
+        "correct": 2,
+        "feedback": "Update() se volá každý snímek (frame). Rychlost závisí na FPS. Pro fyziku je lepší FixedUpdate()."
+      },
+      {
+        "q": "Proč se používá Time.deltaTime při pohybu?",
+        "options": [
+          "Zrychluje pohyb",
+          "Zajistí pohyb nezávislý na počtu FPS",
+          "Měří čas hry",
+          "Synchronizuje multiplayer"
+        ],
+        "correct": 1,
+        "feedback": "Time.deltaTime = čas od posledního snímku. Násobením zajistíme stejnou rychlost bez ohledu na FPS."
+      },
+      {
+        "q": "Co je Singleton pattern?",
+        "options": [
+          "Třída bez konstruktoru",
+          "Návrhový vzor zajišťující existenci právě jedné instance třídy",
+          "Třída s jednou metodou",
+          "Typ komponenty v Unity"
+        ],
+        "correct": 1,
+        "feedback": "Singleton zajistí, že existuje jen jedna instance (např. GameManager). V Unity: statická proměnná Instance v Awake."
+      },
+      {
+        "q": "Jaký je rozdíl mezi OnCollisionEnter a OnTriggerEnter?",
+        "options": [
+          "Žádný",
+          "Collision = fyzická kolize s odrazem, Trigger = průchod zónou bez fyziky",
+          "Trigger je rychlejší",
+          "Collision funguje jen ve 2D"
+        ],
+        "correct": 1,
+        "feedback": "Collision = fyzická kolize (Rigidbody + Collider). Trigger = neviditelná zóna, detekuje průchod bez fyzického odrazu (Is Trigger = true)."
+      },
+      {
+        "q": "Kde získáme komponentu Rigidbody v kódu?",
+        "options": [
+          "new Rigidbody()",
+          "FindObjectOfType<Rigidbody>()",
+          "GetComponent<Rigidbody>()",
+          "Rigidbody.Instance"
+        ],
+        "correct": 2,
+        "feedback": "GetComponent<T>() získá komponentu připojenou na stejný GameObject. Nejčastěji voláno v Start()."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Pohybující se hráč",
+        "desc": "<p>Vytvoř skript pro hráče: pohyb WASD (nebo šipky), rychlost jako public proměnná (výchozí 5). Pohyb nezávislý na FPS.</p>",
+        "hint": "float h = Input.GetAxis(\"Horizontal\"); transform.Translate(new Vector3(h, 0, v) * speed * Time.deltaTime);"
+      },
+      {
+        "title": "Čítač skóre se Singletonem",
+        "desc": "<p>Vytvoř GameManager Singleton s int Score. Metoda AddScore(int body). Při průchodu triggerem přidá 10 bodů. UI Text zobrazuje aktuální skóre.</p>",
+        "hint": "GameManager.Instance.AddScore(10); v OnTriggerEnter. scoreText.text = \"Score: \" + score;"
+      },
+      {
+        "title": "Timer s odpočítáváním",
+        "desc": "<p>Vytvoř skript Timer: float timeLeft = 60. V Update odpočítává. Při 0 zobrazí 'Game Over' a zastaví hru (Time.timeScale = 0).</p>",
+        "hint": "timeLeft -= Time.deltaTime; timerText.text = Mathf.Round(timeLeft).ToString();"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní MonoBehaviour",
+        "desc": "Doplň lifecycle metody.",
+        "template": "public class Hrac : ___1___ {\n  public float speed = 5f;\n\n  void ___2___() {\n    // Inicializace\n  }\n\n  void ___3___() {\n    float h = Input.GetAxis(\"Horizontal\");\n    transform.Translate(Vector3.right * h * speed * ___4___);\n  }\n}",
+        "answers": {
+          "1": "MonoBehaviour",
+          "2": "Start",
+          "3": "Update",
+          "4": "Time.deltaTime"
+        }
+      },
+      {
+        "title": "Singleton pattern",
+        "desc": "Doplň implementaci.",
+        "template": "public class GameManager : MonoBehaviour {\n  public static GameManager ___1___;\n\n  void Awake() {\n    if (___1___ == ___2___) ___1___ = this;\n    else ___3___(gameObject);\n  }\n}",
+        "answers": {
+          "1": "Instance",
+          "2": "null",
+          "3": "Destroy"
+        }
+      },
+      {
+        "title": "Input a pohyb",
+        "desc": "Doplň kód.",
+        "template": "// Pohyb:\nfloat h = Input.___1___(\"Horizontal\");\ntransform.___2___(Vector3.right * h);\n\n// Skok při mezerníku:\nif (Input.___3___(KeyCode.Space)) {\n  rb.AddForce(Vector3.up * 300f);\n}",
+        "answers": {
+          "1": "GetAxis",
+          "2": "Translate",
+          "3": "GetKeyDown"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "MonoBehaviour",
+        "def": "Základní třída Unity skriptů. Poskytuje lifecycle metody."
+      },
+      {
+        "term": "Update()",
+        "def": "Volána každý snímek. Pro vstup a logiku nezávislou na fyzice."
+      },
+      {
+        "term": "FixedUpdate()",
+        "def": "Volána každý fyzikální krok (50x/s). Pro pohyb přes Rigidbody."
+      },
+      {
+        "term": "Time.deltaTime",
+        "def": "Čas od posledního snímku. Zajistí pohyb nezávislý na FPS."
+      },
+      {
+        "term": "GetComponent<T>()",
+        "def": "Získá komponentu daného typu na stejném GameObject."
+      },
+      {
+        "term": "Singleton",
+        "def": "Návrhový vzor — pouze jedna instance třídy (GameManager.Instance)."
+      },
+      {
+        "term": "OnTriggerEnter",
+        "def": "Volána při vstupu do Trigger zóny. Bez fyzického odrazu."
+      },
+      {
+        "term": "Time.timeScale",
+        "def": "Rychlost času. 0 = pauza, 1 = normálně."
+      }
+    ]
+  },
+  "21": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Základy HTML",
+          "content": "<p><strong>HTML</strong> (HyperText Markup Language) definuje strukturu webové stránky pomocí <strong>tagů (značek)</strong>. Každý tag má otevírací a uzavírací část: <code>&lt;tag&gt;obsah&lt;/tag&gt;</code>.</p><p>Základní kostra stránky:</p><pre>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"cs\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;Název stránky&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;!-- obsah --&gt;\n&lt;/body&gt;\n&lt;/html&gt;</pre>"
+        },
+        {
+          "title": "Textové tagy",
+          "content": "<ul><li><code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> — nadpisy (h1 největší)</li><li><code>&lt;p&gt;</code> — odstavec</li><li><code>&lt;strong&gt;</code> — tučné</li><li><code>&lt;em&gt;</code> — kurzíva</li><li><code>&lt;br&gt;</code> — zalomení řádku (samouzavírací)</li><li><code>&lt;a href=\"url\"&gt;</code> — odkaz</li><li><code>&lt;img src=\"...\" alt=\"...\"&gt;</code> — obrázek</li></ul>"
+        },
+        {
+          "title": "Strukturální a sémantické tagy",
+          "content": "<ul><li><code>&lt;div&gt;</code> — blokový kontejner (bez sémantiky)</li><li><code>&lt;span&gt;</code> — řádkový kontejner</li><li><code>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, &lt;section&gt;, &lt;article&gt;</code> — sémantické HTML5 tagy</li></ul>"
+        },
+        {
+          "title": "Formuláře a tabulky",
+          "content": "<pre>&lt;form action=\"/odeslat\" method=\"POST\"&gt;\n  &lt;input type=\"text\" name=\"jmeno\" placeholder=\"Jméno\"&gt;\n  &lt;input type=\"email\" name=\"email\"&gt;\n  &lt;button type=\"submit\"&gt;Odeslat&lt;/button&gt;\n&lt;/form&gt;\n\n&lt;table&gt;\n  &lt;tr&gt;&lt;th&gt;Jméno&lt;/th&gt;&lt;th&gt;Věk&lt;/th&gt;&lt;/tr&gt;\n  &lt;tr&gt;&lt;td&gt;Jana&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Co definuje tag DOCTYPE?",
+        "options": [
+          "Název dokumentu",
+          "Verzi HTML (říká prohlížeči jak dokument parsovat)",
+          "Kódování znaků",
+          "Jazyk stránky"
+        ],
+        "correct": 1,
+        "feedback": "<!DOCTYPE html> říká prohlížeči, že dokument je HTML5. Musí být na prvním řádku."
+      },
+      {
+        "q": "Jaký je rozdíl mezi <strong> a <b>?",
+        "options": [
+          "Žádný",
+          "<strong> má sémantický význam (důraz), <b> jen vizuální tučné",
+          "<b> je novější",
+          "<strong> funguje pouze v HTML5"
+        ],
+        "correct": 1,
+        "feedback": "<strong> má sémantický význam — označuje důležitý text. <b> je jen vizuální formátování bez sémantiky."
+      },
+      {
+        "q": "Jaký atribut je povinný u tagu <img>?",
+        "options": [
+          "title",
+          "width",
+          "alt",
+          "class"
+        ],
+        "correct": 2,
+        "feedback": "Atribut alt (alternativní text) je povinný — popisuje obrázek pro čtečky obrazovky a zobrazí se pokud obrázek nelze načíst."
+      },
+      {
+        "q": "Co je sémantické HTML?",
+        "options": [
+          "HTML s CSS",
+          "Použití tagů které popisují smysl obsahu (header, nav, article)",
+          "HTML bez Javascriptu",
+          "Validované HTML"
+        ],
+        "correct": 1,
+        "feedback": "Sémantické HTML5 tagy (header, nav, main, footer, article) říkají prohlížeči a vyhledávačům co obsah znamená — ne jen jak vypadá."
+      },
+      {
+        "q": "Jaký atribut určuje kam formulář odešle data?",
+        "options": [
+          "method",
+          "target",
+          "action",
+          "name"
+        ],
+        "correct": 2,
+        "feedback": "Atribut action definuje URL na které budou data formuláře odeslána."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Osobní stránka",
+        "desc": "<p>Vytvoř HTML stránku s: nadpisem (jméno), odstavcem o sobě, fotkou (obrázek), odkazem na oblíbenou stránku a tabulkou s rozvrhem (3 dny × 3 předměty).</p>",
+        "hint": "Použij sémantické tagy: header, main, footer. Tabulka: table > tr > th/td."
+      },
+      {
+        "title": "Registrační formulář",
+        "desc": "<p>Vytvoř formulář s: jméno (text), email, heslo (password), datum narození (date), pohlaví (radio), zájmy (checkbox), a tlačítkem Odeslat.</p>",
+        "hint": "<input type=\"radio\" name=\"pohlavi\" value=\"m\"> — stejné name pro skupinu. Checkbox: type=\"checkbox\"."
+      },
+      {
+        "title": "Sémantická struktura",
+        "desc": "<p>Oprav nesémantický kód: nahraď <div id='header'> za <header>, <div id='nav'> za <nav>, <div id='main'> za <main>, <div id='footer'> za <footer>.</p>",
+        "hint": "Sémantické tagy mají stejné chování jako div, ale nesou informaci o obsahu pro prohlížeče a vyhledávače."
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Kostra HTML stránky",
+        "desc": "Doplň tagy.",
+        "template": "<!___1___ html>\n<html lang=\"cs\">\n<___2___>\n  <meta ___3___=\"UTF-8\">\n  <title>Moje stránka</title>\n</head>\n<___4___>\n  <h1>Ahoj světe</h1>\n</body>\n</html>",
+        "answers": {
+          "1": "DOCTYPE",
+          "2": "head",
+          "3": "charset",
+          "4": "body"
+        }
+      },
+      {
+        "title": "Odkaz a obrázek",
+        "desc": "Doplň atributy.",
+        "template": "<a ___1___=\"https://google.com\">Google</a>\n<img ___2___=\"foto.jpg\" ___3___=\"Moje fotka\">",
+        "answers": {
+          "1": "href",
+          "2": "src",
+          "3": "alt"
+        }
+      },
+      {
+        "title": "Formulářové prvky",
+        "desc": "Doplň typy vstupů.",
+        "template": "<input type=\"___1___\" placeholder=\"Jméno\">\n<input type=\"___2___\" placeholder=\"Email\">\n<input type=\"___3___\"> <!-- heslo -->\n<input type=\"___4___\"> <!-- datum -->",
+        "answers": {
+          "1": "text",
+          "2": "email",
+          "3": "password",
+          "4": "date"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "DOCTYPE",
+        "def": "Deklarace verze HTML. <!DOCTYPE html> = HTML5. Musí být na 1. řádku."
+      },
+      {
+        "term": "<head>",
+        "def": "Sekce s metadaty stránky (title, charset, CSS, meta tagy). Nezobrazuje se."
+      },
+      {
+        "term": "<body>",
+        "def": "Viditelný obsah stránky."
+      },
+      {
+        "term": "Sémantické tagy",
+        "def": "HTML5 tagy nesoucí smysl: header, nav, main, section, article, footer."
+      },
+      {
+        "term": "<a href>",
+        "def": "Odkaz (hyperlink). href atribut = cílová URL."
+      },
+      {
+        "term": "<img src alt>",
+        "def": "Obrázek. src = cesta, alt = alternativní text (povinný)."
+      },
+      {
+        "term": "<form action method>",
+        "def": "Formulář. action = URL pro odeslání, method = GET nebo POST."
+      },
+      {
+        "term": "alt atribut",
+        "def": "Alternativní text obrázku. Povinný pro přístupnost a SEO."
+      }
+    ]
+  },
+  "22": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je CSS?",
+          "content": "<p><strong>CSS</strong> (Cascading Style Sheets) definuje vzhled HTML stránek. Odděluje obsah (HTML) od prezentace.</p><p>Tři způsoby připojení CSS:</p><ul><li><strong>Inline</strong>: <code>&lt;p style=\"color:red\"&gt;</code></li><li><strong>Interní</strong>: v <code>&lt;style&gt;</code> tagu v head</li><li><strong>Externí</strong>: <code>&lt;link rel=\"stylesheet\" href=\"styl.css\"&gt;</code></li></ul>"
+        },
+        {
+          "title": "Selektory",
+          "content": "<pre>/* Tagový selektor */\np { color: blue; }\n\n/* Třídní selektor */\n.moje-trida { font-size: 16px; }\n\n/* ID selektor */\n#hlavicka { background: navy; }\n\n/* Kombinace */\ndiv.karta { border: 1px solid; }\n\n/* Potomek */\nnav a { text-decoration: none; }\n</pre>"
+        },
+        {
+          "title": "Box model",
+          "content": "<p>Každý HTML prvek je obdélník s vrstvami: <strong>content → padding → border → margin</strong>.</p><pre>div {\n  width: 200px;\n  padding: 10px;     /* vnitřní odsazení */\n  border: 2px solid; /* rámeček */\n  margin: 20px;      /* vnější odsazení */\n  box-sizing: border-box; /* width zahrnuje padding+border */\n}</pre>"
+        },
+        {
+          "title": "Flexbox a responzivita",
+          "content": "<pre>.kontejner {\n  display: flex;\n  justify-content: space-between; /* horizontální */\n  align-items: center;            /* vertikální */\n  gap: 10px;\n}\n\n/* Responzivita */\n@media (max-width: 768px) {\n  .kontejner { flex-direction: column; }\n}</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaká je správná specificita (priorita) selektorů?",
+        "options": [
+          "tag < třída < ID",
+          "ID < třída < tag",
+          "tag < ID < třída",
+          "Všechny jsou stejné"
+        ],
+        "correct": 0,
+        "feedback": "Specificita: tag (0,0,1) < třída (0,1,0) < ID (1,0,0). ID má nejvyšší prioritu, inline styly ještě vyšší."
+      },
+      {
+        "q": "Co je padding v box modelu?",
+        "options": [
+          "Vnější odsazení od okolních elementů",
+          "Vnitřní odsazení mezi obsahem a rámečkem",
+          "Tloušťka rámečku",
+          "Šířka elementu"
+        ],
+        "correct": 1,
+        "feedback": "Padding = vnitřní odsazení. Prostor mezi obsahem a rámečkem (border). Margin = vnější odsazení od ostatních prvků."
+      },
+      {
+        "q": "Jaká vlastnost aktivuje flexbox na kontejneru?",
+        "options": [
+          "flex: 1",
+          "position: flex",
+          "display: flex",
+          "flex-direction: row"
+        ],
+        "correct": 2,
+        "feedback": "display: flex nastaví kontejner jako flex kontejner. Potomci se stanou flex položkami."
+      },
+      {
+        "q": "Co dělá justify-content: center ve flexboxu?",
+        "options": [
+          "Vertikálně centruje obsah",
+          "Horizontálně centruje flex položky",
+          "Roztáhne položky na plnou šířku",
+          "Nastaví flex-direction"
+        ],
+        "correct": 1,
+        "feedback": "justify-content řídí zarovnání podél hlavní osy (horizontálně pro row). center = vystředění uprostřed."
+      },
+      {
+        "q": "K čemu slouží @media v CSS?",
+        "options": [
+          "Přehrávání videa",
+          "Vkládání externího CSS souboru",
+          "Podmíněné styly pro různé velikosti obrazovky",
+          "Animace"
+        ],
+        "correct": 2,
+        "feedback": "@media (media queries) aplikují styly pouze při splnění podmínky — nejčastěji maximální šířka pro responzivní design."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Karta profilu",
+        "desc": "<p>Nastyluj HTML kartu: obrázek profilu (kulatý — border-radius: 50%), jméno, popis. Karta má stín (box-shadow), zaoblené rohy, na hover změní barvu pozadí.</p>",
+        "hint": "border-radius: 50% dělá čtverec kruhem. box-shadow: 0 2px 8px rgba(0,0,0,0.2). :hover pseudo-třída."
+      },
+      {
+        "title": "Responzivní navigace",
+        "desc": "<p>Vytvoř horizontální navigaci s Flexboxem. Na mobilních zařízeních (max-width: 600px) se přepne na vertikální sloupec.</p>",
+        "hint": "nav ul { display: flex; list-style: none; gap: 20px; } @media (max-width: 600px) { flex-direction: column; }"
+      },
+      {
+        "title": "Grid layout",
+        "desc": "<p>Vytvoř 3-sloupcový grid pro galerii obrázků pomocí CSS Grid. Na mobilu 1 sloupec.</p>",
+        "hint": "display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; @media → grid-template-columns: 1fr;"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní selektory",
+        "desc": "Doplň typy selektorů.",
+        "template": "/* Všechny odstavce: */\n___1___ { color: blue; }\n\n/* Prvky s třídou 'karta': */\n___2___karta { border: 1px solid; }\n\n/* Prvek s ID 'hlavicka': */\n___3___hlavicka { background: navy; }",
+        "answers": {
+          "1": "p",
+          "2": ".",
+          "3": "#"
+        }
+      },
+      {
+        "title": "Box model",
+        "desc": "Doplň vlastnosti.",
+        "template": "div {\n  ___1___: 200px;      /* šířka obsahu */\n  ___2___: 16px;       /* vnitřní odsazení */\n  ___3___: 1px solid;  /* rámeček */\n  ___4___: 20px;       /* vnější odsazení */\n}",
+        "answers": {
+          "1": "width",
+          "2": "padding",
+          "3": "border",
+          "4": "margin"
+        }
+      },
+      {
+        "title": "Flexbox",
+        "desc": "Doplň vlastnosti flexboxu.",
+        "template": ".row {\n  display: ___1___;\n  ___2___-content: space-between;\n  ___3___-items: center;\n  gap: 10px;\n}",
+        "answers": {
+          "1": "flex",
+          "2": "justify",
+          "3": "align"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "Selektor",
+        "def": "Pravidlo určující na které HTML prvky se CSS aplikuje (tag, .třída, #id)."
+      },
+      {
+        "term": "Box model",
+        "def": "Content → Padding → Border → Margin. Každý prvek je obdélník."
+      },
+      {
+        "term": "Padding",
+        "def": "Vnitřní odsazení mezi obsahem a rámečkem."
+      },
+      {
+        "term": "Margin",
+        "def": "Vnější odsazení — prostor mimo rámeček oddělující od ostatních prvků."
+      },
+      {
+        "term": "Flexbox",
+        "def": "CSS layout. display:flex na kontejneru. Potomci se řadí flexibilně."
+      },
+      {
+        "term": "justify-content",
+        "def": "Zarovnání flex položek podél hlavní osy (horizontálně)."
+      },
+      {
+        "term": "align-items",
+        "def": "Zarovnání flex položek podél vedlejší osy (vertikálně)."
+      },
+      {
+        "term": "@media",
+        "def": "Media queries — podmíněné styly pro různá zařízení/velikosti obrazovky."
+      }
+    ]
+  },
+  "23": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je PHP?",
+          "content": "<p><strong>PHP</strong> (Hypertext Preprocessor) je serverový skriptovací jazyk. Kód běží na serveru, klient dostane HTML výsledek.</p><p>PHP kód se vkládá do HTML pomocí tagů <code>&lt;?php ... ?&gt;</code>.</p><pre>&lt;?php\n  $jmeno = \"Jana\";\n  echo \"Ahoj, \" . $jmeno . \"!\";\n?&gt;</pre>"
+        },
+        {
+          "title": "Základní syntaxe",
+          "content": "<p>Proměnné začínají <code>$</code>. Datové typy: string, int, float, bool, array.</p><pre>$cislo = 42;\n$text = \"Maturita\";\n$pole = [1, 2, 3];\n$pole[] = 4;  // přidání prvku\n\n// Podmínka:\nif ($cislo > 0) {\n  echo \"kladné\";\n}\n\n// Cyklus:\nforeach ($pole as $prvek) {\n  echo $prvek . \"&lt;br&gt;\";\n}</pre>"
+        },
+        {
+          "title": "Funkce a superglobální proměnné",
+          "content": "<pre>function secti($a, $b) {\n  return $a + $b;\n}\necho secti(3, 4);\n\n// Superglobální proměnné:\n$_GET['klic']    // data z URL parametrů\n$_POST['klic']   // data z formuláře POST\n$_SESSION['u']   // session data\n$_COOKIE['u']    // cookies</pre>"
+        },
+        {
+          "title": "Práce s formulářem",
+          "content": "<pre>&lt;form method=\"POST\" action=\"zpracuj.php\"&gt;\n  &lt;input type=\"text\" name=\"jmeno\"&gt;\n  &lt;button&gt;Odeslat&lt;/button&gt;\n&lt;/form&gt;\n\n// zpracuj.php:\n&lt;?php\n  $jmeno = htmlspecialchars($_POST['jmeno']);\n  echo \"Ahoj, \" . $jmeno;\n?&gt;</pre><p><code>htmlspecialchars()</code> chrání před XSS útoky.</p>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Čím začínají proměnné v PHP?",
+        "options": [
+          "#",
+          "@",
+          "$",
+          "&"
+        ],
+        "correct": 2,
+        "feedback": "Všechny proměnné v PHP začínají znakem $. Například $jmeno, $vek, $pole."
+      },
+      {
+        "q": "Kde běží PHP kód?",
+        "options": [
+          "V prohlížeči klienta",
+          "Na webovém serveru",
+          "V databázi",
+          "V operačním systému klienta"
+        ],
+        "correct": 1,
+        "feedback": "PHP je serverový jazyk — kód se vykonává na serveru. Klientovi je odesláno pouze HTML/CSS/JS."
+      },
+      {
+        "q": "Jak získáme data odeslaná formulářem metodou POST?",
+        "options": [
+          "$_GET['klic']",
+          "$_POST['klic']",
+          "$_FORM['klic']",
+          "$_REQUEST['klic'] vždy"
+        ],
+        "correct": 1,
+        "feedback": "$_POST[] obsahuje data odeslaná metodou POST (formulář). $_GET[] obsahuje URL parametry."
+      },
+      {
+        "q": "K čemu slouží htmlspecialchars()?",
+        "options": [
+          "Formátování HTML",
+          "Ochrana před XSS — převede < > na HTML entity",
+          "Kódování URL",
+          "Šifrování hesla"
+        ],
+        "correct": 1,
+        "feedback": "htmlspecialchars() převede znaky < > & na HTML entity — zabrání vložení škodlivého kódu (XSS útok)."
+      },
+      {
+        "q": "Jak přidáme prvek do pole v PHP?",
+        "options": [
+          "$pole.add(prvek)",
+          "$pole.push(prvek)",
+          "$pole[] = prvek",
+          "array_add($pole, prvek)"
+        ],
+        "correct": 2,
+        "feedback": "$pole[] = hodnota přidá hodnotu na konec pole. Alternativně: array_push($pole, hodnota)."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Kalkulačka v PHP",
+        "desc": "<p>Vytvoř HTML formulář (2 čísla, výběr operace) a PHP skript, který provede výpočet a zobrazí výsledek. Ošetři dělení nulou.</p>",
+        "hint": "<select name='op'><option>+</option>... switch($_POST['op']) { case '+': ... }"
+      },
+      {
+        "title": "Validace registrace",
+        "desc": "<p>Formulář: jméno, email, heslo. PHP zkontroluje: jméno neprázdné, email platný (filter_var), heslo min. 8 znaků. Zobrazí chyby nebo potvrzení.</p>",
+        "hint": "filter_var($email, FILTER_VALIDATE_EMAIL) vrátí false pokud email není platný. strlen($heslo) >= 8."
+      },
+      {
+        "title": "Výpis tabulky z pole",
+        "desc": "<p>Vytvoř PHP asociativní pole 5 studentů (jméno → průměr). Vypiš HTML tabulku seřazenou podle průměru.</p>",
+        "hint": "$studenti = ['Jana' => 1.5, 'Petr' => 2.3]; asort($studenti); foreach ($studenti as $jmeno => $prumer) { ... }"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Základní PHP syntaxe",
+        "desc": "Doplň kód.",
+        "template": "<?php\n  // Proměnná:\n  ___1___jmeno = \"Jana\";\n\n  // Výpis:\n  ___2___ \"Ahoj \" . $jmeno;\n\n  // Podmínka:\n  ___3___ ($vek >= 18) {\n    echo \"dospělý\";\n  }\n?>",
+        "answers": {
+          "1": "$",
+          "2": "echo",
+          "3": "if"
+        }
+      },
+      {
+        "title": "Formulář POST",
+        "desc": "Doplň zpracování formuláře.",
+        "template": "<?php\n  // Přečti POST data:\n  $jmeno = ___1___['jmeno'];\n\n  // Ochrana před XSS:\n  $jmeno = ___2___($jmeno);\n\n  // Výpis:\n  echo \"Ahoj \" . $jmeno;\n?>",
+        "answers": {
+          "1": "$_POST",
+          "2": "htmlspecialchars"
+        }
+      },
+      {
+        "title": "Pole a foreach",
+        "desc": "Doplň kód.",
+        "template": "$mesta = [\"Praha\", \"Brno\", \"Ostrava\"];\n\n// Přidání prvku:\n$mesta___1___ = \"Plzeň\";\n\n// Výpis:\n___2___ ($mesta as ___3___mesto) {\n  echo $mesto . \"<br>\";\n}",
+        "answers": {
+          "1": "[]",
+          "2": "foreach",
+          "3": "$"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "PHP",
+        "def": "Serverový skriptovací jazyk. Kód běží na serveru, klientovi se posílá HTML."
+      },
+      {
+        "term": "$proměnná",
+        "def": "Proměnné v PHP začínají znakem $. Slabě typovaný jazyk."
+      },
+      {
+        "term": "$_POST",
+        "def": "Superglobální pole s daty odeslanými formulářem metodou POST."
+      },
+      {
+        "term": "$_GET",
+        "def": "Superglobální pole s daty z URL parametrů (query string)."
+      },
+      {
+        "term": "echo",
+        "def": "Výstupní příkaz PHP. Vypíše text nebo HTML."
+      },
+      {
+        "term": "htmlspecialchars()",
+        "def": "Prevence XSS — převede < > & na HTML entity."
+      },
+      {
+        "term": "foreach",
+        "def": "Cyklus procházející pole: foreach ($pole as $prvek)."
+      },
+      {
+        "term": "$_SESSION",
+        "def": "Superglobální pole pro ukládání dat mezi HTTP požadavky (relace)."
+      }
+    ]
+  },
+  "24": {
+    "explain": {
+      "sections": [
+        {
+          "title": "Co je JavaScript?",
+          "content": "<p><strong>JavaScript (JS)</strong> je klientský skriptovací jazyk — běží přímo v prohlížeči. Umožňuje dynamické chování stránek: reagovat na události, měnit obsah, komunikovat se serverem.</p><p>Připojení k HTML:</p><pre>&lt;script src=\"skript.js\"&gt;&lt;/script&gt;\n// nebo inline:\n&lt;script&gt; alert(\"Ahoj!\"); &lt;/script&gt;</pre>"
+        },
+        {
+          "title": "Proměnné a funkce",
+          "content": "<pre>let jmeno = \"Jana\";     // proměnná (lze přiřadit)\nconst PI = 3.14;         // konstanta\nvar stare = \"zastaralé\";\n\n// Funkce:\nfunction secti(a, b) {\n  return a + b;\n}\n\n// Arrow funkce:\nconst secti = (a, b) => a + b;\n\n// Template literals:\nconsole.log(`Ahoj ${jmeno}!`);</pre>"
+        },
+        {
+          "title": "Manipulace s DOM",
+          "content": "<p><strong>DOM</strong> (Document Object Model) je strom HTML elementů. JS může přidávat, měnit a mazat prvky.</p><pre>// Výběr elementu:\nconst el = document.getElementById('muj-div');\nconst els = document.querySelectorAll('.karta');\n\n// Změna obsahu:\nel.textContent = 'Nový text';\nel.innerHTML = '&lt;strong&gt;Tučně&lt;/strong&gt;';\n\n// Přidání třídy:\nel.classList.add('aktivni');\nel.classList.toggle('skryt');</pre>"
+        },
+        {
+          "title": "Události a fetch",
+          "content": "<pre>// Event listener:\nbtn.addEventListener('click', () => {\n  console.log('Kliknuto!');\n});\n\n// Fetch API (asynchronní požadavek):\nfetch('https://api.example.com/data')\n  .then(r => r.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));\n</pre>"
+        }
+      ]
+    },
+    "quiz": [
+      {
+        "q": "Jaký je rozdíl mezi let a const?",
+        "options": [
+          "Žádný",
+          "let lze přiřadit novou hodnotu, const nelze",
+          "const je rychlejší",
+          "let je globální, const lokální"
+        ],
+        "correct": 1,
+        "feedback": "let deklaruje proměnnou jejíž hodnotu lze změnit. const = konstanta, hodnotě nelze přiřadit novou (ale objekt lze mutovat)."
+      },
+      {
+        "q": "Co je DOM?",
+        "options": [
+          "Databáze prohlížeče",
+          "Programovací jazyk",
+          "Strom HTML elementů dostupný v JavaScriptu",
+          "Protokol komunikace"
+        ],
+        "correct": 2,
+        "feedback": "DOM (Document Object Model) je reprezentace HTML dokumentu jako stromové struktury. JS ho může číst a upravovat."
+      },
+      {
+        "q": "Jak vybereme element s id='tlacitko' v JS?",
+        "options": [
+          "document.getElement('tlacitko')",
+          "document.getElementById('tlacitko')",
+          "document.find('#tlacitko')",
+          "document.select('tlacitko')"
+        ],
+        "correct": 1,
+        "feedback": "document.getElementById() vrátí jeden element s daným ID. Alternativa: document.querySelector('#tlacitko')."
+      },
+      {
+        "q": "Jak přidáme posluchač události na tlačítko?",
+        "options": [
+          "btn.onClick = fn",
+          "btn.addEvent('click', fn)",
+          "btn.addEventListener('click', fn)",
+          "btn.on('click', fn)"
+        ],
+        "correct": 2,
+        "feedback": "addEventListener() přidá posluchač události. První parametr = název události ('click', 'input', 'keydown'), druhý = funkce."
+      },
+      {
+        "q": "Co je arrow funkce?",
+        "options": [
+          "Funkce s šipkou v názvu",
+          "Zkrácená syntaxe pro funkci: (a, b) => a + b",
+          "Asynchronní funkce",
+          "Funkce vracející objekt"
+        ],
+        "correct": 1,
+        "feedback": "Arrow funkce je zkrácená syntaxe: const fn = (a) => a * 2. Kratší a neváže vlastní this."
+      }
+    ],
+    "tasks": [
+      {
+        "title": "Interaktivní počítadlo",
+        "desc": "<p>Vytvoř HTML stránku s číslem (výchozí 0) a dvěma tlačítky: + (zvýší o 1) a - (sníží o 1). Číslo se zobrazuje v elementu, pod 0 nejde.</p>",
+        "hint": "let pocet = 0; btn.addEventListener('click', () => { pocet++; el.textContent = pocet; });"
+      },
+      {
+        "title": "Validace formuláře v JS",
+        "desc": "<p>Formulář s polem pro email. Při odeslání JS zkontroluje formát emailu (obsahuje @ a .) — pokud ne, zobrazí chybovou zprávu (bez odeslání na server).</p>",
+        "hint": "event.preventDefault() zastaví odeslání. email.includes('@') && email.includes('.') pro základní validaci."
+      },
+      {
+        "title": "Fetch a zobrazení dat",
+        "desc": "<p>Načti data z veřejného API (https://jsonplaceholder.typicode.com/users) a zobraz jména prvních 5 uživatelů v HTML listu.</p>",
+        "hint": "fetch(url).then(r=>r.json()).then(data => { data.slice(0,5).forEach(u => { li.textContent = u.name; }) })"
+      }
+    ],
+    "codefill": [
+      {
+        "title": "Proměnné a výpis",
+        "desc": "Doplň kód.",
+        "template": "// Proměnná:\n___1___ jmeno = \"Jana\";\n\n// Konstanta:\n___2___ MAX = 100;\n\n// Template literal:\nconsole.log(___3___Ahoj ${jmeno}!___3___);",
+        "answers": {
+          "1": "let",
+          "2": "const",
+          "3": "`"
+        }
+      },
+      {
+        "title": "DOM manipulace",
+        "desc": "Doplň kód.",
+        "template": "// Výběr elementu:\nconst el = document.___1___('muj-id');\n\n// Změna textu:\nel.___2___ = 'Nový text';\n\n// Přidání třídy:\nel.classList.___3___('aktivni');",
+        "answers": {
+          "1": "getElementById",
+          "2": "textContent",
+          "3": "add"
+        }
+      },
+      {
+        "title": "Event listener",
+        "desc": "Doplň kód.",
+        "template": "const btn = document.getElementById('btn');\n\nbtn.___1___(___2___, () => {\n  console.log('Kliknuto!');\n  el.textContent = 'Ahoj!';\n});",
+        "answers": {
+          "1": "addEventListener",
+          "2": "'click'"
+        }
+      }
+    ],
+    "flashcards": [
+      {
+        "term": "JavaScript",
+        "def": "Klientský skriptovací jazyk. Běží v prohlížeči, umožňuje dynamické chování."
+      },
+      {
+        "term": "let / const",
+        "def": "Moderní deklarace proměnných. let = lze přiřadit, const = konstanta."
+      },
+      {
+        "term": "DOM",
+        "def": "Document Object Model — strom HTML elementů dostupný v JS."
+      },
+      {
+        "term": "getElementById()",
+        "def": "Vybere HTML element podle ID."
+      },
+      {
+        "term": "querySelector()",
+        "def": "Vybere první element odpovídající CSS selektoru."
+      },
+      {
+        "term": "addEventListener()",
+        "def": "Přidá posluchač události na element."
+      },
+      {
+        "term": "Arrow funkce",
+        "def": "Zkrácená syntaxe: const fn = (a, b) => a + b."
+      },
+      {
+        "term": "fetch()",
+        "def": "Asynchronní HTTP požadavek. Vrátí Promise s odpovědí."
+      }
+    ]
+  }
+}
