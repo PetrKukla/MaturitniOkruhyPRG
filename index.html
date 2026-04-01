@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maturita PRG — Přípravný portál</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo-mark">PR</div>
+            <div class="header-text">
+                <h1>Maturita PRG — Přípravný portál</h1>
+                <p>25 okruhů · Předgenerovaný obsah · 2023/2024</p>
+            </div>
+            <div class="header-badge" style="font-family:var(--mono)">⏳ Načítám obsah...</div>
+        </header>
+
+        <div class="app">
+            <!-- SIDEBAR -->
+            <aside class="sidebar" id="sidebar"></aside>
+
+            <!-- MAIN -->
+            <main class="main" id="main">
+                <div class="welcome" id="welcome">
+                    <div class="welcome-icon">🎓</div>
+                    <h2>Vyber okruh a procvičuj</h2>
+                    <p>Klikni na libovolný okruh vlevo. AI ti připraví vysvětlení, kvíz, praktické úlohy, doplňování kódu a flashcardy.</p>
+                    <div class="welcome-chips">
+                        <span class="chip chip-green">💡 Vysvětlení pojmů</span>
+                        <span class="chip chip-purple">🧩 Kvíz</span>
+                        <span class="chip chip-pink">⚙️ Praktické úlohy</span>
+                        <span class="chip chip-yellow">📝 Doplňování kódu</span>
+                        <span class="chip chip-green">🃏 Flashcardy</span>
+                    </div>
+                </div>
+                <div class="topic-view" id="topic-view" style="display:none;"></div>
+            </main>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>
