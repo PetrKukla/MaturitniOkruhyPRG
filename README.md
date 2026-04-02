@@ -25,6 +25,7 @@ Každý okruh je definován svým indexem a obsahuje tyto sekce:
 
 ```json
 "1": {
+  "version": 0, // Verze musí být před commitnutím zvýšena
   "explain": {
     "sections": [
       {
@@ -94,7 +95,8 @@ git checkout -b feature/nazev-tvoji-zmeny
 
 Proveď potřebné změny.
 
-- Tip: Pokud upravuješ data.json, doporučuji po uložení zkontrolovat validitu souboru (např. přes JSONLint), ať předejdeš chybám při načítání celého webu.
+> [!CAUTION]
+> Pokud upravuješ data.json, je nutné u změněného okruhu inkrementovat číslo verze. Ukládání postupu by jinak nefungovalo správně.
 
 ### 5. Commit a Push
 

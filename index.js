@@ -36,10 +36,60 @@ const GROUPS = [
     { label: "Webové technologie", range: [21,24] },
 ];
 
-let cache = {};         // Loaded from data.json at startup
+let cache = {};
 let currentOkruh = null;
 let activeTab = 'explain';
 let dataReady = false;
+
+const STORAGE_KEY = 'maturita_prg_progress';
+
+// ── LOCAL STORAGE HELPERS ──
+function getProgress() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+}
+
+function saveProgress(prog) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(prog));
+}
+
+function initTopicProgress(idx) {
+    if (!cache[idx]) return;
+    const prog = getProgress();
+    const currentVersion = cache[idx].version ?? "0";
+
+    if (!prog[idx] || prog[idx].version !== currentVersion) {
+        prog[idx] = {
+            version: currentVersion,
+            quiz: [],
+            codefill: []
+        };
+        saveProgress(prog);
+    }
+}
+
+function updateSidebarUI() {
+    const prog = getProgress();
+
+    OKRUHY.forEach((_, idx) => {
+        const btn = document.getElementById(`okruh-btn-${idx}`);
+        if (!btn || !cache[idx]) return;
+
+        initTopicProgress(idx);
+        const p = getProgress()[idx];
+
+        const qTotal = cache[idx].quiz ? cache[idx].quiz.length : 0;
+        const cTotal = cache[idx].codefill ? cache[idx].codefill.length : 0;
+
+        const qDone = p.quiz.length >= qTotal;
+        const cDone = p.codefill.length >= cTotal;
+
+        if (qDone && cDone && (qTotal > 0 || cTotal > 0)) {
+            btn.classList.add('completed-okruh');
+        } else {
+            btn.classList.remove('completed-okruh');
+        }
+    });
+}
 
 // ── LOAD data.json AT STARTUP ──
 async function loadData() {
@@ -47,13 +97,16 @@ async function loadData() {
         const res = await fetch('data.json');
         if (!res.ok) throw new Error(`data.json not found (HTTP ${res.status})`);
         const raw = await res.json();
-        // raw is { "0": {...}, "1": {...}, ... }
         Object.entries(raw).forEach(([k, v]) => { cache[parseInt(k)] = v; });
         dataReady = true;
+
         document.querySelector('.header-badge').textContent = '✓ Obsah načten';
         document.querySelector('.header-badge').style.background = 'rgba(74,222,128,0.1)';
         document.querySelector('.header-badge').style.borderColor = 'rgba(74,222,128,0.3)';
         document.querySelector('.header-badge').style.color = 'var(--correct)';
+
+        updateSidebarUI();
+
     } catch(e) {
         document.querySelector('.header-badge').textContent = '⚠ data.json chybí';
         document.querySelector('.header-badge').style.background = 'rgba(248,113,113,0.1)';
@@ -84,12 +137,30 @@ GROUPS.forEach(g => {
     }
 });
 
+// ── RESET ENTIRE TOPIC ──
+window.resetTopic = () => {
+    if (currentOkruh === null) return;
+    if (!confirm("Opravdu chceš vymazat veškerý svůj postup v tomto okruhu?")) return;
+
+    const prog = getProgress();
+    if (prog[currentOkruh]) {
+        prog[currentOkruh].quiz = [];
+        prog[currentOkruh].codefill = [];
+        saveProgress(prog);
+        updateSidebarUI();
+
+        // Znovu vykreslíme okruh
+        if (cache[currentOkruh]) {
+            renderAll(cache[currentOkruh]);
+        }
+    }
+};
+
 // ── LOAD TOPIC ──
 async function loadTopic(idx) {
     currentOkruh = idx;
     activeTab = 'explain';
 
-    // Update sidebar highlight
     document.querySelectorAll('.okruh-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(`okruh-btn-${idx}`).classList.add('active');
 
@@ -99,9 +170,12 @@ async function loadTopic(idx) {
 
     tv.innerHTML = `
     <div class="topic-header">
-      <div class="topic-header-top">
-        <span class="topic-num">OKRUH ${idx+1}</span>
-        <h2 class="topic-title">${ICONS[idx]} ${OKRUHY[idx]}</h2>
+      <div class="topic-header-top" style="display: flex; align-items: center;">
+        <div>
+          <span class="topic-num">OKRUH ${idx+1}</span>
+          <h2 class="topic-title">${ICONS[idx]} ${OKRUHY[idx]}</h2>
+        </div>
+        <button class="btn-reset-topic" onclick="resetTopic()">↻ Resetovat okruh</button>
       </div>
       <div class="tab-bar">
         <button class="tab-btn active" data-tab="explain" onclick="switchTab('explain')">
@@ -110,11 +184,11 @@ async function loadTopic(idx) {
         <button class="tab-btn" data-tab="quiz" onclick="switchTab('quiz')">
           <span class="tab-dot" style="background:var(--accent2)"></span>Kvíz
         </button>
+        <button class="tab-btn" data-tab="codefill" onclick="switchTab('codefill')">
+          <span class="tab-dot" style="background:var(--accent4)"></span>Doplňování
+        </button>
         <button class="tab-btn" data-tab="tasks" onclick="switchTab('tasks')">
           <span class="tab-dot" style="background:var(--accent3)"></span>Praktické úlohy
-        </button>
-        <button class="tab-btn" data-tab="codefill" onclick="switchTab('codefill')">
-          <span class="tab-dot" style="background:var(--accent4)"></span>Doplňování kódu
         </button>
         <button class="tab-btn" data-tab="flash" onclick="switchTab('flash')">
           <span class="tab-dot" style="background:var(--accent)"></span>Flashcardy
@@ -131,22 +205,21 @@ async function loadTopic(idx) {
   `;
 
     if (cache[idx]) {
+        initTopicProgress(idx);
         renderAll(cache[idx]);
     } else {
-        // data.json wasn't loaded or this okruh is missing
         ['explain','quiz','tasks','codefill','flash'].forEach(t => {
             const panel = document.getElementById(`panel-${t}`);
             if (panel) panel.innerHTML = `<div class="error-state">
         ⚠️ Obsah pro tento okruh nebyl nalezen.<br><br>
-        Ujisti se, že soubor <code>data.json</code> je ve stejné složce jako tato stránka.<br><br>
-        Pro vygenerování obsahu použij <strong>generator.html</strong>.
+        Ujisti se, že soubor <code>data.json</code> je ve stejné složce jako tato stránka.
       </div>`;
         });
     }
 }
 
 // ── SWITCH TAB ──
-function switchTab(tab) {
+window.switchTab = (tab) => {
     activeTab = tab;
     document.querySelectorAll('.tab-btn').forEach(b => {
         b.classList.toggle('active', b.dataset.tab === tab);
@@ -154,7 +227,7 @@ function switchTab(tab) {
     document.querySelectorAll('.tab-panel').forEach(p => {
         p.classList.toggle('active', p.id === `panel-${tab}`);
     });
-}
+};
 
 // ── RENDER ALL PANELS ──
 function renderAll(data) {
@@ -195,30 +268,79 @@ function renderQuiz(questions) {
         });
         html += `</div>
       <div class="quiz-feedback" id="quiz-fb-${qi}"></div>
+      <button class="btn-reset-quiz" id="quiz-reset-btn-${qi}" onclick="resetQuiz(${qi})" style="display:none;">↻ Zkusit znovu</button>
     </div>`;
     });
     html += '</div>';
     panel.innerHTML = html;
     panel._questions = questions;
+
+    const prog = getProgress()[currentOkruh];
+    if (prog && prog.quiz) {
+        prog.quiz.forEach(qi => {
+            const q = questions[qi];
+            if (q) checkQuiz(qi, q.correct, q.correct, true);
+        });
+    }
 }
 
-function checkQuiz(qi, selected, correct) {
-    // Disable all options for this question
+window.checkQuiz = (qi, selected, correct, skipSave = false) => {
     document.querySelectorAll(`#quiz-opts-${qi} .quiz-option`).forEach((btn, i) => {
         btn.disabled = true;
         if (i === correct) btn.classList.add('correct');
         else if (i === selected && selected !== correct) btn.classList.add('wrong');
     });
+
     const fb = document.getElementById(`quiz-fb-${qi}`);
     const panel = document.getElementById('panel-quiz');
     const q = panel._questions?.[qi];
+
     if (fb) {
         fb.className = `quiz-feedback show ${selected === correct ? 'correct' : 'wrong'}`;
         fb.innerHTML = selected === correct
             ? `✓ Správně! ${q?.feedback || ''}`
             : `✗ Špatně. ${q?.feedback || ''}`;
     }
-}
+
+    const resetBtn = document.getElementById(`quiz-reset-btn-${qi}`);
+    if (resetBtn) resetBtn.style.display = 'inline-block';
+
+    if (!skipSave && selected === correct && currentOkruh !== null) {
+        const prog = getProgress();
+        if (!prog[currentOkruh].quiz.includes(qi)) {
+            prog[currentOkruh].quiz.push(qi);
+            saveProgress(prog);
+            updateSidebarUI();
+        }
+    }
+};
+
+window.resetQuiz = (qi) => {
+    // Povolí tlačítka a vyčistí styly
+    document.querySelectorAll(`#quiz-opts-${qi} .quiz-option`).forEach(btn => {
+        btn.disabled = false;
+        btn.classList.remove('correct', 'wrong');
+    });
+
+    const fb = document.getElementById(`quiz-fb-${qi}`);
+    if (fb) {
+        fb.className = 'quiz-feedback';
+        fb.innerHTML = '';
+    }
+
+    const resetBtn = document.getElementById(`quiz-reset-btn-${qi}`);
+    if (resetBtn) resetBtn.style.display = 'none';
+
+    // Vymaže ze Storage
+    if (currentOkruh !== null) {
+        const prog = getProgress();
+        if (prog[currentOkruh] && prog[currentOkruh].quiz.includes(qi)) {
+            prog[currentOkruh].quiz = prog[currentOkruh].quiz.filter(id => id !== qi);
+            saveProgress(prog);
+            updateSidebarUI();
+        }
+    }
+};
 
 // ── RENDER TASKS ──
 function renderTasks(tasks) {
@@ -242,10 +364,10 @@ function renderTasks(tasks) {
     panel.innerHTML = html;
 }
 
-function toggleHint(i) {
+window.toggleHint = (i) => {
     const h = document.getElementById(`task-hint-${i}`);
     if (h) h.classList.toggle('show');
-}
+};
 
 // ── RENDER CODE FILL ──
 function renderCodeFill(exercises) {
@@ -256,13 +378,11 @@ function renderCodeFill(exercises) {
     exercises.forEach((ex, ei) => {
         let tpl = ex.template || '';
 
-        // Nahrazení ___N___ za input nebo select
         tpl = tpl.replace(/___(\d+)___/g, (_, n) => {
             const ans = (ex.answers || {})[n] || '';
             const opts = (ex.options || {})[n];
 
             if (Array.isArray(opts)) {
-                // Vygenerování dropdownu
                 let selectHtml = `<select class="fill-blank" id="fill-${ei}-${n}" data-answer="${ans.replace(/"/g, '&quot;')}">`;
                 selectHtml += `<option value="" disabled selected>?</option>`;
                 opts.forEach(opt => {
@@ -271,19 +391,18 @@ function renderCodeFill(exercises) {
                 selectHtml += `</select>`;
                 return selectHtml;
             } else {
-                // Fallback na klasický text input
                 return `<input class="fill-blank" id="fill-${ei}-${n}" data-answer="${ans.replace(/"/g, '&quot;')}" placeholder="??" spellcheck="false">`;
             }
         });
 
-        html += `<div class="code-fill-card">
+        html += `<div class="code-fill-card" id="code-fill-card-${ei}">
       <div class="code-fill-header">
         <span class="code-fill-badge">DOPLŇOVÁNÍ ${ei+1}</span>
         <span style="font-size:0.85rem;font-weight:600">${ex.title}</span>
       </div>
       <div class="code-fill-desc">${ex.desc}</div>
       <div class="code-fill-area">${tpl}</div>
-      <div class="code-fill-actions">
+      <div class="code-fill-actions" id="fill-actions-${ei}">
         <button class="btn-check" onclick="checkFill(${ei})">✓ Zkontrolovat</button>
         <button class="btn-reset" onclick="resetFill(${ei})">× Reset</button>
       </div>
@@ -293,10 +412,31 @@ function renderCodeFill(exercises) {
 
     html += '</div>';
     panel.innerHTML = html;
+
+    const prog = getProgress()[currentOkruh];
+    if (prog && prog.codefill) {
+        prog.codefill.forEach(ei => {
+            const inputs = document.querySelectorAll(`[id^="fill-${ei}-"]`);
+            inputs.forEach(inp => {
+                inp.value = inp.getAttribute('data-answer');
+                inp.disabled = true;
+                inp.classList.add('correct');
+            });
+
+            const res = document.getElementById(`fill-result-${ei}`);
+            if (res) {
+                res.className = 'code-fill-result show all-correct';
+                res.textContent = `✓ Výborně! Úloha již byla úspěšně vyřešena.`;
+            }
+
+            // Schováme tlačítko kontrola, ale Reset ponecháme
+            const checkBtn = document.querySelector(`#fill-actions-${ei} .btn-check`);
+            if (checkBtn) checkBtn.style.display = 'none';
+        });
+    }
 }
 
-// ── CHECK FILL ──
-function checkFill(ei) {
+window.checkFill = (ei) => {
     const inputs = document.querySelectorAll(`[id^="fill-${ei}-"]`);
     if (inputs.length === 0) return;
 
@@ -320,10 +460,22 @@ function checkFill(ei) {
             ? `✓ Výborně! Všechny odpovědi jsou správně.`
             : `✗ ${correct}/${total} správně. Zkus to znovu!`;
     }
-}
 
-// ── RESET FILL ──
-function resetFill(ei) {
+    if (correct === total && currentOkruh !== null) {
+        const prog = getProgress();
+        if (!prog[currentOkruh].codefill.includes(ei)) {
+            prog[currentOkruh].codefill.push(ei);
+            saveProgress(prog);
+            updateSidebarUI();
+
+            inputs.forEach(inp => inp.disabled = true);
+            const checkBtn = document.querySelector(`#fill-actions-${ei} .btn-check`);
+            if (checkBtn) checkBtn.style.display = 'none';
+        }
+    }
+};
+
+window.resetFill = (ei) => {
     const inputs = document.querySelectorAll(`[id^="fill-${ei}-"]`);
 
     inputs.forEach(inp => {
@@ -332,12 +484,27 @@ function resetFill(ei) {
         } else {
             inp.value = '';
         }
+        inp.disabled = false; // Znovu odemkneme
         inp.classList.remove('correct','wrong');
     });
 
     const res = document.getElementById(`fill-result-${ei}`);
     if (res) { res.className = 'code-fill-result'; res.textContent = ''; }
-}
+
+    // Obnovíme zobrazení tlačítka Kontrola
+    const checkBtn = document.querySelector(`#fill-actions-${ei} .btn-check`);
+    if (checkBtn) checkBtn.style.display = 'inline-block';
+
+    // Vymazat ze Storage
+    if (currentOkruh !== null) {
+        const prog = getProgress();
+        if (prog[currentOkruh] && prog[currentOkruh].codefill.includes(ei)) {
+            prog[currentOkruh].codefill = prog[currentOkruh].codefill.filter(id => id !== ei);
+            saveProgress(prog);
+            updateSidebarUI();
+        }
+    }
+};
 
 // ── RENDER FLASHCARDS ──
 function renderFlash(cards) {

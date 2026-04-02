@@ -223,6 +223,12 @@ header {
     margin-bottom: 1rem;
 }
 
+.topic-header-top div:first-child {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 .topic-num {
     font-family: var(--mono); font-size: 0.7rem;
     color: var(--accent); background: rgba(110,231,183,0.1);
@@ -661,13 +667,13 @@ select.fill-blank option {
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
 }
 
 .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
 
 .flashcard-front, .flashcard-back {
     position: absolute; inset: 0;
-    backface-visibility: hidden;
     border-radius: 12px;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
@@ -678,6 +684,7 @@ select.fill-blank option {
 .flashcard-front {
     background: var(--bg2);
     border: 1px solid var(--border);
+    z-index: 2;
 }
 
 .flashcard-back {
@@ -789,6 +796,68 @@ select.fill-blank option {
 /* Tab panel */
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
+
+/* Indikace kompletně splněného okruhu v sidebaru */
+.okruh-btn.completed-okruh {
+    background-color: rgba(74, 222, 128, 0.15);
+    border-left: 4px solid var(--correct, #4ade80);
+    color: var(--correct, #4ade80);
+}
+
+.okruh-btn.completed-okruh:hover {
+    background-color: rgba(74, 222, 128, 0.25);
+}
+
+.okruh-btn.completed-okruh .okruh-num {
+    background-color: var(--correct, #4ade80);
+    color: #111;
+}
+
+/* Úprava hotového codefillu, aby vypadal zablokovaně a hotově */
+.fill-blank:disabled.correct {
+    background-color: rgba(74, 222, 128, 0.1);
+    color: var(--correct, #4ade80);
+    border-color: var(--correct, #4ade80);
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+/* Tlačítko pro reset celého okruhu */
+.btn-reset-topic {
+    background: transparent;
+    border: 1px solid var(--text-muted, #666);
+    color: var(--text-muted, #666);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-left: auto; /* Odstrčí tlačítko doprava, pokud je header flex */
+    transition: all 0.2s;
+}
+
+.btn-reset-topic:hover {
+    background: rgba(248, 113, 113, 0.1);
+    color: var(--wrong, #f87171);
+    border-color: var(--wrong, #f87171);
+}
+
+/* Tlačítko pro reset kvízové otázky */
+.btn-reset-quiz {
+    background: transparent;
+    border: 1px solid var(--text-muted, #666);
+    color: var(--text-muted, #666);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    transition: all 0.2s;
+}
+
+.btn-reset-quiz:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
 
 @media (max-width: 768px) {
     .app { grid-template-columns: 1fr; }
