@@ -1,5 +1,6 @@
 {
     "0": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -109,7 +110,7 @@
             {
                 "title": "Komponenty PC",
                 "desc": "Doplň zkratky komponent.",
-                "template": "Mozek počítače = ___1___\nDočasná paměť = ___2___\nRychlé úložiště = ___3___\nGrafická karta = ___4___",
+                "template": "Procesor = ___1___\nDočasná paměť = ___2___\nRychlé perzistentní úložiště = ___3___\nGrafická karta = ___4___",
                 "answers": {
                     "1": "CPU",
                     "2": "RAM",
@@ -121,11 +122,17 @@
                 "title": "Vstupní a výstupní zařízení",
                 "desc": "Zařaď jako vstupní (V) nebo výstupní (O).",
                 "template": "Klávesnice = ___1___\nMonitor = ___2___\nMyš = ___3___\nTiskárna = ___4___",
+                "options": {
+                    "1": ["VSTUPNÍ", "VÝSTUPNÍ"],
+                    "2": ["VSTUPNÍ", "VÝSTUPNÍ"],
+                    "3": ["VSTUPNÍ", "VÝSTUPNÍ"],
+                    "4": ["VSTUPNÍ", "VÝSTUPNÍ"]
+                },
                 "answers": {
-                    "1": "V",
-                    "2": "O",
-                    "3": "V",
-                    "4": "O"
+                    "1": "VSTUPNÍ",
+                    "2": "VÝSTUPNÍ",
+                    "3": "VSTUPNÍ",
+                    "4": "VÝSTUPNÍ"
                 }
             }
         ],
@@ -165,6 +172,7 @@
         ]
     },
     "1": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -330,176 +338,182 @@
         ]
     },
     "2": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
-                    "title": "Základy a Operátory",
-                    "content": "<p>Booleova algebra pracuje výhradně s dvojkovou soustavou (hodnoty 0 a 1) [cite: 10, 11].</p><ul><li><strong>AND (Logický součin, *)</strong>: Vrací 1 pouze tehdy, když jsou oba vstupy 1 [cite: 14, 15, 16].</li><li><strong>OR (Logický součet, +)</strong>: Vrací 1, pokud je alespoň jeden ze vstupů 1 [cite: 19, 20, 22].</li><li><strong>NOT (Negace, čára nad)</strong>: Obrací hodnotu (0 na 1, 1 na 0) [cite: 23, 24, 25].</li><li><strong>Priorita operátorů</strong>: ZÁVORKY > NOT > AND > OR [cite: 26, 27].</li><li><strong>Odvozené operátory</strong>: NAND (negovaný AND), NOR (negovaný OR) a XOR (A*!B + !A*B)[cite: 28, 29, 30, 31].</li></ul>"
+                    "title": "Booleova algebra",
+                    "content": "<p><strong>Booleova algebra</strong> pracuje s hodnotami <strong>pravda (1)</strong> a <strong>nepravda (0)</strong>. Základní operace:</p><ul><li><strong>AND (∧)</strong> — 1 pouze pokud jsou OBA vstupy 1</li><li><strong>OR (∨)</strong> — 1 pokud je ALESPOŇ JEDEN vstup 1</li><li><strong>NOT (¬)</strong> — invertuje: 0→1, 1→0</li><li><strong>XOR</strong> — 1 pokud se vstupy liší</li><li><strong>NAND, NOR</strong> — negace AND/OR</li></ul>"
                 },
                 {
-                    "title": "Zákony pro zjednodušování",
-                    "content": "<ul><li><strong>Zákon agresivnosti</strong>: A*0=0, A+1=1 [cite: 40, 41, 42].</li><li><strong>Zákon neutrality</strong>: A*1=A, A+0=A [cite: 44, 45, 46].</li><li><strong>Idempotence</strong>: A*A=A, A+A=A [cite: 47, 48, 49].</li><li><strong>Zákon komplementarity</strong>: A*(!A)=0, A+(!A)=1 [cite: 51, 52, 53].</li><li><strong>De Morganovy zákony</strong>: Negace součinu se rovná součtu negací (!A+!B) a negace součtu se rovná součinu negací (!A*!B)[cite: 54, 55, 56].</li></ul>"
+                    "title": "Pravdivostní tabulka",
+                    "content": "<p>Zobrazuje výstupy pro všechny kombinace vstupů. Pro n vstupů: 2ⁿ řádků.</p><pre>AND:          OR:\na b | a∧b    a b | a∨b\n0 0 |  0    0 0 |  0\n0 1 |  0    0 1 |  1\n1 0 |  0    1 0 |  1\n1 1 |  1    1 1 |  1</pre>"
                 },
                 {
-                    "title": "Pravdivostní tabulka a K-mapa",
-                    "content": "<p><strong>Pravdivostní tabulka</strong> přehledně vypisuje výsledky výrazu pro všechny kombinace proměnných [cite: 57, 58, 59, 69].</p><p><strong>Karnaughova mapa</strong> slouží k minimalizaci:</p><ul><li>Musí mít 2ⁿ buněk, kde n je počet proměnných [cite: 79].</li><li>Řady se značí čarami, každá proměnná zabírá přesně polovinu buněk [cite: 80, 81].</li><li>Sousední jedničky se seskupují do skupin o velikosti mocniny 2 (1, 2, 4, 8...) [cite: 127].</li><li>Tabulka funguje jako <strong>torus</strong>, takže buňky lze seskupovat i přes hrany [cite: 128].</li><li>Buňka může patřit do více skupin[cite: 129]. Výsledný výraz vzniká součinem proměnných se stejnou hodnotou v dané skupině[cite: 132].</li></ul>"
+                    "title": "Karnaughova mapa",
+                    "content": "<p><strong>K-mapa</strong> je grafická metoda minimalizace. Sousední buňky se liší v 1 proměnné (Grayův kód). Hledáme co největší skupiny jedniček (1, 2, 4, 8...).</p>"
+                },
+                {
+                    "title": "Zákony Booleovy algebry",
+                    "content": "<ul><li><code>a + a = a</code> (idempotence)</li><li><code>a + ā = 1</code> (doplněk)</li><li><code>a · 1 = a</code></li><li><code>a · 0 = 0</code></li><li><code>a·(a+b) = a</code> (absorpce)</li></ul>"
                 }
             ]
         },
         "quiz": [
             {
-                "q": "Jaká je správná priorita logických operátorů?",
+                "q": "Jaký je výsledek 1 AND 0?",
                 "options": [
-                    "Závorky > AND > OR > NOT",
-                    "Závorky > NOT > AND > OR",
-                    "NOT > Závorky > AND > OR",
-                    "Závorky > NOT > OR > AND"
+                    "0",
+                    "1",
+                    "Neurčito",
+                    "Záleží na kontextu"
                 ],
-                "correct": 1,
-                "feedback": "ZÁVORKY mají vždy přednost, po nich následuje negace (NOT), logický součin (AND) a nakonec logický součet (OR)[cite: 26, 27]."
+                "correct": 0,
+                "feedback": "AND vrací 1 pouze pokud jsou OBA vstupy 1."
             },
             {
-                "q": "Jak by se zapsal De Morganův zákon pro negaci logického součtu: NOT (A + B)?",
+                "q": "Kolik řádků má pravdivostní tabulka pro 3 proměnné?",
                 "options": [
-                    "(NOT A) + (NOT B)",
-                    "(NOT A) * (NOT B)",
-                    "A * B",
-                    "NOT (A * B)"
-                ],
-                "correct": 1,
-                "feedback": "Negace součtu se podle De Morganových zákonů rovná součinu negací[cite: 54, 56]."
-            },
-            {
-                "q": "Co říká zákon agresivnosti pro logický součet (A + 1)?",
-                "options": [
-                    "Výsledek je A",
-                    "Výsledek je 0",
-                    "Výsledek je 1",
-                    "Záleží na hodnotě B"
-                ],
-                "correct": 2,
-                "feedback": "Zákon agresivnosti definuje, že A + 1 = 1[cite: 40, 42]."
-            },
-            {
-                "q": "Lze v Karnaughově mapě seskupit blok 6 buněk?",
-                "options": [
-                    "Ano, pokud spolu sousedí",
-                    "Ano, ale pouze ve středu mapy",
-                    "Ne, počet buněk ve skupině musí být sudý",
-                    "Ne, počet buněk musí být mocninou čísla 2"
-                ],
-                "correct": 3,
-                "feedback": "Sousední buňky se musí seskupovat výhradně tak, aby jejich počet byl mocninou čísla 2 (např. 1, 2, 4, 8)[cite: 127]."
-            },
-            {
-                "q": "Co znamená, že se Karnaughova mapa chová jako torus?",
-                "options": [
-                    "Má vždy tvar čtverce",
-                    "Může obsahovat pouze hodnoty 0 a 1",
-                    "Buňky na protilehlých okrajích lze seskupovat",
-                    "Pravdivostní hodnoty rotují"
-                ],
-                "correct": 2,
-                "feedback": "Torus znamená, že se okraje mapy pomyslně dotýkají, takže lze buňky seskupovat i přes hrany tabulky[cite: 128]."
-            },
-            {
-                "q": "Kolik buněk bude mít Karnaughova mapa pro výraz se 4 proměnnými?",
-                "options": [
+                    "3",
+                    "6",
                     "8",
-                    "12",
-                    "16",
-                    "32"
+                    "16"
                 ],
                 "correct": 2,
-                "feedback": "Karnaughova mapa musí mít 2ⁿ buněk, kde n je počet proměnných. Pro 4 proměnné je to 2⁴ = 16[cite: 79]."
+                "feedback": "2³ = 8 řádků."
+            },
+            {
+                "q": "Co je výsledek NOT 0?",
+                "options": [
+                    "0",
+                    "1",
+                    "Nedefinováno",
+                    "-1"
+                ],
+                "correct": 1,
+                "feedback": "NOT 0 = 1, NOT 1 = 0."
+            },
+            {
+                "q": "K čemu slouží Karnaughova mapa?",
+                "options": [
+                    "Zobrazení obvodů",
+                    "Minimalizace logických funkcí",
+                    "Převod čísel",
+                    "Návrh procesorů"
+                ],
+                "correct": 1,
+                "feedback": "K-mapa je grafická metoda minimalizace logických výrazů."
+            },
+            {
+                "q": "Jaký je výsledek 1 XOR 1?",
+                "options": [
+                    "0",
+                    "1",
+                    "2",
+                    "Neurčito"
+                ],
+                "correct": 0,
+                "feedback": "XOR vrací 1 pouze pokud se vstupy liší. 1 XOR 1 = 0."
             }
         ],
         "tasks": [
             {
-                "title": "Aplikace priorit",
-                "desc": "<p>Vyhodnoť výraz pro vstupy A=1, B=0, C=1. Výraz: <strong>Y = NOT A * B + C</strong></p>",
-                "hint": "Nezapomeň na správné pořadí: NOT má přednost před AND, AND má přednost před OR[cite: 27]."
+                "title": "Pravdivostní tabulka",
+                "desc": "<p>Sestavte pravdivostní tabulku pro <strong>y = a·b + ā·c</strong>. Sloupce: a, b, c, ā, a·b, ā·c, y.</p>",
+                "hint": "3 proměnné = 8 řádků. Nejdříve meziresultáty, pak výsledek OR."
             },
             {
-                "title": "Tvorba Karnaughovy mapy",
-                "desc": "<p>Zakresli do Karnaughovy mapy výraz, pro který platí Y=1, pokud A=1, B=0 a C=1.</p>",
-                "hint": "Zapiš 1 do buňky, která leží v oblasti vyznačené pro A a C, ale mimo oblast pro B[cite: 82]."
+                "title": "Minimalizace K-mapou",
+                "desc": "<p>Funkce: m0=1, m1=1, m2=0, m3=1, m4=0, m5=1, m6=0, m7=1. Sestav K-mapu (3 proměnné) a najdi minimalizovaný výraz.</p>",
+                "hint": "Hledej největší skupiny jedniček. Skupiny mohou přesahovat okraje."
             },
             {
-                "title": "Zjednodušení pomocí zákonů",
-                "desc": "<p>Aplikuj zákony Booleovy algebry pro zjednodušení výrazu: <strong>A * (A + NOT B)</strong></p>",
-                "hint": "Roznásob závorku a pamatuj na zákon idempotence (A*A=A) a další zjednodušení[cite: 47, 48]."
+                "title": "Majority funkce",
+                "desc": "<p>Navrhněte obvod: výstup=1 tehdy, když jsou alespoň 2 ze 3 vstupů (a,b,c) rovny 1. Postup: tabulka → K-mapa → obvod.</p>",
+                "hint": "Majority: y = ab + bc + ac"
             }
         ],
         "codefill": [
             {
-                "title": "Priorita operátorů",
-                "desc": "Seřaď operátory od nejvyšší priority (1) po nejnižší (4).",
-                "template": "1. ___1___\n2. ___2___\n3. ___3___\n4. ___4___",
-                "options": {
-                    "1": ["ZÁVORKY", "NOT", "AND", "OR"],
-                    "2": ["ZÁVORKY", "NOT", "AND", "OR"],
-                    "3": ["ZÁVORKY", "NOT", "AND", "OR"],
-                    "4": ["ZÁVORKY", "NOT", "AND", "OR"]
-                },
+                "title": "Výsledky AND",
+                "desc": "Doplň.",
+                "template": "0 AND 0 = ___1___\n0 AND 1 = ___2___\n1 AND 0 = ___3___\n1 AND 1 = ___4___",
                 "answers": {
-                    "1": "ZÁVORKY",
-                    "2": "NOT",
-                    "3": "AND",
-                    "4": "OR"
+                    "1": "0",
+                    "2": "0",
+                    "3": "0",
+                    "4": "1"
                 }
             },
             {
-                "title": "Zákony Booleovy algebry",
-                "desc": "Doplň výsledky podle probíraných zákonů.",
-                "template": "A + 1 = ___1___ (Agresivnost)\nA * 1 = ___2___ (Neutralita)\nA + A = ___3___ (Idempotence)\nA * NOT A = ___4___ (Komplementarita)",
+                "title": "OR a NOT",
+                "desc": "Doplň výsledky.",
+                "template": "0 OR 1 = ___1___\n1 OR 1 = ___2___\nNOT 0 = ___3___\nNOT 1 = ___4___\n1 XOR 0 = ___5___",
                 "answers": {
                     "1": "1",
-                    "2": "A",
-                    "3": "A",
-                    "4": "0"
+                    "2": "1",
+                    "3": "1",
+                    "4": "0",
+                    "5": "1"
                 }
             },
             {
-                "title": "Pravidla Karnaughovy mapy",
-                "desc": "Doplň základní vlastnosti mapy.",
-                "template": "Počet buněk se počítá jako 2 na ___1___.\nVelikost skupin buněk musí být ___2___ čísla 2.\nMapa se chová jako ___3___, lze spojovat okraje.\nZ každé skupiny získáme část výsledku ___4___ společných proměnných.",
+                "title": "Zákony algebry",
+                "desc": "Doplň výsledky.",
+                "template": "a AND 1 = ___1___\na AND 0 = ___2___\na OR 0 = ___3___\na OR 1 = ___4___\na OR ā = ___5___",
+                "options": {
+                    "1": ["a", "0", "1", "ā"],
+                    "2": ["a", "0", "1", "ā"],
+                    "3": ["a", "0", "1", "ā"],
+                    "4": ["a", "0", "1", "ā"],
+                    "5": ["a", "0", "1", "ā"]
+                },
                 "answers": {
-                    "1": "n",
-                    "2": "mocninou",
-                    "3": "torus",
-                    "4": "součinem"
+                    "1": "a",
+                    "2": "0",
+                    "3": "a",
+                    "4": "1",
+                    "5": "1"
                 }
             }
         ],
         "flashcards": [
             {
-                "term": "Priorita operátorů",
-                "def": "ZÁVORKY > NOT > AND > OR[cite: 26, 27]."
+                "term": "AND",
+                "def": "Logický součin. Výsledek 1 pouze pokud jsou oba vstupy 1."
             },
             {
-                "term": "Zákon agresivnosti",
-                "def": "A*0=0, A+1=1[cite: 40, 41, 42]."
+                "term": "OR",
+                "def": "Logický součet. Výsledek 1 pokud je alespoň jeden vstup 1."
             },
             {
-                "term": "Zákon neutrality",
-                "def": "A*1=A, A+0=A[cite: 44, 45, 46]."
+                "term": "NOT",
+                "def": "Negace. Invertuje hodnotu: 0→1, 1→0."
             },
             {
-                "term": "De Morganovy zákony",
-                "def": "Negace součinu = součet negací. Negace součtu = součin negací[cite: 54, 55, 56]."
+                "term": "XOR",
+                "def": "Exkluzivní OR. Výsledek 1 pouze pokud se vstupy liší."
             },
             {
-                "term": "Pravidlo Torusu v K-mapě",
-                "def": "Buňky lze seskupovat i přes hrany (okraje) tabulky, protože se chová jako torus[cite: 128]."
+                "term": "NAND",
+                "def": "Negace AND. Výsledek 0 pouze pokud jsou oba vstupy 1."
             },
             {
-                "term": "Velikost skupin v K-mapě",
-                "def": "Sousední buňky se seskupují tak, aby jejich počet byl mocninou čísla 2 (1, 2, 4, 8...)[cite: 127]."
+                "term": "Pravdivostní tabulka",
+                "def": "Tabulka výstupů pro všechny kombinace vstupů. 2ⁿ řádků pro n proměnných."
+            },
+            {
+                "term": "Karnaughova mapa",
+                "def": "Grafická metoda minimalizace. Hledáme největší skupiny jedniček."
+            },
+            {
+                "term": "Minimalizace",
+                "def": "Zjednodušení logického výrazu na ekvivalentní tvar s méně operacemi."
             }
         ]
     },
     "3": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -599,6 +613,14 @@
                 "title": "RS stavy",
                 "desc": "Doplň výstupy.",
                 "template": "S=1, R=0 → Q=___1___ (akce: ___2___)\nS=0, R=1 → Q=___3___ (akce: ___4___)\nS=0, R=0 → Q=___5___\nS=1, R=1 → ___6___",
+                "options": {
+                    "1": ["0", "1", "nedefinováno"],
+                    "2": ["Set", "Reset", "Paměť", "Zakázáno"],
+                    "3": ["0", "1", "nedefinováno"],
+                    "4": ["Set", "Reset", "Paměť", "Zakázáno"],
+                    "5": ["0", "1", "beze změny", "nedefinováno"],
+                    "6": ["beze změny", "Set", "Reset", "Zakázáno"]
+                },
                 "answers": {
                     "1": "1",
                     "2": "Set",
@@ -610,12 +632,18 @@
             },
             {
                 "title": "Typy obvodů",
-                "desc": "Zařaď jako kombinační (K) nebo sekvenční (S).",
+                "desc": "Zařaď jako kombinační nebo sekvenční.",
                 "template": "Sčítačka = ___1___\nRS flip-flop = ___2___\nMultiplexor = ___3___\nČítač = ___4___",
+                "options": {
+                    "1": ["KOMBINAČNÍ", "SEKVENČNÍ"],
+                    "2": ["KOMBINAČNÍ", "SEKVENČNÍ"],
+                    "3": ["KOMBINAČNÍ", "SEKVENČNÍ"],
+                    "4": ["KOMBINAČNÍ", "SEKVENČNÍ"]
+                },
                 "answers": {
-                    "1": "K",
-                    "2": "S",
-                    "3": "K",
+                    "1": "KOMBINAČNÍ",
+                    "2": "SEKVENČNÍ",
+                    "3": "KOMBINAČNÍ",
                     "4": "S"
                 }
             },
@@ -623,6 +651,11 @@
                 "title": "Pojmy",
                 "desc": "Doplň správné pojmy.",
                 "template": "Základní paměťový prvek = ___1___\nSignál synchronizující obvod = ___2___\nObvod bez paměti = ___3___",
+                "options": {
+                    "1": ["klopný obvod", "hradlo", "multiplexor"],
+                    "2": ["clock", "reset", "enable"],
+                    "3": ["sekvenční", "kombinační", "paměťový"]
+                },
                 "answers": {
                     "1": "klopný obvod",
                     "2": "clock",
@@ -666,6 +699,7 @@
         ]
     },
     "4": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -765,6 +799,12 @@
                 "title": "Principy senzorů",
                 "desc": "Přiřaď princip.",
                 "template": "Mění odpor → ___1___\nMění kapacitu → ___2___\nDeformace → napětí → ___3___\nTeplota → napětí → ___4___",
+                "options": {
+                    "1": ["odporový", "kapacitní", "indukční"],
+                    "2": ["kapacitní", "odporový", "termoelektrický"],
+                    "3": ["piezoelektrický", "indukční", "odporový"],
+                    "4": ["termoelektrický", "piezoelektrický", "kapacitní"]
+                },
                 "answers": {
                     "1": "odporový",
                     "2": "kapacitní",
@@ -776,6 +816,12 @@
                 "title": "Typy senzorů",
                 "desc": "Doplň kategorii.",
                 "template": "Termočlánek = ___1___ senzor\nUltrazvukový = ___2___ senzor\nAnalogový výstup = ___3___ signál\nI²C výstup = ___4___ signál",
+                "options": {
+                    "1": ["pasivní", "aktivní"],
+                    "2": ["pasivní", "aktivní"],
+                    "3": ["analogový", "digitální"],
+                    "4": ["analogový", "digitální"]
+                },
                 "answers": {
                     "1": "pasivní",
                     "2": "aktivní",
@@ -787,6 +833,11 @@
                 "title": "Příklady senzorů",
                 "desc": "Přiřaď senzor k veličině.",
                 "template": "Teplota = ___1___\nVzdálenost = ___2___\nSvětlo = ___3___",
+                "options": {
+                    "1": ["termistor", "HC-SR04", "fotorezistor"],
+                    "2": ["termistor", "HC-SR04", "fotorezistor"],
+                    "3": ["termistor", "HC-SR04", "fotorezistor"]
+                },
                 "answers": {
                     "1": "termistor",
                     "2": "HC-SR04",
@@ -830,6 +881,7 @@
         ]
     },
     "5": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -929,6 +981,13 @@
                 "title": "Součásti systému",
                 "desc": "Doplň funkci prvku.",
                 "template": "Kompresor = ___1___\nVzduchojemník = ___2___\nFRL = ___3___\nRozvaděč = ___4___\nVálec = ___5___",
+                "options": {
+                    "1": ["stlačuje vzduch", "ukládá stlačený vzduch", "filtruje a reguluje vzduch"],
+                    "2": ["ukládá stlačený vzduch", "stlačuje vzduch", "řídí tok vzduchu"],
+                    "3": ["filtruje a reguluje vzduch", "ukládá stlačený vzduch", "přeměňuje tlak na pohyb"],
+                    "4": ["řídí tok vzduchu", "stlačuje vzduch", "přeměňuje tlak na pohyb"],
+                    "5": ["přeměňuje tlak na pohyb", "řídí tok vzduchu", "ukládá stlačený vzduch"]
+                },
                 "answers": {
                     "1": "stlačuje vzduch",
                     "2": "ukládá stlačený vzduch",
@@ -941,6 +1000,12 @@
                 "title": "Typy rozvaděčů",
                 "desc": "Doplň vlastnost.",
                 "template": "Monostabilní → po odepnutí signálu se vrátí ___1___\nBistabilní → drží polohu ___2___\nOznačení 5/2 → ___3___ cest, ___4___ polohy",
+                "options": {
+                    "1": ["pružinou do výchozí", "do náhodné polohy", "vždy do polohy 5"],
+                    "2": ["bez napájení", "pouze s trvalým tlakem", "jen při sepnutí"],
+                    "3": ["2", "5", "3"],
+                    "4": ["2", "5", "3"]
+                },
                 "answers": {
                     "1": "pružinou do výchozí",
                     "2": "bez napájení",
@@ -952,6 +1017,11 @@
                 "title": "Typy válců",
                 "desc": "Doplň správný typ.",
                 "template": "Vzduch tlačí jen jedním směrem → ___1___ válec\nVzduch řídí pohyb oběma směry → ___2___ válec\nVrací pružina → ___3___ válec",
+                "options": {
+                    "1": ["jednočinný", "dvojčinný", "rotační"],
+                    "2": ["dvojčinný", "jednočinný", "pružinový"],
+                    "3": ["jednočinný", "dvojčinný", "monostabilní"]
+                },
                 "answers": {
                     "1": "jednočinný",
                     "2": "dvojčinný",
@@ -995,6 +1065,7 @@
         ]
     },
     "6": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -1094,6 +1165,12 @@
                 "title": "Cyklus PLC",
                 "desc": "Doplň kroky cyklu.",
                 "template": "Krok 1: Načti ___1___\nKrok 2: Zpracuj ___2___\nKrok 3: Nastav ___3___\nKrok 4: ___4___",
+                "options": {
+                    "1": ["vstupy", "výstupy", "napájení"],
+                    "2": ["program", "chyby", "vstupy"],
+                    "3": ["výstupy", "senzory", "adresy"],
+                    "4": ["Opakuj", "Konec", "Ulož"]
+                },
                 "answers": {
                     "1": "vstupy",
                     "2": "program",
@@ -1105,6 +1182,12 @@
                 "title": "Programovací jazyky",
                 "desc": "Doplň zkratku jazyka.",
                 "template": "Grafický, vypadá jako relé schéma = ___1___\nBlokové schéma funkcí = ___2___\nTextový, podobný Pascalu = ___3___\nStavový diagram = ___4___",
+                "options": {
+                    "1": ["LD", "ST", "IL"],
+                    "2": ["FBD", "SFC", "LD"],
+                    "3": ["ST", "IL", "FBD"],
+                    "4": ["SFC", "LD", "ST"]
+                },
                 "answers": {
                     "1": "LD",
                     "2": "FBD",
@@ -1116,6 +1199,12 @@
                 "title": "Typy PLC",
                 "desc": "Doplň vlastnosti.",
                 "template": "Vše v jednom tělese = ___1___ PLC\nRozšiřitelné moduly = ___2___ PLC\nSiemens S7-1200 = ___3___ PLC\nVhodný pro větší aplikace = ___4___ PLC",
+                "options": {
+                    "1": ["kompaktní", "modulární", "externí"],
+                    "2": ["modulární", "kompaktní", "integrované"],
+                    "3": ["kompaktní", "modulární", "analogové"],
+                    "4": ["modulární", "kompaktní", "jednoduché"]
+                },
                 "answers": {
                     "1": "kompaktní",
                     "2": "modulární",
@@ -1160,6 +1249,7 @@
         ]
     },
     "7": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -1240,7 +1330,7 @@
         "tasks": [
             {
                 "title": "Návrh domácí sítě",
-                "desc": "<p>Navrhni domácí síť pro byt s: 3 počítači, 2 chytrými televizory, 5 smartphony. Uveď:</p><ul><li>Potřebné síťové prvky</li><li>Typ kabeláže (nebo WiFi)</li><li>Adresní schéma (IP adresy)</li></ul>",
+                "desc": "<p>Navrhni domácí sítě pro byt s: 3 počítači, 2 chytrými televizory, 5 smartphony. Uveď:</p><ul><li>Potřebné síťové prvky</li><li>Typ kabeláže (nebo WiFi)</li><li>Adresní schéma (IP adresy)</li></ul>",
                 "hint": "Router od ISP → switch pro kabelová zařízení + WiFi AP. Typická domácí síť: 192.168.1.0/24."
             },
             {
@@ -1259,6 +1349,12 @@
                 "title": "Síťové prvky",
                 "desc": "Doplň funkci.",
                 "template": "Hub = posílá data ___1___\nSwitch = posílá data ___2___\nRouter = propojuje ___3___\nRepeater = ___4___",
+                "options": {
+                    "1": ["všem", "jen příjemci", "přes IP"],
+                    "2": ["jen příjemci", "všem", "do internetu"],
+                    "3": ["různé sítě", "stejné sítě", "jen tiskárny"],
+                    "4": ["zesiluje signál", "filtruje viry", "překládá DNS"]
+                },
                 "answers": {
                     "1": "všem",
                     "2": "jen příjemci",
@@ -1270,6 +1366,12 @@
                 "title": "Protokoly",
                 "desc": "Doplň účel protokolu.",
                 "template": "HTTP = protokol pro ___1___\nDNS = překlad ___2___\nIP = ___3___ adresování\nMAC = ___4___ adresa karty",
+                "options": {
+                    "1": ["web", "poštu", "soubory"],
+                    "2": ["jmen na IP", "IP na jména", "MAC na IP"],
+                    "3": ["logické", "fyzické", "vnitřní"],
+                    "4": ["fyzická", "logická", "virtuální"]
+                },
                 "answers": {
                     "1": "web",
                     "2": "jmen na IP",
@@ -1281,6 +1383,12 @@
                 "title": "Typy sítí",
                 "desc": "Doplň zkratku.",
                 "template": "Lokální síť v budově = ___1___\nRozsáhlá síť (internet) = ___2___\nRovnocenné uzly bez serveru = ___3___\nMěstská síť = ___4___",
+                "options": {
+                    "1": ["LAN", "WAN", "PAN"],
+                    "2": ["WAN", "LAN", "MAN"],
+                    "3": ["P2P", "Client-Server", "WiFi"],
+                    "4": ["MAN", "WAN", "SAN"]
+                },
                 "answers": {
                     "1": "LAN",
                     "2": "WAN",
@@ -1325,6 +1433,7 @@
         ]
     },
     "8": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -1424,6 +1533,12 @@
                 "title": "Značky diagramu",
                 "desc": "Doplň název značky.",
                 "template": "Začátek/Konec = ___1___\nZpracování = ___2___\nPodmínka = ___3___\nVstup/Výstup = ___4___",
+                "options": {
+                    "1": ["ovál", "čtverec", "jehlan"],
+                    "2": ["obdélník", "ovál", "kruh"],
+                    "3": ["kosočtverec", "trojúhelník", "lichoběžník"],
+                    "4": ["rovnoběžník", "hvězda", "kosočtverec"]
+                },
                 "answers": {
                     "1": "ovál",
                     "2": "obdélník",
@@ -1435,6 +1550,11 @@
                 "title": "Typy chyb",
                 "desc": "Doplň typ chyby.",
                 "template": "Chybějící závorka → ___1___ chyba\nDělení nulou za běhu → ___2___ chyba\nŠpatný výsledek výpočtu → ___3___ chyba",
+                "options": {
+                    "1": ["syntaktická", "logická", "sémantická"],
+                    "2": ["runtime", "syntaktická", "grafická"],
+                    "3": ["logická", "syntaktická", "síťová"]
+                },
                 "answers": {
                     "1": "syntaktická",
                     "2": "runtime",
@@ -1445,6 +1565,11 @@
                 "title": "Třídící algoritmy",
                 "desc": "Doplň složitost.",
                 "template": "Bubble sort nejhorší případ = ___1___\nQuick sort průměrný případ = ___2___\nBubble sort: porovnává ___3___ prvky",
+                "options": {
+                    "1": ["O(n²)", "O(n)", "O(log n)"],
+                    "2": ["O(n log n)", "O(n²)", "O(1)"],
+                    "3": ["sousední", "vzdálené", "liché"]
+                },
                 "answers": {
                     "1": "O(n²)",
                     "2": "O(n log n)",
@@ -1488,6 +1613,7 @@
         ]
     },
     "9": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -1587,6 +1713,12 @@
                 "title": "Základní struktura",
                 "desc": "Doplň správné funkce.",
                 "template": "void ___1___() {\n  // spustí se jednou\n  pinMode(13, ___2___);\n  Serial.begin(___3___);\n}\n\nvoid ___4___() {\n  // opakuje se stále\n  digitalWrite(13, HIGH);\n  delay(500);\n}",
+                "options": {
+                    "1": ["setup", "loop", "main"],
+                    "2": ["OUTPUT", "INPUT", "HIGH"],
+                    "3": ["9600", "115200", "500"],
+                    "4": ["loop", "setup", "run"]
+                },
                 "answers": {
                     "1": "setup",
                     "2": "OUTPUT",
@@ -1598,6 +1730,11 @@
                 "title": "Ovládání LED",
                 "desc": "Doplň příkazy.",
                 "template": "digitalWrite(pin, ___1___);  // rozsvítit\ndigitalWrite(pin, ___2___);  // zhasnout\ndelay(___3___);              // čekat 1 sekundu",
+                "options": {
+                    "1": ["HIGH", "LOW", "INPUT"],
+                    "2": ["LOW", "HIGH", "OUTPUT"],
+                    "3": ["1000", "1", "100"]
+                },
                 "answers": {
                     "1": "HIGH",
                     "2": "LOW",
@@ -1608,6 +1745,11 @@
                 "title": "Servo motor",
                 "desc": "Doplň kód pro servo.",
                 "template": "#include <___1___>\nServo myServo;\n\nvoid setup() {\n  myServo.___2___(9);  // připojit na pin 9\n}\n\nvoid loop() {\n  myServo.___3___(90);  // otočit na 90°\n  delay(2000);\n}",
+                "options": {
+                    "1": ["Servo.h", "Wire.h", "SoftwareSerial.h"],
+                    "2": ["attach", "write", "pin"],
+                    "3": ["write", "attach", "move"]
+                },
                 "answers": {
                     "1": "Servo.h",
                     "2": "attach",
@@ -1651,6 +1793,7 @@
         ]
     },
     "10": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -1750,6 +1893,11 @@
                 "title": "Digitální I/O",
                 "desc": "Doplň příkazy.",
                 "template": "// Nastavení pinu jako vstup s pull-up\npinMode(2, ___1___);\n\n// Čtení digitálního pinu\nint stav = ___2___(2);\n\n// LED svítí pokud není tlačítko stisknuto\ndigitalWrite(13, ___3___);\n// (tlačítko s pull-up: stisknuto = LOW)",
+                "options": {
+                    "1": ["INPUT_PULLUP", "INPUT", "OUTPUT"],
+                    "2": ["digitalRead", "analogRead", "pinRead"],
+                    "3": ["stav", "HIGH", "LOW"]
+                },
                 "answers": {
                     "1": "INPUT_PULLUP",
                     "2": "digitalRead",
@@ -1760,6 +1908,11 @@
                 "title": "A/D převod",
                 "desc": "Doplň kód.",
                 "template": "// Čtení analogového pinu\nint hodnota = ___1___(A0);\n\n// Převod na napětí v mV\nfloat napeti = hodnota * ___2___ / 1023.0;\n\n// Výpis přes Serial\nSerial.___3___(napeti);",
+                "options": {
+                    "1": ["analogRead", "digitalRead", "readAnalog"],
+                    "2": ["5000", "1024", "5"],
+                    "3": ["println", "write", "print"]
+                },
                 "answers": {
                     "1": "analogRead",
                     "2": "5000",
@@ -1768,8 +1921,14 @@
             },
             {
                 "title": "Logické úrovně",
-                "dest": "Doplň hodnoty.",
+                "desc": "Doplň hodnoty.",
                 "template": "HIGH = přibližně ___1___V\nLOW = přibližně ___2___V\nArduino ADC rozlišení = ___3___ bitů\nRozsah analogRead = 0 až ___4___",
+                "options": {
+                    "1": ["5", "0", "3.3"],
+                    "2": ["0", "5", "1.5"],
+                    "3": ["10", "8", "12"],
+                    "4": ["1023", "255", "512"]
+                },
                 "answers": {
                     "1": "5",
                     "2": "0",
@@ -1814,6 +1973,7 @@
         ]
     },
     "11": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -1913,6 +2073,11 @@
                 "title": "PWM výstup",
                 "desc": "Doplň kód.",
                 "template": "// PWM na pin 9\nint jas = 128;  // 50% jas\n___1___(9, jas);  // nastav PWM\n\n// Čtení potenciometru\nint val = ___2___(A0);  // 0–1023\n\n// Převod na PWM rozsah\nint pwm = val / ___3___;  // 0–255",
+                "options": {
+                    "1": ["analogWrite", "digitalWrite", "PWMWrite"],
+                    "2": ["analogRead", "digitalRead", "readADC"],
+                    "3": ["4", "1024", "255"]
+                },
                 "answers": {
                     "1": "analogWrite",
                     "2": "analogRead",
@@ -1923,6 +2088,11 @@
                 "title": "Střída",
                 "desc": "Doplň hodnoty.",
                 "template": "analogWrite(pin, 0);    // ___1___% duty cycle\nanalogWrite(pin, 127);  // přibližně ___2___% \nanalogWrite(pin, 255);  // ___3___% duty cycle",
+                "options": {
+                    "1": ["0", "100", "50"],
+                    "2": ["50", "25", "100"],
+                    "3": ["100", "0", "255"]
+                },
                 "answers": {
                     "1": "0",
                     "2": "50",
@@ -1933,6 +2103,12 @@
                 "title": "Napětí z ADC",
                 "desc": "Doplň výpočet.",
                 "template": "int raw = analogRead(A0);  // 0–1023\n// Výpočet napětí\nfloat volt = raw * ___1___ / ___2___;\n// Max. hodnota raw = ___3___\n// Odpovídá napětí ___4___ V",
+                "options": {
+                    "1": ["5.0", "1023.0", "255"],
+                    "2": ["1023", "5", "5000"],
+                    "3": ["1023", "1024", "255"],
+                    "4": ["5", "3.3", "12"]
+                },
                 "answers": {
                     "1": "5.0",
                     "2": "1023",
@@ -1977,6 +2153,7 @@
         ]
     },
     "12": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -2076,6 +2253,12 @@
                 "title": "HC-SR04",
                 "desc": "Doplň kód pro měření vzdálenosti.",
                 "template": "const int trigPin = 9;\nconst int echoPin = 10;\n\nvoid setup() {\n  pinMode(trigPin, ___1___);\n  pinMode(echoPin, ___2___);\n}\n\nvoid loop() {\n  digitalWrite(trigPin, ___3___);\n  delayMicroseconds(10);\n  digitalWrite(trigPin, LOW);\n  long dur = ___4___(echoPin, HIGH);\n  int dist = dur * 0.034 / 2;\n}",
+                "options": {
+                    "1": ["OUTPUT", "INPUT", "HIGH"],
+                    "2": ["INPUT", "OUTPUT", "LOW"],
+                    "3": ["HIGH", "LOW", "INPUT"],
+                    "4": ["pulseIn", "digitalRead", "analogRead"]
+                },
                 "answers": {
                     "1": "OUTPUT",
                     "2": "INPUT",
@@ -2087,6 +2270,12 @@
                 "title": "Fotorezistor",
                 "desc": "Doplň kód.",
                 "template": "// LDR na pin A0\nint svetlo = ___1___(A0);\n\n// Pokud je tma (hodnota > 700)\nif (svetlo ___2___ 700) {\n  digitalWrite(13, ___3___);  // rozsvítit\n} else {\n  digitalWrite(13, ___4___);\n}",
+                "options": {
+                    "1": ["analogRead", "digitalRead", "pinMode"],
+                    "2": [">", "<", "=="],
+                    "3": ["HIGH", "LOW", "OUTPUT"],
+                    "4": ["LOW", "HIGH", "INPUT"]
+                },
                 "answers": {
                     "1": "analogRead",
                     "2": ">",
@@ -2098,6 +2287,12 @@
                 "title": "Typy senzorů",
                 "desc": "Doplň typ výstupu.",
                 "template": "Fotorezistor = ___1___ výstup\nDS18B20 = ___2___ výstup (1-Wire)\nDHT22 = ___3___ výstup\nNTC termistor = ___4___ výstup",
+                "options": {
+                    "1": ["analogový", "digitální", "PWM"],
+                    "2": ["digitální", "analogový", "napěťový"],
+                    "3": ["digitální", "analogový", "I2C"],
+                    "4": ["analogový", "digitální", "sériový"]
+                },
                 "answers": {
                     "1": "analogový",
                     "2": "digitální",
@@ -2142,6 +2337,7 @@
         ]
     },
     "13": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -2241,6 +2437,13 @@
                 "title": "Deklarace proměnných",
                 "desc": "Doplň správné typy.",
                 "template": "___1___ jmeno = \"Jana\";\n___2___ vek = 17;\n___3___ vyska = 1.72;\n___4___ jeStudent = true;\n___5___ znamka = 'A';",
+                "options": {
+                    "1": ["string", "int", "char"],
+                    "2": ["int", "double", "bool"],
+                    "3": ["double", "float", "int"],
+                    "4": ["bool", "string", "long"],
+                    "5": ["char", "string", "byte"]
+                },
                 "answers": {
                     "1": "string",
                     "2": "int",
@@ -2253,6 +2456,13 @@
                 "title": "Zkrácené operátory",
                 "desc": "Doplň zkrácený zápis.",
                 "template": "i = i + 1;  →  ___1___\ni = i - 1;  →  ___2___\ni = i * 2;  →  ___3___\ni = i + 5;  →  ___4___\ni = i / 2;  →  ___5___",
+                "options": {
+                    "1": ["i++", "++i", "i+=1"],
+                    "2": ["i--", "--i", "i-=1"],
+                    "3": ["i *= 2", "i =* 2", "i**"],
+                    "4": ["i += 5", "i =+ 5", "i + 5"],
+                    "5": ["i /= 2", "i =/ 2", "i // 2"]
+                },
                 "answers": {
                     "1": "i++",
                     "2": "i--",
@@ -2265,6 +2475,13 @@
                 "title": "Logické operátory",
                 "desc": "Doplň výsledky.",
                 "template": "true && false = ___1___\ntrue || false = ___2___\n!true = ___3___\n5 > 3 = ___4___\n5 == 5 = ___5___",
+                "options": {
+                    "1": ["false", "true"],
+                    "2": ["true", "false"],
+                    "3": ["false", "true"],
+                    "4": ["true", "false"],
+                    "5": ["true", "false"]
+                },
                 "answers": {
                     "1": "false",
                     "2": "true",
@@ -2310,6 +2527,7 @@
         ]
     },
     "14": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -2409,6 +2627,12 @@
                 "title": "if-else struktura",
                 "desc": "Doplň klíčová slova.",
                 "template": "___1___ (x > 0) {\n  Console.WriteLine(\"kladné\");\n} ___2___ ___3___ (x < 0) {\n  Console.WriteLine(\"záporné\");\n} ___4___ {\n  Console.WriteLine(\"nula\");\n}",
+                "options": {
+                    "1": ["if", "else", "switch"],
+                    "2": ["else", "elif", "then"],
+                    "3": ["if", "case", "when"],
+                    "4": ["else", "default", "final"]
+                },
                 "answers": {
                     "1": "if",
                     "2": "else",
@@ -2420,6 +2644,12 @@
                 "title": "switch příkaz",
                 "desc": "Doplň strukturu.",
                 "template": "___1___ (den) {\n  ___2___ 1:\n    Console.WriteLine(\"Pondělí\");\n    ___3___;\n  case 2:\n    Console.WriteLine(\"Úterý\");\n    break;\n  ___4___:\n    Console.WriteLine(\"Jiný den\");\n    break;\n}",
+                "options": {
+                    "1": ["switch", "if", "select"],
+                    "2": ["case", "if", "item"],
+                    "3": ["break", "return", "exit"],
+                    "4": ["default", "else", "final"]
+                },
                 "answers": {
                     "1": "switch",
                     "2": "case",
@@ -2431,6 +2661,11 @@
                 "title": "do-while",
                 "desc": "Doplň strukturu.",
                 "template": "int vstup;\n___1___ {\n  Console.Write(\"Zadej číslo 1-10: \");\n  vstup = Convert.ToInt32(Console.ReadLine());\n} ___2___ (vstup < 1 ___3___ vstup > 10);",
+                "options": {
+                    "1": ["do", "while", "for"],
+                    "2": ["while", "until", "then"],
+                    "3": ["||", "&&", "!"]
+                },
                 "answers": {
                     "1": "do",
                     "2": "while",
@@ -2474,6 +2709,7 @@
         ]
     },
     "15": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -2573,6 +2809,11 @@
                 "title": "Základní for",
                 "desc": "Doplň cyklus pro výpis čísel 1–10.",
                 "template": "for (int ___1___ = 1; ___1___ ___2___ 10; ___1___++) {\n  Console.___3___(___1___);\n}",
+                "options": {
+                    "1": ["i", "j", "x"],
+                    "2": ["<=", "<", "=="],
+                    "3": ["WriteLine", "Write", "Print"]
+                },
                 "answers": {
                     "1": "i",
                     "2": "<=",
@@ -2583,6 +2824,11 @@
                 "title": "foreach",
                 "desc": "Doplň foreach pro výpis pole.",
                 "template": "string[] barvy = {\"červená\", \"modrá\", \"zelená\"};\n___1___ (string ___2___ ___3___ barvy) {\n  Console.WriteLine(___2___);\n}",
+                "options": {
+                    "1": ["foreach", "for", "while"],
+                    "2": ["barva", "item", "c"],
+                    "3": ["in", "of", "within"]
+                },
                 "answers": {
                     "1": "foreach",
                     "2": "barva",
@@ -2593,6 +2839,11 @@
                 "title": "Počítání výskytů",
                 "desc": "Doplň kód.",
                 "template": "string text = \"maturita\";\nint pocet = 0;\nforeach (___1___ c in text) {\n  if (c ___2___ 'a') {\n    ___3___++;\n  }\n}\nConsole.WriteLine($\"Počet 'a': {pocet}\");",
+                "options": {
+                    "1": ["char", "string", "var"],
+                    "2": ["==", "=", "!="],
+                    "3": ["pocet", "c", "text"]
+                },
                 "answers": {
                     "1": "char",
                     "2": "==",
@@ -2636,6 +2887,7 @@
         ]
     },
     "16": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -2735,6 +2987,12 @@
                 "title": "Deklarace pole",
                 "desc": "Doplň kód.",
                 "template": "// Pole 5 celých čísel (nuly):\nint[] pole = new ___1___[___2___];\n\n// Inicializace s hodnotami:\nstring[] jmena = {___3___, \"Petr\", \"Jana\"};\n\n// Délka pole:\nint delka = jmena.___4___;",
+                "options": {
+                    "1": ["int", "double", "var"],
+                    "2": ["5", "0", "Length"],
+                    "3": ["\"Anna\"", "Anna", "var"],
+                    "4": ["Length", "Count", "Size"]
+                },
                 "answers": {
                     "1": "int",
                     "2": "5",
@@ -2746,6 +3004,11 @@
                 "title": "Práce s List",
                 "desc": "Doplň operace.",
                 "template": "List&lt;string&gt; seznam = new List&lt;string&gt;();\nseznám.___1___(\"Praha\");  // přidat\nseznám.___2___(\"Brno\");   // odebrat\nint pocet = seznam.___3___;  // počet prvků",
+                "options": {
+                    "1": ["Add", "Insert", "Push"],
+                    "2": ["Remove", "Delete", "Pop"],
+                    "3": ["Count", "Length", "Capacity"]
+                },
                 "answers": {
                     "1": "Add",
                     "2": "Remove",
@@ -2756,6 +3019,12 @@
                 "title": "Dvourozměrné pole",
                 "desc": "Doplň kód.",
                 "template": "// 3 řádky, 3 sloupce:\nint[,] mat = new int[___1___,___2___];\nmat[0,0] = 1;\n\n// Počet řádků:\nint radky = mat.GetLength(___3___);\n// Počet sloupců:\nint sloupce = mat.GetLength(___4___);",
+                "options": {
+                    "1": ["3", "0", "Length"],
+                    "2": ["3", "0", "1"],
+                    "3": ["0", "1", "2"],
+                    "4": ["1", "0", "2"]
+                },
                 "answers": {
                     "1": "3",
                     "2": "3",
@@ -2800,6 +3069,7 @@
         ]
     },
     "17": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -2899,6 +3169,12 @@
                 "title": "Základní operace se soubory",
                 "desc": "Doplň metody.",
                 "template": "// Kontrola existence:\nbool existuje = File.___1___(\"data.txt\");\n\n// Přepis souboru:\nFile.___2___(\"data.txt\", \"nový obsah\");\n\n// Připsat na konec:\nFile.___3___(\"data.txt\", \"další řádek\\n\");\n\n// Přečíst vše:\nstring text = File.___4___(\"data.txt\");",
+                "options": {
+                    "1": ["Exists", "IsFile", "Check"],
+                    "2": ["WriteAllText", "SaveText", "CreateFile"],
+                    "3": ["AppendAllText", "AddAllText", "WriteAtEnd"],
+                    "4": ["ReadAllText", "GetAllText", "GetContent"]
+                },
                 "answers": {
                     "1": "Exists",
                     "2": "WriteAllText",
@@ -2910,6 +3186,12 @@
                 "title": "StreamWriter s using",
                 "desc": "Doplň kód.",
                 "template": "___1___ (StreamWriter sw = new ___2___(\"log.txt\", ___3___: true)) {\n  sw.___4___(\"Nový záznam\");\n}",
+                "options": {
+                    "1": ["using", "while", "with"],
+                    "2": ["StreamWriter", "FileWriter", "TextWriter"],
+                    "3": ["append", "overwrite", "mode"],
+                    "4": ["WriteLine", "Print", "Write"]
+                },
                 "answers": {
                     "1": "using",
                     "2": "StreamWriter",
@@ -2921,6 +3203,10 @@
                 "title": "StreamReader čtení",
                 "desc": "Doplň kód.",
                 "template": "using (StreamReader sr = new StreamReader(\"soubor.txt\")) {\n  string radek;\n  while ((radek = sr.___1___()) ___2___ null) {\n    Console.WriteLine(radek);\n  }\n}",
+                "options": {
+                    "1": ["ReadLine", "ReadText", "GetLine"],
+                    "2": ["!=", "==", "is"]
+                },
                 "answers": {
                     "1": "ReadLine",
                     "2": "!="
@@ -2963,6 +3249,7 @@
         ]
     },
     "18": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -3062,6 +3349,13 @@
                 "title": "Základní třída",
                 "desc": "Doplň strukturu třídy.",
                 "template": "___1___ Auto {\n  ___2___ string Znacka;  // private\n  ___3___ int Rok;        // public\n\n  ___4___ Auto(string znacka, int rok) {\n    ___5___.Znacka = znacka;\n    this.Rok = rok;\n  }\n}",
+                "options": {
+                    "1": ["class", "struct", "void"],
+                    "2": ["private", "public", "protected"],
+                    "3": ["public", "private", "internal"],
+                    "4": ["public", "new", "constructor"],
+                    "5": ["this", "Auto", "super"]
+                },
                 "answers": {
                     "1": "class",
                     "2": "private",
@@ -3074,6 +3368,11 @@
                 "title": "Property",
                 "desc": "Doplň property.",
                 "template": "private int _vek;\npublic int Vek {\n  ___1___ { return _vek; }\n  ___2___ {\n    if (___3___ >= 0) _vek = ___3___;\n  }\n}",
+                "options": {
+                    "1": ["get", "read", "return"],
+                    "2": ["set", "write", "assign"],
+                    "3": ["value", "input", "val"]
+                },
                 "answers": {
                     "1": "get",
                     "2": "set",
@@ -3084,6 +3383,11 @@
                 "title": "Dědičnost",
                 "desc": "Doplň klíčová slova.",
                 "template": "class Tvar {\n  public ___1___ void Vykresli() { }\n}\n\nclass Kruh : ___2___ {\n  public ___3___ void Vykresli() {\n    Console.WriteLine(\"○\");\n  }\n}",
+                "options": {
+                    "1": ["virtual", "override", "abstract"],
+                    "2": ["Tvar", "Osoba", "Auto"],
+                    "3": ["override", "virtual", "new"]
+                },
                 "answers": {
                     "1": "virtual",
                     "2": "Tvar",
@@ -3127,6 +3431,7 @@
         ]
     },
     "19": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -3226,6 +3531,11 @@
                 "title": "Click handler",
                 "desc": "Doplň handler pro výpočet.",
                 "template": "private void ___1___(object sender, EventArgs e) {\n  double a = Convert.ToDouble(txtA.___2___);\n  double b = Convert.ToDouble(txtB.Text);\n  lblVysledek.___2___ = (a + b).___3___();\n}",
+                "options": {
+                    "1": ["btnVypocti_Click", "onClick", "button1"],
+                    "2": ["Text", "Value", "Content"],
+                    "3": ["ToString", "ToString(\"F2\")", "Convert"]
+                },
                 "answers": {
                     "1": "btnVypocti_Click",
                     "2": "Text",
@@ -3236,6 +3546,11 @@
                 "title": "Timer",
                 "desc": "Doplň kód pro timer.",
                 "template": "// Inicializace:\ntimer1.___1___ = 1000;\ntimer1.___2___();\n\n// Tick handler:\nprivate void timer1_Tick(object sender, EventArgs e) {\n  lblCas.Text = DateTime.Now.___3___(\"HH:mm:ss\");\n}",
+                "options": {
+                    "1": ["Interval", "Time", "Delay"],
+                    "2": ["Start", "Run", "Enable"],
+                    "3": ["ToString", "ToLongTimeString", "Format"]
+                },
                 "answers": {
                     "1": "Interval",
                     "2": "Start",
@@ -3246,6 +3561,10 @@
                 "title": "TextBox a Label",
                 "desc": "Doplň vlastnosti.",
                 "template": "// Čtení textu:\nstring vstup = textBox1.___1___;\n\n// Zápis do Label:\nlabel1.___1___ = \"Výsledek: \" + vysledek;\n\n// Vymazání TextBox:\ntextBox1.___1___ = ___2___;",
+                "options": {
+                    "1": ["Text", "Value", "Content"],
+                    "2": ["\"\"", "null", "empty"]
+                },
                 "answers": {
                     "1": "Text",
                     "2": "\"\""
@@ -3288,6 +3607,7 @@
         ]
     },
     "20": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -3387,6 +3707,12 @@
                 "title": "Základní MonoBehaviour",
                 "desc": "Doplň lifecycle metody.",
                 "template": "public class Hrac : ___1___ {\n  public float speed = 5f;\n\n  void ___2___() {\n    // Inicializace\n  }\n\n  void ___3___() {\n    float h = Input.GetAxis(\"Horizontal\");\n    transform.Translate(Vector3.right * h * speed * ___4___);\n  }\n}",
+                "options": {
+                    "1": ["MonoBehaviour", "GameObject", "Component"],
+                    "2": ["Start", "Awake", "Update"],
+                    "3": ["Update", "FixedUpdate", "LateUpdate"],
+                    "4": ["Time.deltaTime", "Time.time", "speed"]
+                },
                 "answers": {
                     "1": "MonoBehaviour",
                     "2": "Start",
@@ -3398,6 +3724,11 @@
                 "title": "Singleton pattern",
                 "desc": "Doplň implementaci.",
                 "template": "public class GameManager : MonoBehaviour {\n  public static GameManager ___1___;\n\n  void Awake() {\n    if (___1___ == ___2___) ___1___ = this;\n    else ___3___(gameObject);\n  }\n}",
+                "options": {
+                    "1": ["Instance", "Main", "Manager"],
+                    "2": ["null", "this", "0"],
+                    "3": ["Destroy", "Remove", "Dispose"]
+                },
                 "answers": {
                     "1": "Instance",
                     "2": "null",
@@ -3408,6 +3739,11 @@
                 "title": "Input a pohyb",
                 "desc": "Doplň kód.",
                 "template": "// Pohyb:\nfloat h = Input.___1___(\"Horizontal\");\ntransform.___2___(Vector3.right * h);\n\n// Skok při mezerníku:\nif (Input.___3___(KeyCode.Space)) {\n  rb.AddForce(Vector3.up * 300f);\n}",
+                "options": {
+                    "1": ["GetAxis", "GetButton", "GetKey"],
+                    "2": ["Translate", "Rotate", "Position"],
+                    "3": ["GetKeyDown", "GetKey", "GetAxis"]
+                },
                 "answers": {
                     "1": "GetAxis",
                     "2": "Translate",
@@ -3451,6 +3787,7 @@
         ]
     },
     "21": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -3550,6 +3887,12 @@
                 "title": "Kostra HTML stránky",
                 "desc": "Doplň tagy.",
                 "template": "<!___1___ html>\n<html lang=\"cs\">\n<___2___>\n  <meta ___3___=\"UTF-8\">\n  <title>Moje stránka</title>\n</head>\n<___4___>\n  <h1>Ahoj světe</h1>\n</body>\n</html>",
+                "options": {
+                    "1": ["DOCTYPE", "HTML", "VERSION"],
+                    "2": ["head", "header", "meta"],
+                    "3": ["charset", "lang", "encoding"],
+                    "4": ["body", "main", "content"]
+                },
                 "answers": {
                     "1": "DOCTYPE",
                     "2": "head",
@@ -3561,6 +3904,11 @@
                 "title": "Odkaz a obrázek",
                 "desc": "Doplň atributy.",
                 "template": "<a ___1___=\"https://google.com\">Google</a>\n<img ___2___=\"foto.jpg\" ___3___=\"Moje fotka\">",
+                "options": {
+                    "1": ["href", "src", "link"],
+                    "2": ["src", "href", "url"],
+                    "3": ["alt", "title", "name"]
+                },
                 "answers": {
                     "1": "href",
                     "2": "src",
@@ -3570,7 +3918,13 @@
             {
                 "title": "Formulářové prvky",
                 "desc": "Doplň typy vstupů.",
-                "template": "<input type=\"___1___\" placeholder=\"Jméno\">\n<input type=\"___2___\" placeholder=\"Email\">\n<input type=\"___3___\"> <!-- heslo -->\n<input type=\"___4___\"> <!-- datum -->",
+                "template": "<input type=\"___1___\" placeholder=\"Jméno\">\n<input type=\"___2___\" placeholder=\"Email\">\n<input type=\"___3___\"> \n<input type=\"___4___\"> ",
+                "options": {
+                    "1": ["text", "name", "input"],
+                    "2": ["email", "text", "mail"],
+                    "3": ["password", "hidden", "secret"],
+                    "4": ["date", "time", "calendar"]
+                },
                 "answers": {
                     "1": "text",
                     "2": "email",
@@ -3615,6 +3969,7 @@
         ]
     },
     "22": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -3714,6 +4069,11 @@
                 "title": "Základní selektory",
                 "desc": "Doplň typy selektorů.",
                 "template": "/* Všechny odstavce: */\n___1___ { color: blue; }\n\n/* Prvky s třídou 'karta': */\n___2___karta { border: 1px solid; }\n\n/* Prvek s ID 'hlavicka': */\n___3___hlavicka { background: navy; }",
+                "options": {
+                    "1": ["p", "div", "h1"],
+                    "2": [".", "#", "@"],
+                    "3": ["#", ".", "@"]
+                },
                 "answers": {
                     "1": "p",
                     "2": ".",
@@ -3724,6 +4084,12 @@
                 "title": "Box model",
                 "desc": "Doplň vlastnosti.",
                 "template": "div {\n  ___1___: 200px;      /* šířka obsahu */\n  ___2___: 16px;       /* vnitřní odsazení */\n  ___3___: 1px solid;  /* rámeček */\n  ___4___: 20px;       /* vnější odsazení */\n}",
+                "options": {
+                    "1": ["width", "height", "size"],
+                    "2": ["padding", "margin", "border"],
+                    "3": ["border", "outline", "background"],
+                    "4": ["margin", "padding", "gap"]
+                },
                 "answers": {
                     "1": "width",
                     "2": "padding",
@@ -3735,6 +4101,11 @@
                 "title": "Flexbox",
                 "desc": "Doplň vlastnosti flexboxu.",
                 "template": ".row {\n  display: ___1___;\n  ___2___-content: space-between;\n  ___3___-items: center;\n  gap: 10px;\n}",
+                "options": {
+                    "1": ["flex", "grid", "block"],
+                    "2": ["justify", "align", "place"],
+                    "3": ["align", "justify", "self"]
+                },
                 "answers": {
                     "1": "flex",
                     "2": "justify",
@@ -3778,6 +4149,7 @@
         ]
     },
     "23": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -3877,6 +4249,11 @@
                 "title": "Základní PHP syntaxe",
                 "desc": "Doplň kód.",
                 "template": "<?php\n  // Proměnná:\n  ___1___jmeno = \"Jana\";\n\n  // Výpis:\n  ___2___ \"Ahoj \" . $jmeno;\n\n  // Podmínka:\n  ___3___ ($vek >= 18) {\n    echo \"dospělý\";\n  }\n?>",
+                "options": {
+                    "1": ["$", "#", "var"],
+                    "2": ["echo", "print", "println"],
+                    "3": ["if", "switch", "when"]
+                },
                 "answers": {
                     "1": "$",
                     "2": "echo",
@@ -3887,6 +4264,10 @@
                 "title": "Formulář POST",
                 "desc": "Doplň zpracování formuláře.",
                 "template": "<?php\n  // Přečti POST data:\n  $jmeno = ___1___['jmeno'];\n\n  // Ochrana před XSS:\n  $jmeno = ___2___($jmeno);\n\n  // Výpis:\n  echo \"Ahoj \" . $jmeno;\n?>",
+                "options": {
+                    "1": ["$_POST", "$_GET", "$_REQUEST"],
+                    "2": ["htmlspecialchars", "strip_tags", "urlencode"]
+                },
                 "answers": {
                     "1": "$_POST",
                     "2": "htmlspecialchars"
@@ -3896,6 +4277,11 @@
                 "title": "Pole a foreach",
                 "desc": "Doplň kód.",
                 "template": "$mesta = [\"Praha\", \"Brno\", \"Ostrava\"];\n\n// Přidání prvku:\n$mesta___1___ = \"Plzeň\";\n\n// Výpis:\n___2___ ($mesta as ___3___mesto) {\n  echo $mesto . \"<br>\";\n}",
+                "options": {
+                    "1": ["[]", "[4]", ".push()"],
+                    "2": ["foreach", "for", "while"],
+                    "3": ["$", "#", "&"]
+                },
                 "answers": {
                     "1": "[]",
                     "2": "foreach",
@@ -3939,6 +4325,7 @@
         ]
     },
     "24": {
+        "version": 0,
         "explain": {
             "sections": [
                 {
@@ -4038,6 +4425,11 @@
                 "title": "Proměnné a výpis",
                 "desc": "Doplň kód.",
                 "template": "// Proměnná:\n___1___ jmeno = \"Jana\";\n\n// Konstanta:\n___2___ MAX = 100;\n\n// Template literal:\nconsole.log(___3___Ahoj ${jmeno}!___3___);",
+                "options": {
+                    "1": ["let", "var", "const"],
+                    "2": ["const", "let", "readonly"],
+                    "3": ["`", "'", "\""]
+                },
                 "answers": {
                     "1": "let",
                     "2": "const",
@@ -4048,6 +4440,11 @@
                 "title": "DOM manipulace",
                 "desc": "Doplň kód.",
                 "template": "// Výběr elementu:\nconst el = document.___1___('muj-id');\n\n// Změna textu:\nel.___2___ = 'Nový text';\n\n// Přidání třídy:\nel.classList.___3___('aktivni');",
+                "options": {
+                    "1": ["getElementById", "querySelector", "getElement"],
+                    "2": ["textContent", "innerHTML", "value"],
+                    "3": ["add", "append", "push"]
+                },
                 "answers": {
                     "1": "getElementById",
                     "2": "textContent",
@@ -4058,6 +4455,10 @@
                 "title": "Event listener",
                 "desc": "Doplň kód.",
                 "template": "const btn = document.getElementById('btn');\n\nbtn.___1___(___2___, () => {\n  console.log('Kliknuto!');\n  el.textContent = 'Ahoj!';\n});",
+                "options": {
+                    "1": ["addEventListener", "on", "attachEvent"],
+                    "2": ["'click'", "'onchange'", "'hover'"]
+                },
                 "answers": {
                     "1": "addEventListener",
                     "2": "'click'"
